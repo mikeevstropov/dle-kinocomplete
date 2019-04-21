@@ -2,7 +2,7 @@
   "name": "mikeevstropov/dle-kinocomplete",
   "description": "DLE Kinocomplete Module for the Movie Websites based on CMS DataLife Engine.",
   "type": "project",
-  "license": "proprietary",
+  "license": "MIT",
   "authors": [
     {
       "name": "Mike Evstropov",
