@@ -1,0 +1,192 @@
+{# install/index.html.twig #}
+
+{% set requirementsErrors = diagnostics.getRequirementsErrors() %}
+
+{% extends "base.html.twig" %}
+
+{% block header %}
+
+  {% include 'diagnostics/requirements-errors.html.twig' with {'errors': requirementsErrors} %}
+
+{% endblock %}
+
+{% block content %}
+
+  {% if status == 'initial' %}
+
+    <div
+      class="panel panel-default">
+
+      <div
+        class="panel-heading">
+        Требуется установка
+      </div>
+
+      <div
+        class="panel-body">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/install-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            style="font-size: 14px;"
+            class="kc__section-message__title">
+            Соглашение пользователя
+          </div>
+
+          <p>
+            Прежде чем приступить к установке, обратите внимание, что
+            работа с модулем, как правило, влечет за собой необратимые
+            изменения в базе данных. По этой причине, перед выполнением
+            любых незнакомых Вам операций, Вы обязуетесь создавать её
+            резервную копию. Сделать это можно в разделе «Управление
+            базой данных».
+            <br/>
+            <br/>
+            Команда разработчиков сообщества «Пиратская Гавань» благодарит
+            Вас за интерес к нашим решениям. Мы верим, что делам нечто
+            важное для веб-мастеров.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        class="panel-footer">
+
+        <div
+          class="text-center">
+
+          <a
+            class="
+              btn
+              btn-sm
+              bg-teal
+              btn-raised
+              legitRipple
+              {{ requirementsErrors|length ? 'disabled' : '' }}"
+            href="{{ router.resolveUrl('install', {step: 'install'}) }}">
+            Установить
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% elseif status == 'success' %}
+
+    <div
+      class="alert alert-success alert-styled-left alert-arrow-left alert-component message_box">
+
+      <h4>
+        Установлено!
+      </h4>
+
+      <div
+        class="panel-body">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/success-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Установка успешно выполнена!
+          </div>
+
+        </div>
+
+        </table>
+
+      </div>
+
+      <div
+        class="panel-footer">
+
+        <div
+          class="text-center">
+
+          <a
+            href="{{ router.resolveUrl() }}"
+            class="btn btn-sm bg-teal btn-raised legitRipple">
+            Продолжить
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% elseif status == 'error' %}
+
+    <div
+      class="alert alert-danger alert-styled-left alert-arrow-left alert-component message_box">
+
+      <h4>
+        Ошибка!
+      </h4>
+
+      <div
+        class="panel-body">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/fail-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Произошла ошибка!
+          </div>
+
+          <p>
+            {{ message }}
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        class="panel-footer">
+
+        <div
+          class="text-center">
+
+          <a
+            href="{{ router.resolveUrl('install') }}"
+            class="btn btn-sm bg-teal btn-raised legitRipple">
+            Вернуться
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% endif %}
+
+{% endblock %}

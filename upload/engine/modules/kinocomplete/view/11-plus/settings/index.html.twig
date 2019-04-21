@@ -1,0 +1,204 @@
+{# settings/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block header %}
+
+  {% include 'diagnostics/errors.html.twig' %}
+  {% include 'diagnostics/warnings.html.twig' %}
+
+{% endblock %}
+
+{% block content %}
+
+  {% if status == 'initial' %}
+
+    <form
+      action=""
+      method="post">
+
+      {% include 'settings/header.html.twig' %}
+      {% include 'settings/general.html.twig' with {'display': 'block'} %}
+      {% include 'settings/sources.html.twig' with {'display': 'none'} %}
+      {% include 'settings/feeds.html.twig' with {'display': 'none'} %}
+      {% include 'settings/extra-fields.html.twig' with {'display': 'none'} %}
+      {% include 'settings/data.html.twig' with {'display': 'none'} %}
+      {% include 'settings/downloads.html.twig' with {'display': 'none'} %}
+      {% include 'settings/proxy.html.twig' with {'display': 'none'} %}
+
+      <div
+        style="margin-bottom: 30px;">
+
+        <a
+          class="btn btn-lg btn-blue"
+          href="{{ router.resolveUrl() }}">
+          Вернуться
+        </a>
+
+        &nbsp;
+
+        <input
+          type="submit"
+          value="Сохранить"
+          class="btn btn-lg btn-green">
+
+      </div>
+
+    </form>
+
+    <script
+      type="text/javascript">
+
+      function ChangeOption(selectedOption) {
+
+        document.getElementById('general').style.display      = "none";
+        document.getElementById('sources').style.display      = "none";
+        document.getElementById('feeds').style.display        = "none";
+        document.getElementById('extra-fields').style.display = "none";
+        document.getElementById('data').style.display         = "none";
+        document.getElementById('downloads').style.display    = "none";
+        document.getElementById('proxy').style.display        = "none";
+        document.getElementById(selectedOption).style.display = "";
+
+        $('#'+ selectedOption).find(".iButton-icons-tab").iButton({
+          labelOn: "<i class='icon-ok'></i>",
+          labelOff: "<i class='icon-remove'></i>",
+          handleWidth: 30
+        });
+      }
+
+    </script>
+
+  {% elseif status == 'success' %}
+
+    <div
+      class="box">
+
+      <div
+        class="box-header">
+
+        <div
+          class="title">
+          Настройки модуля
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/success-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Изменения успешно сохранены!
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-12 text-center">
+
+          <a
+            class="btn btn btn-blue"
+            href="{{ router.resolveUrl('settings') }}">
+            Вернуться назад
+          </a>
+
+          &nbsp;
+
+          <a
+            class="btn btn btn-green"
+            href="{{ router.resolveUrl() }}">
+            На главную
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% elseif status == 'error' %}
+
+    <div
+      class="box">
+
+      <div
+        class="box-header">
+
+        <div
+          class="title">
+          Настройки модуля
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/fail-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Произошла ошибка!
+          </div>
+
+          <p>
+            {{ message }}
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-12 text-center">
+
+          <a
+            class="btn btn btn-blue"
+            href="{{ router.resolveUrl('settings') }}">
+            Вернуться назад
+          </a>
+
+          &nbsp;
+
+          <a
+            class="btn btn btn-green"
+            href="{{ router.resolveUrl() }}">
+            На главную
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+
+{% set warnings = warnings ? warnings : diagnostics.getWarnings() %}
+
+{% if warnings|length %}
+
+  <div
+    style="margin-bottom: 20px;">
+
+    {% for message in warnings %}
+
+      <div
+        style="padding: 10px; margin-bottom: 8px;"
+        class="alert alert-warning alert-component">
+        {{ message }}
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+{% endif %}

@@ -1,0 +1,174 @@
+{# install/index.html.twig #}
+
+{% set requirementsErrors = diagnostics.getRequirementsErrors() %}
+
+{% extends "base.html.twig" %}
+
+{% block header %}
+
+  {% include 'diagnostics/requirements-errors.html.twig' with {'errors': requirementsErrors} %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Установка
+      </div>
+
+    </div>
+
+    {% if status == 'initial' %}
+
+      <div
+        class="row box-section">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/install-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            style="font-size: 13px;"
+            class="kc__section-message__title">
+            Соглашение пользователя
+          </div>
+
+          <p>
+            Прежде чем приступить к установке, обратите внимание, что
+            работа с модулем, как правило, влечет за собой необратимые
+            изменения в базе данных. По этой причине, перед выполнением
+            любых незнакомых Вам операций, Вы обязуетесь создавать её
+            резервную копию. Сделать это можно в разделе «Управление
+            базой данных».
+            <br/>
+            <br/>
+            Команда разработчиков сообщества «Пиратская Гавань» благодарит
+            Вас за интерес к нашим решениям. Мы верим, что делам нечто
+            важное для веб-мастеров.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-12 text-center">
+
+          <a
+            class="
+              btn
+              btn-green
+              {{ requirementsErrors|length ? 'disabled' : '' }}"
+            href="{{ router.resolveUrl('install', {step: 'install'}) }}">
+            Установить
+          </a>
+
+        </div>
+
+      </div>
+
+    {% elseif status == 'success' %}
+
+      <div
+        class="row box-section">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/success-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Установка успешно выполнена!
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-12 text-center">
+
+          <a
+            class="btn btn btn-green"
+            href="{{ router.resolveUrl() }}">
+            Продолжить
+          </a>
+
+        </div>
+
+      </div>
+
+    {% elseif status == 'error' %}
+
+      <div
+        class="row box-section">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/fail-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Произошла ошибка!
+          </div>
+
+          <p>
+            {{ message }}
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-12 text-center">
+
+          <a
+            class="btn btn btn-blue"
+            href="{{ router.resolveUrl('install') }}">
+            Вернуться
+          </a>
+
+        </div>
+
+      </div>
+
+    {% endif %}
+
+  </div>
+
+{% endblock %}

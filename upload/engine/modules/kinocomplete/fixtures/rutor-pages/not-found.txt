@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Страница сейчас загрузится..</title>
+</head>
+
+<body>
+<style>
+@import url(http://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic);
+body { /*background:url(/inc/404.jpg) center center  no-repeat #fff;*/ padding-bottom:500px; font-family: 'Lobster', cursive ; }
+h1, h2, h3 { text-align:center; color: #0380D3; font-weight:normal }
+#vk_groups { margin: 55px auto; }
+</style>
+<h1>Страница пока не доступна</h1>
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+var yaParams = {error: 'kode servers_list_no_cache proxy socket : '};
+</script>
+
+
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter22231096 = new Ya.Metrika({id:22231096,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,params:window.yaParams||{ }});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/22231096" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

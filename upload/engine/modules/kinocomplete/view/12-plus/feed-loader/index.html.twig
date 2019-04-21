@@ -1,0 +1,430 @@
+{# feed-loader/index.html.twig #}
+
+{% set errors = diagnostics.getErrors() %}
+{% set warnings = diagnostics.getWarnings() %}
+
+{% extends "base.html.twig" %}
+
+{% block header %}
+
+  {% include 'diagnostics/errors.html.twig' with {'errors': errors, 'warnings': warnings} %}
+  {% include 'diagnostics/warnings.html.twig' with {'errors': errors, 'warnings': warnings} %}
+
+{% endblock %}
+
+{% block content %}
+
+  {% if errors is empty %}
+
+    <!-- Section (moonwalk) -->
+    <div
+      class="
+        panel
+        panel-default
+        kc__feed-loader__section
+        kc__feed-loader__section_moonwalk">
+
+      <div
+        class="panel-heading">
+        Фиды Moonwalk
+      </div>
+
+      <div
+        class="panel-body">
+
+        Данная утилита наполняет сайт материалами используя фиды
+        видео-базы Moonwalk. Перед выполнением данного действия,
+        настоятельно рекомендуется корректно настроить дополнительные
+        поля, а так же проверить опции фидов в основных настройках
+        модуля. В зависимости от настроек модуля, операция может
+        добавить новые категории, которые присутствуют в жанрах
+        импортируемых материалов.
+
+      </div>
+
+      <hr
+        style="margin: 0;"/>
+
+      <div
+        class="panel-tab-content tab-content">
+
+        <div
+          class="tab-pane active">
+
+          <table
+            class="table table-sm">
+
+            <tbody>
+
+              <tr>
+
+                <td
+                  class="col-md-3">
+                  Используемые фиды:
+                </td>
+
+                <td
+                  class="col-md-9">
+
+                  {% if noMoonwalkFeedsEnabled %}
+                    <span
+                      class="text-danger">
+                      фидов нет
+                    </span>
+                  {% endif %}
+
+                  <div
+                    class="kc__tags">
+
+                    {% if moonwalkForeignMoviesFeedEnabled %}
+
+                      <span
+                        class="kc__tag">
+                        Зарубежные фильмы
+                      </span>
+
+                    {% endif %}
+
+                    {% if moonwalkRussianMoviesFeedEnabled %}
+
+                      <span
+                        class="kc__tag">
+                        Русские фильмы
+                      </span>
+
+                    {% endif %}
+
+                    {% if moonwalkCamripMoviesFeedEnabled %}
+
+                      <span
+                        class="kc__tag">
+                        CamRIP фильмы
+                      </span>
+
+                    {% endif %}
+
+                    {% if moonwalkForeignSeriesFeedEnabled %}
+
+                      <span
+                        class="kc__tag">
+                        Зарубежные сериалы
+                      </span>
+
+                    {% endif %}
+
+                    {% if moonwalkRussianSeriesFeedEnabled %}
+
+                      <span
+                        class="kc__tag">
+                        Русские сериалы
+                      </span>
+
+                    {% endif %}
+
+                    {% if moonwalkAnimeMoviesFeedEnabled %}
+
+                      <span
+                        class="kc__tag">
+                        Аниме фильмы
+                      </span>
+
+                    {% endif %}
+
+                    {% if moonwalkAnimeSeriesFeedEnabled %}
+
+                      <span
+                        class="kc__tag">
+                        Аниме сериалы
+                      </span>
+
+                    {% endif %}
+
+                  </div>
+
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td
+                  class="col-md-3">
+                  Ограничение загрузки новостей:
+                </td>
+
+                <td
+                  class="col-md-9">
+                  {{ feedLoaderPostsLimit ? feedLoaderPostsLimit : 'не ограничено' }}
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td
+                  class="col-md-3">
+                  Назначение типов в категориях:
+                </td>
+
+                <td
+                  class="col-md-9">
+                  {{ categoriesFromVideoType ? 'да' : 'нет' }}
+                </td>
+
+              </tr>
+
+              <tr>
+
+                <td
+                  class="col-md-3">
+                  Назначение жанров в категориях:
+                </td>
+
+                <td
+                  class="col-md-9">
+                  {{ categoriesFromVideoGenres ? 'да' : 'нет' }}
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <hr
+        style="margin: 0;"/>
+
+      <div
+        class="panel-body">
+
+        <div
+          class="progress">
+
+          <!-- Progress Bar (moonwalk) -->
+          <div
+            style="width: 0;"
+            class="
+              progress-bar
+              progress-blue
+              kc__feed-loader__progress-bar
+              kc__feed-loader__progress-bar_moonwalk">
+
+            <span></span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <hr
+        style="margin: 0;"/>
+
+      <!-- Status Bar -->
+      <div
+        class="
+          panel-body
+          kc__feed-loader__status-bar">
+
+        <div>
+
+          <!-- Feed Posts Count (moonwalk) -->
+          <span
+            class="
+              kc__feed-loader__feed-posts-count
+              kc__feed-loader__feed-posts-count_moonwalk">
+            {{ moonwalkFeedPostsCount }}
+          </span>
+
+          <!-- Status Label -->
+          <div
+            class="kc__feed-loader__status-label">
+            загружено
+          </div>
+
+        </div>
+
+        <div>
+
+          <!-- Feed Posts Updated (moonwalk) -->
+          <span
+            class="
+              kc__feed-loader__feed-posts-updated
+              kc__feed-loader__feed-posts-updated_moonwalk">
+            0
+          </span>
+
+          <!-- Status Label -->
+          <div
+            class="kc__feed-loader__status-label">
+            обновлено
+          </div>
+
+        </div>
+
+        <div>
+
+          <!-- Feed Posts Skipped (moonwalk) -->
+          <span
+            class="
+              kc__feed-loader__feed-posts-skipped
+              kc__feed-loader__feed-posts-skipped_moonwalk">
+            0
+          </span>
+
+          <!-- Status Label -->
+          <div
+            class="kc__feed-loader__status-label">
+            пропущено
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="panel-footer"
+        style="text-align: right;">
+
+        <!-- Clean Posts Button (moonwalk) -->
+        <button
+          class="
+            btn
+            btn-sm
+            disabled
+            btn-raised
+            legitRipple
+            bg-brown-400
+            kc__feed-loader__clean-posts-button
+            kc__feed-loader__clean-posts-button_moonwalk">
+          Удалить загруженное
+        </button>
+
+        <!-- Update Posts Button (moonwalk) -->
+        <button
+          class="
+            btn
+            btn-sm
+            disabled
+            btn-raised
+            legitRipple
+            bg-info-600
+            position-right
+            kc__feed-loader__update-posts-button
+            kc__feed-loader__update-posts-button_moonwalk">
+          Начать обновление
+        </button>
+
+        <!-- Create Posts Button (moonwalk) -->
+        <div
+          class="
+            btn
+            btn-sm
+            bg-teal
+            disabled
+            btn-raised
+            legitRipple
+            position-right
+            kc__feed-loader__create-posts-button
+            kc__feed-loader__create-posts-button_moonwalk">
+          Начать загрузку
+        </div>
+
+      </div>
+
+    </div>
+
+    <div
+      style="margin-bottom: 30px;">
+
+      <a
+        href="{{ router.resolveUrl() }}"
+        class="
+          btn
+          btn-raised
+          legitRipple
+          position-left
+          bg-primary-600">
+        Вернуться
+      </a>
+
+    </div>
+
+  {% else %}
+
+    <div
+      class="
+        alert
+        alert-danger
+        alert-arrow-left
+        alert-styled-left
+        alert-component message_box">
+
+      <h4>
+        Раздел недоступен!
+      </h4>
+
+      <div
+        class="panel-body">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/fail-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Диагностика модуля оповестила об ошибках.
+          </div>
+
+          <p>
+            Что бы восстановить функционал данного раздела,
+            исправьте все ошибки указанные в начале страницы.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        class="panel-footer">
+
+        <div
+          class="text-center">
+
+          <a
+            href="{{ router.resolveUrl() }}"
+            class="btn btn-sm bg-teal btn-raised legitRipple">
+            Вернуться назад
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% endif %}
+
+{% endblock %}
+
+{% block assets %}
+
+  <style>
+    {{ source('feed-loader/style.css') }}
+  </style>
+
+  <script
+    src="/engine/modules/kinocomplete/web/dist/injections/feed-loader.min.js">
+  </script>
+
+{% endblock %}

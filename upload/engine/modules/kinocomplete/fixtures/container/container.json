@@ -1,0 +1,6 @@
+{
+  "integer_option": 1,
+  "string_option": "1",
+  "boolean_option": false,
+  "serialized_option": "a:1:{s:1:\"a\";s:1:\"b\";}"
+}

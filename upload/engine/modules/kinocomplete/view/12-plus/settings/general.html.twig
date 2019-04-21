@@ -1,0 +1,174 @@
+{# settings/general.html.twig #}
+
+<div
+  id="general"
+  style="display: {{ display }}">
+
+  <div
+    class="panel panel-flat">
+
+    <div
+      class="panel-body">
+      Действия
+    </div>
+
+    <div
+      class="table-responsive">
+
+      <table
+        class="table table-striped">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Пользователь:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Выполнять действия от указанного пользователя.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[action_user_name]">
+
+                <option
+                  value="">
+                  Автоматически
+                </option>
+
+                {% for user in users %}
+
+                  <option
+                    value="{{ user.name }}"
+                    {{ settings['action_user_name'] == user.name ? 'selected' : '' }}>
+                    {{ user.name }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="panel panel-flat">
+
+    <div
+      class="panel-body">
+      Автокомплит
+    </div>
+
+    <div
+      class="table-responsive">
+
+      <table
+        class="table table-striped">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Добавление новости:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                На странице создания новости будет
+                доступен автокомплит.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[autocomplete_add_post_enabled]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[autocomplete_add_post_enabled]"
+                {{ settings['autocomplete_add_post_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Редактирование новости:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                На странице редактирования новости будет
+                доступен автокомплит.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[autocomplete_edit_post_enabled]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[autocomplete_edit_post_enabled]"
+                {{ settings['autocomplete_edit_post_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

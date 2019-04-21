@@ -1,0 +1,429 @@
+{# settings/data.html.twig #}
+
+<div
+  id="data"
+  style="display: {{ display }}">
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Категории
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Регистр новых категорий:
+              </h6>
+
+              <span
+                class="note large">
+                Определять регистр при создании новых категорий.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <select
+                class="uniform"
+                name="settings[categories_case]">
+
+                <option
+                  value="0"
+                  {{ settings['categories_case'] == '0' ? 'selected' : '' }}>
+                  Не изменять
+                </option>
+
+                <option
+                  value="1"
+                  {{ settings['categories_case'] == '1' ? 'selected' : '' }}>
+                  все строчные
+                </option>
+
+                <option
+                  value="2"
+                  {{ settings['categories_case'] == '2' ? 'selected' : '' }}>
+                  ВСЕ ПРОПИСНЫЕ
+                </option>
+
+                <option
+                  value="3"
+                  {{ settings['categories_case'] == '3' ? 'selected' : '' }}>
+                  С заглавной буквы
+                </option>
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Назначение типов в категориях:
+              </h6>
+
+              <span
+                class="note large">
+                Сериалы, фильмы и другие типы будут
+                определены как отдельные категории.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[categories_from_video_type]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[categories_from_video_type]"
+                {{ settings['categories_from_video_type'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Назначение жанров в категориях:
+              </h6>
+
+              <span
+                class="note large">
+                Авто-назначение категорий на основе
+                жанров добавляемого материала.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[categories_from_video_genres]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[categories_from_video_genres]"
+                {{ settings['categories_from_video_genres'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Новость
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Заголовок:
+              </h6>
+
+              <span
+                class="note large">
+                Шаблон заголовка новости.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="не использовать"
+                name="settings[post_pattern_title]"
+                value="{{ settings['post_pattern_title'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Краткая новость:
+              </h6>
+
+              <span
+                class="note large">
+                Шаблон краткой новости.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="не использовать"
+                name="settings[post_pattern_short_story]"
+                value="{{ settings['post_pattern_short_story'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Полная новость:
+              </h6>
+
+              <span
+                class="note large">
+                Шаблон полной новости.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="не использовать"
+                name="settings[post_pattern_full_story]"
+                value="{{ settings['post_pattern_full_story'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Мета-заголовок:
+              </h6>
+
+              <span
+                class="note large">
+                Шаблон мета-заголовка.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="не использовать"
+                name="settings[post_pattern_meta_title]"
+                value="{{ settings['post_pattern_meta_title'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Мета-описание:
+              </h6>
+
+              <span
+                class="note large">
+                Шаблон мета-описания.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="не использовать"
+                name="settings[post_pattern_meta_description]"
+                value="{{ settings['post_pattern_meta_description'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Мета-ключи:
+              </h6>
+
+              <span
+                class="note large">
+                Шаблон мета-ключей.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="не использовать"
+                name="settings[post_pattern_meta_keywords]"
+                value="{{ settings['post_pattern_meta_keywords'] }}">
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Видео
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Продолжительность:
+              </h6>
+
+              <span
+                class="note large">
+                Шаблон продолжительности.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="не использовать"
+                name="settings[video_pattern_duration]"
+                value="{{ settings['video_pattern_duration'] }}">
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

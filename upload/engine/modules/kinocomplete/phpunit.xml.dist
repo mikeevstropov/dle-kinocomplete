@@ -1,0 +1,16 @@
+<phpunit bootstrap="tests/bootstrap.php">
+  <php>
+    <env name="system_root_dir" value=""/>
+    <env name="system_cache_dir" value=""/>
+    <env name="system_upload_dir" value=""/>
+    <env name="database_host" value=""/>
+    <env name="database_name" value=""/>
+    <env name="database_user" value=""/>
+    <env name="database_pass" value=""/>
+    <env name="database_prefix" value=""/>
+    <env name="moonwalk_token" value=""/>
+    <env name="tmdb_token" value=""/>
+    <env name="hdvb_token" value=""/>
+    <env name="feed_loader_posts_limit" value=""/>
+  </php>
+</phpunit>

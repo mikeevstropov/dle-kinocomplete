@@ -1,0 +1,31 @@
+{# base.html.twig #}
+
+{% block notification %}
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block footer %}
+
+  <div
+    class="footer text-muted text-size-small">
+    <!-- copyright © {{ 'now'|date('Y') }} Piratehaven.ws | -->
+    Kinocomplete {{ moduleVersion }}
+  </div>
+
+{% endblock %}
+
+{% block assets %}
+{% endblock %}
+
+<style>
+  {{ source('style.css') }}
+</style>
+
+<script>
+  {{ source('script.js') }}
+</script>

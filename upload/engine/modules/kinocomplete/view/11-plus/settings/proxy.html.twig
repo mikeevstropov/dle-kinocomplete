@@ -1,0 +1,198 @@
+{# settings/proxy.html.twig #}
+
+<div
+  id="proxy"
+  style="display: {{ display }}">
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Прокси-сервер
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Использовать прокси-сервер:
+              </h6>
+
+              <span
+                class="note large">
+                Включая эту опцию, указанный адрес прокси-сервера
+                будет использован для всех исходящих запросов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[proxy_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[proxy_enabled]"
+                {{ settings['proxy_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                HTTPS-прокси:
+              </h6>
+
+              <span
+                class="note large">
+                Запросы через прокси-сервер будут выполняться
+                используя SSL подключение.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[proxy_secure]">
+
+              <input value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[proxy_secure]"
+                {{ settings['proxy_secure'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Адрес:
+              </h6>
+
+              <span
+                class="note large">
+                Полный адрес прокси-сервера формата IPv4, включая порт через двоеточие.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="127.0.0.1:8080"
+                name="settings[proxy_address]"
+                value="{{ settings['proxy_address'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Логин:
+              </h6>
+
+              <span
+                class="note large">
+                Логин для авторизации приватного прокси-сервера.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите логин"
+                name="settings[proxy_login]"
+                value="{{ settings['proxy_login'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Пароль:
+              </h6>
+
+              <span
+                class="note large">
+                Пароль приватного прокси-сервера используется в связке с логином.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="password"
+                style="width: 100%;"
+                autocomplete="new-password"
+                placeholder="введите пароль"
+                name="settings[proxy_password]"
+                value="{{ settings['proxy_password'] }}">
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

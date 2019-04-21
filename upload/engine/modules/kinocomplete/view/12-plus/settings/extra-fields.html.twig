@@ -1,0 +1,1606 @@
+{# settings/extra-fields.html.twig #}
+
+<div
+  id="extra-fields"
+  style="display: {{ display }}">
+
+  <div
+    class="panel panel-flat">
+
+    <div
+      class="panel-body">
+      Дополнительные поля
+    </div>
+
+    <div
+      class="table-responsive">
+
+      <table
+        class="table table-striped">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Международное название:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Название в международном кинопрокате.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_world_title]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_world_title'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Слоган:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Рекламный лозунг материала.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_tagline]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_tagline'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Продолжительность:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Длительность сеанса просмотра.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_duration]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_duration'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Актеры:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Список ключевых актеров.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_actors]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_actors'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Режиссеры:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Список режиссеров.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_directors]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_directors'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Киностудии:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Список киностудий.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_studios]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_studios'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Страны:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Список стран проведения съемок.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_countries]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_countries'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Жанры:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Список жанров.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_genres]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_genres'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Возрастная группа:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Возрастные ограничения для зрителя.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_age_group]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_age_group'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Постер:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Ссылка на постер.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_poster]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_poster'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Миниатюра:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Ссылка на миниатюру.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_thumbnail]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_thumbnail'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Скриншоты:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Список скриншотов видеоряда.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_screenshots]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_screenshots'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Год:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Год поступления в прокат.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_year]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_year'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Перевод:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Тип перевода или название студии.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_translator]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_translator'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                ID Кинопоиска:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Идентификатор Кинопоиска
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_kinopoisk_id]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_kinopoisk_id'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                ID TMDB:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Идентификатор The Movie Database.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_tmdb_id]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_tmdb_id'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                ID World Art:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Идентификатор World Art.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_world_art_id]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_world_art_id'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                ID Pornolab:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Идентификатор Pornolab.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_porno_lab_id]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_porno_lab_id'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                ID IMDb:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Идентификатор Internet Movie Database.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_imdb_id]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_imdb_id'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Рейтинг по Кинопоиску:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Значение рейтинга по Кинопоиску.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_kinopoisk_rating]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_kinopoisk_rating'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Голоса по Кинопоиску:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Количество голосов по Кинопоиску.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_kinopoisk_votes]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_kinopoisk_votes'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Рейтинг по TMDB:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Значение рейтинга по TMDB.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_tmdb_rating]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_tmdb_rating'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Голоса по TMDB:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Количество голосов по TMDB.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_tmdb_votes]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_tmdb_votes'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Рейтинг по IMDB:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Значение рейтинга по IMDB.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_imdb_rating]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_imdb_rating'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Голоса по IMDB:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Количество голосов по IMDB.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_imdb_votes]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_imdb_votes'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Рейтинг по MPAA:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Значение рейтинга по MPAA.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_mpaa_rating]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_mpaa_rating'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Голоса по MPAA:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Количество голосов по MPAA.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_mpaa_votes]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_mpaa_votes'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Адрес плеера:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Ссылка на материал.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_player]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_player'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Качество видео:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Качество материала в плеере.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_quality]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_quality'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Адрес трейлера:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                  Ссылка на трейлер.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_trailer]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_trailer'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Magnet-ссылка:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Указатель на Торрент ресурс.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_magnet_link]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_magnet_link'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Торрент-файл:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Ссылка на Торрент-файл.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_torrent_file]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_torrent_file'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Размер торрента:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Размер загружаемого торрента.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_torrent_size]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_torrent_size'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Раздают торрент:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Количество раздающих торрент.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_torrent_seeds]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_torrent_seeds'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Принимают торрент:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Количество скачивающих на раздаче.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                class="uniform"
+                name="settings[video_field_torrent_leeches]">
+
+                <option
+                  value="">
+                  Не назначено
+                </option>
+
+                {% for field in extraFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ settings['video_field_torrent_leeches'] == field.name ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

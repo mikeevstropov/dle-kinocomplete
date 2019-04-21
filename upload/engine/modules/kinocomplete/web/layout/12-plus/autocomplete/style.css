@@ -1,0 +1,360 @@
+/* Keyframes */
+
+@keyframes kc__autocomplete__spinner {
+  to {transform: rotate(360deg);}
+}
+
+/* Title Row */
+
+.title-row {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 975px;
+  align-items: center;
+}
+
+.title-row > #title {
+  flex: 1 1 auto;
+  max-width: none;
+  width: auto;
+}
+
+.title-row > .help-button {
+  flex: 0 0 auto;
+}
+
+.title-row > #related_news {
+  flex-basis: 100%;
+}
+
+.title-row > #related_news > .findrelated {
+  margin-top: 10px;
+  max-width: none;
+}
+
+.kinocomplete__autocomplete__trigger-button {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1200px) {
+
+  .kinocomplete__autocomplete__trigger-button {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1570px) {
+
+  .title-row {
+    max-width: 796px;
+  }
+}
+
+/* Autocomplete */
+
+.kc__autocomplete__suggestion-dialog {
+  position: static;
+  max-height: 70vh;
+}
+
+.kc__autocomplete__overlay-checkbox {
+  display: flex;
+  margin-top: 9px;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.kc__autocomplete__overlay-checkbox > label {
+  margin: 0;
+  margin-left: 15px;
+  margin-bottom: 1px;
+}
+
+.kc__autocomplete__overlay-checkbox .switchery {
+  height: 18px !important;
+  width: 40px !important;
+}
+
+.kc__autocomplete__overlay-checkbox .switchery small {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.kc__autocomplete__suggestion-dialog.loading:after {
+  background-color: rgba(255, 255, 255, .5);
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.kc__autocomplete__suggestion-dialog.loading:before {
+  box-sizing: border-box;
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  margin-left: -15px;
+  border-radius: 50%;
+  border-top: 2px solid #aaa;
+  border-right: 2px solid transparent;
+  animation: kc__autocomplete__spinner .6s linear infinite;
+}
+
+.kc__autocomplete__suggestion-dialog__search-query {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.kc__autocomplete__suggestion-dialog__search-query.loading:after {
+  box-sizing: border-box;
+  position: absolute;
+  content: '';
+  top: 50%;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  margin-left: -8px;
+  border-radius: 50%;
+  border-top: 2px solid #aaa;
+  border-right: 2px solid transparent;
+  animation: kc__autocomplete__spinner .6s linear infinite;
+}
+
+.kc__autocomplete__suggestion-dialog__search-query__label {
+  margin-right: 18px;
+  margin-bottom: 0;
+}
+
+.kc__autocomplete__suggestion-dialog__search-query__field {
+  margin-right: 3px;
+}
+
+.kc__autocomplete__errors-dialog__errors {
+  margin-top: 19px;
+}
+
+.kc__autocomplete__errors-dialog__error {
+  font-style: italic;
+}
+
+.kc__autocomplete__errors-dialog__error:not(:first-child) {
+  margin-top: 7px;
+}
+
+.kc__autocomplete__errors-dialog__error:before {
+  color: orange;
+  content: "\f06a";
+  margin-right: 10px;
+  text-rendering: auto;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font: normal normal normal 13px/1 FontAwesome;
+}
+
+.kc__autocomplete__suggestion-dialog__content {
+  margin-top: 23px;
+}
+
+.kc__autocomplete__dummy-ticket {
+  background-color: #f6f6f6;
+  padding: 10px;
+  display: flex;
+}
+
+.kc__autocomplete__dummy-ticket:not(:first-child) {
+  margin-top: 12px;
+}
+
+.kc__autocomplete__dummy-ticket__thumbnail {
+  background-color: #fcfcfc;
+  margin-right: 15px;
+  flex-shrink: 0;
+  height: 111px;
+  width: 80px;
+}
+
+.kc__autocomplete__dummy-ticket__info {
+  flex-direction: column;
+  flex-basis: 100%;
+  display: flex;
+}
+
+.kc__autocomplete__dummy-ticket__text {
+  background-color: #eaeaea;
+}
+
+.kc__autocomplete__error-alert {
+  padding: 10px;
+  margin-top: 19px;
+  box-shadow: none;
+  margin-bottom: -11px;
+}
+
+.kc__autocomplete__video-ticket {
+  background-color: #f6f6f6;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+}
+
+.kc__autocomplete__video-ticket:not(:first-child) {
+  margin-top: 12px;
+}
+
+.kc__autocomplete__video-ticket__thumbnail {
+  background-position: center center;
+  background-color: #fcfcfc;
+  background-size: cover;
+  margin-right: 15px;
+  flex-shrink: 0;
+  height: 111px;
+  width: 80px;
+}
+
+.kc__autocomplete__video-ticket__thumbnail.empty {
+  background-size: inherit;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(/engine/modules/kinocomplete/web/assets/images/placeholders/video-thumbnail.png);
+}
+
+.kc__autocomplete__video-ticket__info {
+  flex-direction: column;
+  flex-basis: 100%;
+  display: flex;
+}
+
+.kc__autocomplete__video-ticket__header {
+  justify-content: space-between;
+  display: flex;
+}
+
+.kc__autocomplete__video-ticket__title {
+  font-size: 15px;
+}
+
+.kc__autocomplete__video-ticket__origin {
+  text-transform: uppercase;
+  position: relative;
+  margin-left: 20px;
+  font-size: 10px;
+  color: #aaa;
+  right: 4px;
+  top: 4px;
+}
+
+.kc__autocomplete__video-ticket__caption {
+  margin-top: 5px;
+  font-size: 12px;
+  display: flex;
+  color: #555;
+}
+
+.kc__autocomplete__video-ticket__year {
+  margin-right: 6px;
+}
+
+.kc__autocomplete__video-ticket__footer {
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  display: flex;
+}
+
+.kc__autocomplete__video-ticket__quality {
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  padding: 1px 13px;
+}
+
+.kc__autocomplete__torrent-ticket {
+  background-color: #f6f6f6;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+}
+
+.kc__autocomplete__torrent-ticket:not(:first-child) {
+  margin-top: 12px;
+}
+
+.kc__autocomplete__torrent-ticket__thumbnail {
+  background-position: center center;
+  background-color: #fcfcfc;
+  background-size: cover;
+  margin-right: 15px;
+  flex-shrink: 0;
+  height: 111px;
+  width: 80px;
+}
+
+.kc__autocomplete__torrent-ticket__thumbnail.empty {
+  background-size: inherit;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url(/engine/modules/kinocomplete/web/assets/images/placeholders/torrent-thumbnail.png);
+}
+
+.kc__autocomplete__torrent-ticket__info {
+  flex-direction: column;
+  flex-basis: 100%;
+  display: flex;
+}
+
+.kc__autocomplete__torrent-ticket__header {
+  justify-content: space-between;
+  display: flex;
+}
+
+.kc__autocomplete__torrent-ticket__title {
+  font-size: 15px;
+}
+
+.kc__autocomplete__torrent-ticket__origin {
+  text-transform: uppercase;
+  position: relative;
+  margin-left: 20px;
+  font-size: 10px;
+  color: #aaa;
+  right: 4px;
+  top: 4px;
+}
+
+.kc__autocomplete__torrent-ticket__caption {
+  margin-top: 5px;
+  font-size: 12px;
+  display: flex;
+  color: #555;
+}
+
+.kc__autocomplete__torrent-ticket__year {
+  margin-right: 6px;
+}
+
+.kc__autocomplete__torrent-ticket__footer {
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+  display: flex;
+}
+
+.kc__autocomplete__torrent-ticket__peers i {
+  font-size: 12px;
+}
+
+.kc__autocomplete__torrent-ticket__seeds {
+  margin-right: 10px;
+  color: green;
+}
+
+.kc__autocomplete__torrent-ticket__leeches {
+  color: red;
+}

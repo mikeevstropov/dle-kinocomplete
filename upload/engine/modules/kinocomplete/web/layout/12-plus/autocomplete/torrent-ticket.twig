@@ -1,0 +1,125 @@
+<div
+  class="kc__autocomplete__torrent-ticket">
+
+  {% if item.thumbnail %}
+
+    <!-- Thumbnail -->
+    <div
+      class="kc__autocomplete__torrent-ticket__thumbnail"
+      style="background-image: url('{{ item.thumbnail }}');">
+    </div>
+
+  {% else %}
+
+    <!-- Thumbnail -->
+    <div
+      class="kc__autocomplete__torrent-ticket__thumbnail empty">
+    </div>
+
+  {% endif %}
+
+  <!-- Info -->
+  <div
+    class="kc__autocomplete__torrent-ticket__info">
+
+    <!-- Header -->
+    <div
+      class="kc__autocomplete__torrent-ticket__header">
+
+      <!-- Title -->
+      <div
+        class="kc__autocomplete__torrent-ticket__title">
+
+        {% if item.title %}
+
+          {{ item.title }}
+
+        {% else %}
+
+          {{ item.worldTitle ?: 'Без заголовка' }}
+
+        {% endif %}
+
+      </div>
+
+      {% if item.origin %}
+
+        <!-- Origin -->
+        <div
+          class="kc__autocomplete__torrent-ticket__origin">
+          {{ item.origin }}
+        </div>
+
+      {% endif %}
+
+    </div>
+
+    <!-- Caption -->
+    <div
+      class="kc__autocomplete__torrent-ticket__caption">
+
+      {% if item.year %}
+
+        <!-- Year -->
+        <div
+          class="kc__autocomplete__torrent-ticket__year">
+          {{ item.year }}
+        </div>
+
+      {% endif %}
+
+      {% if item.translator %}
+
+        <!-- Translator -->
+        <div
+          class="kc__autocomplete__torrent-ticket__translator">
+          {{ item.translator }}
+        </div>
+
+      {% endif %}
+
+    </div>
+
+    <!-- Footer -->
+    <div
+      class="kc__autocomplete__torrent-ticket__footer">
+
+      <!-- Type -->
+      <div
+        class="kc__autocomplete__torrent-ticket__type">
+        {{ item.typeLabel ?: 'Неизвестный тип' }}
+      </div>
+
+      <!-- Peers -->
+      <div
+        class="kc__autocomplete__torrent-ticket__peers">
+
+        <span
+          class="kc__autocomplete__torrent-ticket__seeds">
+
+          {{ item.torrentSeeds }}
+
+          <i
+            class="fa fa-arrow-up">
+          </i>
+
+        </span>
+
+        <span
+          class="kc__autocomplete__torrent-ticket__leeches">
+
+          {{ item.torrentLeeches }}
+
+          <i
+            class="fa fa-arrow-down">
+          </i>
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

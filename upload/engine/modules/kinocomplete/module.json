@@ -1,0 +1,11 @@
+{
+  "module_version":               "0.1.4",
+  "module_label":                 "Kinocomplete",
+  "module_name":                  "kinocomplete",
+  "module_description":           "Автокомплит новостей для кино-сайтов.",
+  "module_icon":                  "kinocomplete.png",
+  "system_version_min":           "11.0",
+  "system_version_max":           "^13.0",
+  "database_configuration_table": "kc_configuration",
+  "database_feed_posts_table":    "kc_feed_posts"
+}

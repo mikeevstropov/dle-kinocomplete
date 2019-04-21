@@ -1,0 +1,186 @@
+{# install.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block header %}
+
+  {% include 'diagnostics/errors.html.twig' %}
+  {% include 'diagnostics/warnings.html.twig' %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div
+    class="panel panel-default">
+
+    <div
+      class="panel-heading">
+      Разделы управления
+    </div>
+
+    <div
+      class="list-bordered">
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-sm-6 media-list media-list-linked">
+
+          <a
+            class="media-link"
+            href="{{ router.resolveUrl('settings') }}">
+
+            <div
+              class="media-left">
+
+              <img
+                style="padding: 0;"
+                class="img-lg section_icon"
+                src="/engine/modules/kinocomplete/web/assets/images/icons/settings-icon.png">
+
+            </div>
+
+            <div
+              class="media-body">
+
+              <h6
+                class="media-heading text-semibold">
+                Настройки модуля
+              </h6>
+
+              <span
+                class="text-muted text-size-small">
+                Параметры прокси сервера, конфигурация автокомплита,
+                деактивация модуля и другие настройки.
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+        <div
+          class="col-sm-6 media-list media-list-linked">
+
+          <a
+            class="media-link"
+            href="{{ router.resolveUrl('feed-loader') }}">
+
+            <div
+              class="media-left">
+
+              <img
+                style="padding: 0;"
+                class="img-lg section_icon"
+                src="/engine/modules/kinocomplete/web/assets/images/icons/feeds-icon.png">
+
+            </div>
+
+            <div
+              class="media-body">
+
+              <h6
+                class="media-heading text-semibold">
+                Загрузка фидов
+              </h6>
+
+              <span
+                class="text-muted text-size-small">
+                Утилита автоматического заполнения веб-сайта материалами.
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-sm-6 media-list media-list-linked">
+
+          <a
+            target="_blank"
+            class="media-link"
+            href="https://piratehaven.ws/">
+
+            <div
+              class="media-left">
+
+              <img
+                style="padding: 0;"
+                class="img-lg section_icon"
+                src="/engine/modules/kinocomplete/web/assets/images/icons/community-icon.png">
+
+            </div>
+
+            <div
+              class="media-body">
+
+              <h6
+                class="media-heading text-semibold">
+                Пиратская гавань
+              </h6>
+
+              <span
+                class="text-muted text-size-small">
+                Телеграм-сообщество для владельцев киносайтов.
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+        <div
+          class="col-sm-6 media-list media-list-linked">
+
+          <a
+            class="media-link"
+            href="{{ router.resolveUrl('uninstall') }}">
+
+            <div
+              class="media-left">
+
+              <img
+                style="padding: 0;"
+                class="img-lg section_icon"
+                src="/engine/modules/kinocomplete/web/assets/images/icons/remove-icon.png">
+
+            </div>
+
+            <div
+              class="media-body">
+
+              <h6
+                class="media-heading text-semibold">
+                Удаление модуля
+              </h6>
+
+              <span
+                class="text-muted text-size-small">
+                Полная деинсталяция модуля, включая удаление
+                пользовательских настроек.
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

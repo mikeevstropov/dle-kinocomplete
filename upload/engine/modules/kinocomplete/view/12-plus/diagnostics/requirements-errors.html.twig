@@ -1,0 +1,21 @@
+
+{% set errors = errors ? errors : diagnostics.getRequirementsErrors() %}
+
+{% if errors|length %}
+
+  <div
+    style="margin-bottom: 20px;">
+
+    {% for message in errors %}
+
+      <div
+        style="padding: 10px; margin-bottom: 8px;"
+        class="alert alert-danger alert-component">
+        {{ message }}
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+{% endif %}

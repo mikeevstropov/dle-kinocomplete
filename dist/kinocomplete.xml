@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dleplugin>
+  <name>Kinocomplete</name>
+  <description>Автокомплит новостей для кино-сайтов.</description>
+  <icon>engine/skins/images/kinocomplete.png</icon>
+  <version>0.1.4</version>
+  <dleversion>11.0</dleversion>
+  <versioncompare>greater</versioncompare>
+  <mysqlinstall><![CDATA[]]></mysqlinstall>
+  <mysqlupgrade><![CDATA[]]></mysqlupgrade>
+  <mysqlenable><![CDATA[]]></mysqlenable>
+  <mysqldisable><![CDATA[]]></mysqldisable>
+  <mysqldelete><![CDATA[]]></mysqldelete>
+  <file name="engine/inc/addnews.php">
+    <operation action="after">
+      <searchcode><![CDATA[$js_array[] = "engine/classes/uploads/html5/fileuploader.js";]]></searchcode>
+      <replacecode><![CDATA[require ENGINE_DIR ."/modules/kinocomplete/src/addNewsInjection.php";]]></replacecode>
+    </operation>
+  </file>
+  <file name="engine/inc/editnews.php">
+    <operation action="after">
+      <searchcode><![CDATA[$js_array[] = "engine/classes/uploads/html5/fileuploader.js";]]></searchcode>
+      <replacecode><![CDATA[require ENGINE_DIR ."/modules/kinocomplete/src/editNewsInjection.php";]]></replacecode>
+    </operation>
+  </file>
+  <file name="engine/modules/show.full.php">
+    <operation action="after">
+      <searchcode><![CDATA[else $tpl->load_template( 'fullstory.tpl' );]]></searchcode>
+      <replacecode><![CDATA[require ENGINE_DIR ."/modules/kinocomplete/src/showFullInjection.php";]]></replacecode>
+    </operation>
+  </file>
+</dleplugin>

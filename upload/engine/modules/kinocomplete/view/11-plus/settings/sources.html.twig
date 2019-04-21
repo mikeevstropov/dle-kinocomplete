@@ -1,0 +1,971 @@
+{# settings/sources.html.twig #}
+
+<div
+  id="sources"
+  style="display: {{ display }}">
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Moonwalk
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Использовать источник:
+              </h6>
+
+              <span
+                class="note large">
+                Moonwalk будет исользован как
+                источник данных.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[moonwalk_enabled]"
+                {{ settings['moonwalk_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Безопасное подключение:
+              </h6>
+
+              <span
+                class="note large">
+                Запросы к Moonwalk будут выполняться
+                используя SSL подключение.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_secure]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[moonwalk_secure]"
+                {{ settings['moonwalk_secure'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Имя сервера:
+              </h6>
+
+              <span
+                class="note large">
+                Доменное имя для обращений к Moonwalk.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                name="settings[moonwalk_host]"
+                placeholder="введите имя сервера"
+                value="{{ settings['moonwalk_host'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Ключ-токен:
+              </h6>
+
+              <span
+                class="note large">
+                Moonwalk Token для запросов к материалам базы.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите токен"
+                name="settings[moonwalk_token]"
+                value="{{ settings['moonwalk_token'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Базовый путь:
+              </h6>
+
+              <span
+                class="note large">
+                Используется для формирования запросов к Moonwalk.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите путь"
+                name="settings[moonwalk_base_path]"
+                value="{{ settings['moonwalk_base_path'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Шаблон плеера:
+              </h6>
+
+              <span
+                class="note large">
+                Для ссылки плеера доступна переменная {path}.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите шаблон"
+                name="settings[moonwalk_player_pattern]"
+                value="{{ settings['moonwalk_player_pattern'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Шаблон постера:
+              </h6>
+
+              <span
+                class="note large">
+                Для ссылки постера доступна переменная {kinopoisk_id}.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите шаблон"
+                name="settings[moonwalk_poster_pattern]"
+                value="{{ settings['moonwalk_poster_pattern'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Шаблон миниатюры:
+              </h6>
+
+              <span
+                class="note large">
+                Для ссылки миниатюры доступна переменная {kinopoisk_id}.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите шаблон"
+                name="settings[moonwalk_thumbnail_pattern]"
+                value="{{ settings['moonwalk_thumbnail_pattern'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Запрашивать скриншоты:
+              </h6>
+
+              <span
+                class="note large">
+                При запросе видео, так же будут получены скриншоты
+                видеоряда.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_screenshots_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[moonwalk_screenshots_enabled]"
+                {{ settings['moonwalk_screenshots_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        The Movie Database
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Использовать источник:
+              </h6>
+
+              <span
+                class="note large">
+                TMDB будет исользован как
+                источник данных.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[tmdb_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[tmdb_enabled]"
+                {{ settings['tmdb_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Безопасное подключение:
+              </h6>
+
+              <span
+                class="note large">
+                Запросы к TMDB будут выполняться
+                используя SSL подключение.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[tmdb_secure]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[tmdb_secure]"
+                {{ settings['tmdb_secure'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Имя сервера:
+              </h6>
+
+              <span
+                class="note large">
+                Доменное имя для обращений к TMDB.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                name="settings[tmdb_host]"
+                placeholder="введите имя сервера"
+                value="{{ settings['tmdb_host'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Ключ-токен:
+              </h6>
+
+              <span
+                class="note large">
+                TMDB Token для запросов к материалам базы.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                name="settings[tmdb_token]"
+                placeholder="введите токен"
+                value="{{ settings['tmdb_token'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Базовый путь:
+              </h6>
+
+              <span
+                class="note large">
+                Используется для формирования запросов к TMDB.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите путь"
+                name="settings[tmdb_base_path]"
+                value="{{ settings['tmdb_base_path'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Язык:
+              </h6>
+
+              <span
+                class="note large">
+                Выбор языка возвращаемых данных TMDB.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <select
+                class="uniform"
+                style="min-width: 100px;"
+                name="settings[tmdb_language]">
+
+                {% for lang in tmdbLanguages %}
+
+                  {% if lang.name is not empty %}
+
+                    <option
+                      value="{{ lang['iso_639_1'] }}"
+                      {{ settings['tmdb_language'] == lang['iso_639_1'] ? 'selected' : '' }}>
+                      {{ lang.name }}
+                    </option>
+
+                  {% endif %}
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        HDVB
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Использовать источник:
+              </h6>
+
+              <span
+                class="note large">
+                HDVB будет исользован как
+                источник данных.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[hdvb_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[hdvb_enabled]"
+                {{ settings['hdvb_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Безопасное подключение:
+              </h6>
+
+              <span
+                class="note large">
+                Запросы к HDVB будут выполняться
+                используя SSL подключение.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[hdvb_secure]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[hdvb_secure]"
+                {{ settings['hdvb_secure'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Имя сервера:
+              </h6>
+
+              <span
+                class="note large">
+                Доменное имя для обращений к HDVB.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                name="settings[hdvb_host]"
+                placeholder="введите имя сервера"
+                value="{{ settings['hdvb_host'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Ключ-токен:
+              </h6>
+
+              <span
+                class="note large">
+                HDVB Token для запросов к материалам базы.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите токен"
+                name="settings[hdvb_token]"
+                value="{{ settings['hdvb_token'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Базовый путь:
+              </h6>
+
+              <span
+                class="note large">
+                Используется для формирования запросов к HDVB.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите путь"
+                name="settings[hdvb_base_path]"
+                value="{{ settings['hdvb_base_path'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Шаблон плеера:
+              </h6>
+
+              <span
+                class="note large">
+                Для ссылки плеера доступна переменная {path}.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите шаблон"
+                name="settings[hdvb_player_pattern]"
+                value="{{ settings['hdvb_player_pattern'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Шаблон постера:
+              </h6>
+
+              <span
+                class="note large">
+                Для ссылки постера доступна переменная {kinopoisk_id}.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите шаблон"
+                name="settings[hdvb_poster_pattern]"
+                value="{{ settings['hdvb_poster_pattern'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Шаблон миниатюры:
+              </h6>
+
+              <span
+                class="note large">
+                Для ссылки миниатюры доступна переменная {kinopoisk_id}.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите шаблон"
+                name="settings[hdvb_thumbnail_pattern]"
+                value="{{ settings['hdvb_thumbnail_pattern'] }}">
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Rutor
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Использовать источник:
+              </h6>
+
+              <span
+                class="note large">
+                Rutor будет исользован как
+                источник данных.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[rutor_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[rutor_enabled]"
+                {{ settings['rutor_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Безопасное подключение:
+              </h6>
+
+              <span
+                class="note large">
+                  Запросы к Rutor будут выполняться
+                  используя SSL подключение.
+                </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[rutor_secure]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[rutor_secure]"
+                {{ settings['rutor_secure'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Имя сервера:
+              </h6>
+
+              <span
+                class="note large">
+                Доменное имя для обращений к Rutor.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                name="settings[rutor_host]"
+                placeholder="введите имя сервера"
+                value="{{ settings['rutor_host'] }}">
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

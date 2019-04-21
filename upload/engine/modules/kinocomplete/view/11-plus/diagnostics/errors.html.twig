@@ -1,0 +1,22 @@
+
+{% set errors = errors ? errors : diagnostics.getErrors() %}
+{% set warnings = warnings ? warnings : diagnostics.getWarnings() %}
+
+{% if errors|length %}
+
+  <div
+    style="margin-bottom: {{ warnings|length ? '0' : '20px' }};">
+
+    {% for message in errors %}
+
+      <div
+        class="alert alert-error"
+        style="padding: 10px; margin-bottom: 8px;">
+        {{ message }}
+      </div>
+
+    {% endfor %}
+
+  </div>
+
+{% endif %}

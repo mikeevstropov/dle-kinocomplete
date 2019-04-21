@@ -1,0 +1,107 @@
+<div
+  class="kc__autocomplete__video-ticket">
+
+  {% if item.thumbnail %}
+
+    <!-- Thumbnail -->
+    <div
+      class="kc__autocomplete__video-ticket__thumbnail"
+      style="background-image: url('{{ item.thumbnail }}');">
+    </div>
+
+  {% else %}
+
+    <!-- Thumbnail -->
+    <div
+      class="kc__autocomplete__video-ticket__thumbnail empty">
+    </div>
+
+  {% endif %}
+
+  <!-- Info -->
+  <div
+    class="kc__autocomplete__video-ticket__info">
+
+    <!-- Header -->
+    <div
+      class="kc__autocomplete__video-ticket__header">
+
+      <!-- Title -->
+      <div
+        class="kc__autocomplete__video-ticket__title">
+
+        {% if item.title %}
+
+          {{ item.title }}
+
+        {% else %}
+
+          {{ item.worldTitle ?: 'Без заголовка' }}
+
+        {% endif %}
+
+      </div>
+
+      {% if item.origin %}
+
+        <!-- Origin -->
+        <div
+          class="kc__autocomplete__video-ticket__origin">
+          {{ item.origin }}
+        </div>
+
+      {% endif %}
+
+    </div>
+
+    <!-- Caption -->
+    <div
+      class="kc__autocomplete__video-ticket__caption">
+
+      {% if item.year %}
+
+        <!-- Year -->
+        <div
+          class="kc__autocomplete__video-ticket__year">
+          {{ item.year }}
+        </div>
+
+      {% endif %}
+
+      {% if item.translator %}
+
+        <!-- Translator -->
+        <div
+          class="kc__autocomplete__video-ticket__translator">
+          {{ item.translator }}
+        </div>
+
+      {% endif %}
+
+    </div>
+
+    <!-- Footer -->
+    <div
+      class="kc__autocomplete__video-ticket__footer">
+
+      <!-- Type -->
+      <div
+        class="kc__autocomplete__video-ticket__type">
+        {{ item.typeLabel ?: 'Неизвестный тип' }}
+      </div>
+
+      {% if item.quality %}
+
+        <!-- Quality -->
+        <div
+          class="kc__autocomplete__video-ticket__quality">
+          {{ item.quality }}
+        </div>
+
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,57 @@
+
+/* System */
+
+.btn.btn-green {
+  margin-bottom: 0;
+}
+
+/* Globals */
+
+.kc__tags {
+  margin: -4px;
+  display: block;
+}
+
+.kc__tag {
+  color: #fff;
+  font-size: 12px;
+  margin: 4px 2px;
+  background: #999;
+  padding: 4px 9px;
+  border-radius: 2px;
+  display: inline-block;
+  border: 1px solid #858585;
+}
+
+@media (max-width: 1450px) {
+  .kc__tag {
+    font-size: 11px;
+  }
+}
+
+.kc__section-message {
+  text-align: center;
+  max-width: 540px;
+  display: block;
+  margin: 0 auto;
+}
+
+.kc__section-message__title {
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.kc__section-message__image {
+  max-width: 100%;
+  padding: 10px;
+}
+
+/* jQuery Chosen */
+
+.chzn-choices .search-field input {
+  width: inherit !important;
+}
+
+.chzn-container {
+  max-width: none !important;
+}

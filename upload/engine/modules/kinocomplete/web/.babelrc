@@ -1,0 +1,37 @@
+{
+  "env": {
+    "production": {
+      "presets": [
+        ["env"]
+      ],
+      "plugins": [
+        "transform-runtime",
+        "syntax-dynamic-import",
+        "transform-decorators-legacy",
+        ["transform-class-properties", {"loose": true}]
+      ]
+    },
+    "development": {
+      "presets": [
+        ["env"]
+      ],
+      "plugins": [
+        "transform-runtime",
+        "syntax-dynamic-import",
+        "transform-decorators-legacy",
+        ["transform-class-properties", {"loose": true}]
+      ]
+    },
+    "test": {
+      "presets": [
+        ["env"]
+      ],
+      "plugins": [
+        "transform-runtime",
+        "syntax-dynamic-import",
+        "transform-decorators-legacy",
+        ["transform-class-properties", {"loose": true}]
+      ]
+    }
+  }
+}

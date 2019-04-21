@@ -1,0 +1,126 @@
+[
+  {
+    "label": "Заголовок",
+    "name": "title"
+  },
+  {
+    "label": "Мировой заголовок",
+    "name": "world_title"
+  },
+  {
+    "label": "Слоган",
+    "name": "tagline"
+  },
+  {
+    "label": "Описание",
+    "name": "description"
+  },
+  {
+    "label": "Продолжительность",
+    "name": "duration"
+  },
+  {
+    "label": "Актеры",
+    "name": "actors"
+  },
+  {
+    "label": "Режиссеры",
+    "name": "directors"
+  },
+  {
+    "label": "Студии",
+    "name": "studios"
+  },
+  {
+    "label": "Страны",
+    "name": "countries"
+  },
+  {
+    "label": "Жанры",
+    "name": "genres"
+  },
+  {
+    "label": "Возрастная группа",
+    "name": "age_group"
+  },
+  {
+    "label": "Постер",
+    "name": "poster"
+  },
+  {
+    "label": "Миниатюра",
+    "name": "thumbnail"
+  },
+  {
+    "label": "Год",
+    "name": "year"
+  },
+  {
+    "label": "Перевод",
+    "name": "translator"
+  },
+  {
+    "label": "ID Кинопоиска",
+    "name": "kinopoisk_id"
+  },
+  {
+    "label": "ID TMDB",
+    "name": "tmdb_id"
+  },
+  {
+    "label": "ID World Art",
+    "name": "world_art_id"
+  },
+  {
+    "label": "ID Pornolab",
+    "name": "porno_lab_id"
+  },
+  {
+    "label": "ID IMDB",
+    "name": "imdb_id"
+  },
+  {
+    "label": "Рейтинг по Кинопоиску",
+    "name": "kinopoisk_rating"
+  },
+  {
+    "label": "Голоса по Кинопоиску",
+    "name": "kinopoisk_votes"
+  },
+  {
+    "label": "Рейтинг по TMDB",
+    "name": "tmdb_rating"
+  },
+  {
+    "label": "Голоса по TMDB",
+    "name": "tmdb_votes"
+  },
+  {
+    "label": "Рейтинг по IMDB",
+    "name": "imdb_rating"
+  },
+  {
+    "label": "Голоса по IMDB",
+    "name": "imdb_votes"
+  },
+  {
+    "label": "Рейтинг по MPAA",
+    "name": "mpaa_rating"
+  },
+  {
+    "label": "Голоса по MPAA",
+    "name": "mpaa_votes"
+  },
+  {
+    "label": "Плеер",
+    "name": "player"
+  },
+  {
+    "label": "Качество",
+    "name": "quality"
+  },
+  {
+    "label": "Трейлер",
+    "name": "trailer"
+  }
+]

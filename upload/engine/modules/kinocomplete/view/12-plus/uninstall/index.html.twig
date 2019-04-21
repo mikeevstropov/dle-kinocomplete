@@ -1,0 +1,167 @@
+{# uninstall/index.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+  {% if status == 'initial' %}
+
+    <div
+      class="panel panel-default">
+
+      <div
+        class="panel-heading">
+        Удаление модуля
+      </div>
+
+      <div
+        class="panel-body">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/remove-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Вы действительно желаете удалить модуль?
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="panel-footer">
+
+        <div
+          class="text-center">
+
+          <a
+            href="{{ router.resolveUrl() }}"
+            class="btn btn-sm bg-primary-600 btn-raised position-left legitRipple">
+            Вернуться
+          </a>
+
+          <a
+            class="btn btn-sm bg-danger btn-raised legitRipple"
+            href="{{ router.resolveUrl('uninstall', {step: 'uninstall'}) }}">
+            Удалить
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% elseif status == 'success' %}
+
+    <div
+      class="alert alert-success alert-styled-left alert-arrow-left alert-component message_box">
+
+      <h4>
+        Удалено!
+      </h4>
+
+      <div
+        class="panel-body">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/success-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Удаление успешно выполнено!
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="panel-footer">
+
+        <div
+          class="text-center">
+
+          <a
+            href="{{ router.resolveModuleUrl('main') }}"
+            class="btn btn-sm bg-teal btn-raised legitRipple">
+            На главную
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% elseif status == 'error' %}
+
+    <div
+      class="alert alert-danger alert-styled-left alert-arrow-left alert-component message_box">
+
+      <h4>
+        Ошибка!
+      </h4>
+
+      <div
+        class="panel-body">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/fail-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Произошла ошибка!
+          </div>
+
+          <p>
+            {{ message }}
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        class="panel-footer">
+
+        <div
+          class="text-center">
+
+          <a
+            href="{{ router.resolveUrl('uninstall') }}"
+            class="btn btn-sm bg-teal btn-raised legitRipple">
+            Вернуться
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% endif %}
+
+{% endblock %}

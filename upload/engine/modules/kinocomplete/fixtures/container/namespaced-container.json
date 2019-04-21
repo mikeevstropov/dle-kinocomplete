@@ -1,0 +1,6 @@
+{
+  "namespace_integer_option": 1,
+  "namespace_string_option": "1",
+  "namespace_boolean_option": false,
+  "namespace_serialized_option": "a:1:{s:1:\"a\";s:1:\"b\";}"
+}

@@ -1,0 +1,156 @@
+{# uninstall/index.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Удаление модуля
+      </div>
+
+    </div>
+
+    {% if status == 'initial' %}
+
+      <div
+        class="row box-section">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/remove-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Вы действительно желаете удалить модуль?
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-12 text-center">
+
+          <a
+            class="btn btn btn-blue"
+            href="{{ router.resolveUrl() }}">
+            Вернуться
+          </a>
+
+          &nbsp;
+
+          <a
+            class="btn btn btn-red"
+            href="{{ router.resolveUrl('uninstall', {step: 'uninstall'}) }}">
+            Удалить
+          </a>
+
+        </div>
+
+      </div>
+
+    {% elseif status == 'success' %}
+
+      <div
+        class="row box-section">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/success-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Удаление успешно выполнено!
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-12 text-center">
+
+          <a
+            class="btn btn btn-blue"
+            href="{{ router.resolveModuleUrl('main') }}">
+            На главную
+          </a>
+
+        </div>
+
+      </div>
+
+    {% elseif status == 'error' %}
+
+      <div
+        class="row box-section">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/fail-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Произошла ошибка!
+          </div>
+
+          <p>
+            {{ message }}
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-12 text-center">
+
+          <a
+            class="btn btn btn-blue"
+            href="{{ router.resolveUrl() }}">
+            Вернуться
+          </a>
+
+        </div>
+
+      </div>
+
+    {% endif %}
+
+  </div>
+
+{% endblock %}

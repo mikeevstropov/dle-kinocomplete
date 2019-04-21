@@ -1,0 +1,471 @@
+{# settings/feeds.html.twig #}
+
+<div
+  id="feeds"
+  style="display: {{ display }}">
+
+  <div
+    class="panel panel-flat">
+
+    <div
+      class="panel-body">
+      Загрузчик фидов
+    </div>
+
+    <div
+      class="table-responsive">
+
+      <table
+        class="table table-striped">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Лимит чтения материалов:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Ограничение на чтение материалов из фидов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                type="number"
+                class="form-control"
+                placeholder="не ограничено"
+                name="settings[feed_loader_posts_limit]"
+                value="{{ settings['feed_loader_posts_limit'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Данные соответствия материалов:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Принадлежность видео к новости будет
+                определяться по указанным данным.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                multiple
+                title="выберите"
+                class="chosen-select"
+                data-placeholder="выберите из списка"
+                name="settings[post_accessory_video_fields][]">
+
+                <option
+                  value="">
+                </option>
+
+                {% for field in postAccessoryVideoFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ field.name in settings['post_accessory_video_fields'] ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Обновляемые данные новости:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Указанный набор данных будет использован
+                для обновления новости.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <select
+                multiple
+                title="выберите"
+                class="chosen-select"
+                data-placeholder="обновлять все данные"
+                name="settings[post_updater_video_fields][]">
+
+                <option
+                  value="">
+                </option>
+
+                {% for field in postUpdaterVideoFields %}
+
+                  <option
+                    value="{{ field.name }}"
+                    {{ field.name in settings['post_updater_video_fields'] ? 'selected' : '' }}>
+                    {{ field.label }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Обновлять дату новости:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                При изменении данных новости будет
+                обновляться дата публикации.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[post_updater_new_date]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[post_updater_new_date]"
+                {{ settings['post_updater_new_date'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="panel panel-flat">
+
+    <div
+      class="panel-body">
+      Фиды Moonwalk
+    </div>
+
+    <div
+      class="table-responsive">
+
+      <table
+        class="table table-striped">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Зарубежные фильмы:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Использовать фид зарубежных фильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_foreign_movies_feed_enabled]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[moonwalk_foreign_movies_feed_enabled]"
+                {{ settings['moonwalk_foreign_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Русские фильмы:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Использовать фид русских фильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_russian_movies_feed_enabled]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[moonwalk_russian_movies_feed_enabled]"
+                {{ settings['moonwalk_russian_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                CamRIP фильмы:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Использовать фид CamRIP фильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_camrip_movies_feed_enabled]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[moonwalk_camrip_movies_feed_enabled]"
+                {{ settings['moonwalk_camrip_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Зарубежные сериалы:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Использовать фид зарубежных сериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_foreign_series_feed_enabled]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[moonwalk_foreign_series_feed_enabled]"
+                {{ settings['moonwalk_foreign_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Русские сериалы:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Использовать фид русских сериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_russian_series_feed_enabled]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[moonwalk_russian_series_feed_enabled]"
+                {{ settings['moonwalk_russian_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Аниме фильмы:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Использовать фид аниме фильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_anime_movies_feed_enabled]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[moonwalk_anime_movies_feed_enabled]"
+                {{ settings['moonwalk_anime_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Аниме сериалы:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Использовать фид аниме сериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[moonwalk_anime_series_feed_enabled]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[moonwalk_anime_series_feed_enabled]"
+                {{ settings['moonwalk_anime_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

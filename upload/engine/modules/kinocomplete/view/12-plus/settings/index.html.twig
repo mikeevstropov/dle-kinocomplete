@@ -1,0 +1,187 @@
+{# settings/index.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block header %}
+
+  {% include 'diagnostics/errors.html.twig' %}
+  {% include 'diagnostics/warnings.html.twig' %}
+
+{% endblock %}
+
+{% block content %}
+
+  {% if status == 'initial' %}
+
+    <form
+      action=""
+      method="post">
+
+      {% include 'settings/header.html.twig' %}
+      {% include 'settings/general.html.twig' with {'display': 'block'} %}
+      {% include 'settings/sources.html.twig' with {'display': 'none'} %}
+      {% include 'settings/feeds.html.twig' with {'display': 'none'} %}
+      {% include 'settings/extra-fields.html.twig' with {'display': 'none'} %}
+      {% include 'settings/data.html.twig' with {'display': 'none'} %}
+      {% include 'settings/downloads.html.twig' with {'display': 'none'} %}
+      {% include 'settings/proxy.html.twig' with {'display': 'none'} %}
+
+      <div
+        style="margin-bottom: 30px;">
+
+        <a
+          href="{{ router.resolveUrl() }}"
+          class="btn bg-primary-600 btn-raised position-left legitRipple">
+          Вернуться
+        </a>
+
+        <button
+          type="submit"
+          class="btn bg-teal btn-raised legitRipple">
+
+          <i
+            class="fa fa-floppy-o position-left">
+          </i>
+
+          Сохранить
+
+        </button>
+
+      </div>
+
+    </form>
+
+    <script
+      type="text/javascript">
+
+      function ChangeOption(selectedOption) {
+
+        document.getElementById('general').style.display      = "none";
+        document.getElementById('sources').style.display      = "none";
+        document.getElementById('feeds').style.display        = "none";
+        document.getElementById('extra-fields').style.display = "none";
+        document.getElementById('data').style.display         = "none";
+        document.getElementById('downloads').style.display    = "none";
+        document.getElementById('proxy').style.display        = "none";
+        document.getElementById(selectedOption).style.display = "";
+      }
+
+    </script>
+
+  {% elseif status == 'success' %}
+
+    <div
+      class="alert alert-success alert-styled-left alert-arrow-left alert-component message_box">
+
+      <h4>
+        Сохранено!
+      </h4>
+
+      <div
+        class="panel-body">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/success-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Изменения успешно сохранены!
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="panel-footer">
+
+        <div
+          class="text-center">
+
+          <a
+            href="{{ router.resolveUrl('settings') }}"
+            class="btn btn-sm bg-primary-600 btn-raised position-left legitRipple">
+            Вернуться назад
+          </a>
+
+          <a
+            href="{{ router.resolveUrl() }}"
+            class="btn btn-sm bg-teal btn-raised legitRipple">
+            На главную
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% elseif status == 'error' %}
+
+    <div
+      class="alert alert-danger alert-styled-left alert-arrow-left alert-component message_box">
+
+      <h4>
+        Ошибка!
+      </h4>
+
+      <div
+        class="panel-body">
+
+        <!-- Section Message -->
+        <div
+          class="kc__section-message">
+
+          <!-- Image of Section Message -->
+          <img
+            class="kc__section-message__image"
+            src="/engine/modules/kinocomplete/web/assets/images/banners/fail-banner.png"/>
+
+          <!-- Title of Section Message -->
+          <div
+            class="kc__section-message__title">
+            Произошла ошибка!
+          </div>
+
+          <p>
+            {{ message }}
+          </p>
+
+        </div>
+
+      </div>
+
+      <div
+        class="panel-footer">
+
+        <div
+          class="text-center">
+
+          <a
+            href="{{ router.resolveUrl('settings') }}"
+            class="btn btn-sm bg-primary-600 btn-raised position-left legitRipple">
+            Вернуться назад
+          </a>
+
+          <a
+            href="{{ router.resolveUrl() }}"
+            class="btn btn-sm bg-teal btn-raised legitRipple">
+            На главную
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  {% endif %}
+
+{% endblock %}

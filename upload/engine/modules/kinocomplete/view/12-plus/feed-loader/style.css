@@ -1,0 +1,59 @@
+/* Keyframes */
+
+@keyframes kc__feed-loader__spinner {
+  to {transform: rotate(360deg);}
+}
+
+/* Section */
+
+.kc__feed-loader__create-posts-button,
+.kc__feed-loader__update-posts-button,
+.kc__feed-loader__clean-posts-button {
+  position: relative;
+}
+
+.kc__feed-loader__create-posts-button.loading,
+.kc__feed-loader__update-posts-button.loading,
+.kc__feed-loader__clean-posts-button.loading {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: transparent !important;
+}
+
+.kc__feed-loader__create-posts-button.loading:after,
+.kc__feed-loader__update-posts-button.loading:after,
+.kc__feed-loader__clean-posts-button.loading:after {
+  box-sizing: border-box;
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  margin-left: -7px;
+  border-radius: 50%;
+  border-top: 2px solid white;
+  border-right: 2px solid transparent;
+  animation: kc__feed-loader__spinner .6s linear infinite;
+}
+
+.kc__feed-loader__status-bar {
+  display: flex;
+}
+
+.kc__feed-loader__status-bar > div {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.kc__feed-loader__status-bar > div:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+.kc__feed-loader__feed-posts-count,
+.kc__feed-loader__feed-posts-updated,
+.kc__feed-loader__feed-posts-skipped {
+  font-weight: 600;
+}

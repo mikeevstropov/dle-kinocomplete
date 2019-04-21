@@ -1,0 +1,269 @@
+{# settings/downloads.html.twig #}
+
+<div
+  id="downloads"
+  style="display: {{ display }}">
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Изображения
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Загружать изображения:
+              </h6>
+
+              <span
+                class="note large">
+                Изображения будут загружаться автоматически.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[images_auto_download]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[images_auto_download]"
+                {{ settings['images_auto_download'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Перезаписывать изображения:
+              </h6>
+
+              <span
+                class="note large">
+                Загрузка изображений будет
+                перезаписывать файлы.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[images_overwrite_download]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[images_overwrite_download]"
+                {{ settings['images_overwrite_download'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Путь загрузки:
+              </h6>
+
+              <span
+                class="note large">
+                Изображения будут загружаться в папку
+                "upload" по указанному пути.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите путь"
+                name="settings[images_download_path]"
+                value="{{ settings['images_download_path'] }}">
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Торрент-файлы
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Загружать торрент-файлы:
+              </h6>
+
+              <span
+                class="note large">
+                Торрент-файлы будут загружаться автоматически.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[torrents_auto_download]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[torrents_auto_download]"
+                {{ settings['torrents_auto_download'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Перезаписывать торрент-файлы:
+              </h6>
+
+              <span
+                class="note large">
+                Загрузка торрент-файлов будет
+                выполняться в режиме перезаписи.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[torrents_overwrite_download]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[torrents_overwrite_download]"
+                {{ settings['torrents_overwrite_download'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Путь загрузки:
+              </h6>
+
+              <span
+                class="note large">
+                Торрент-файлы будут загружаться в папку
+                "upload" по указанному пути.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите путь"
+                name="settings[torrents_download_path]"
+                value="{{ settings['torrents_download_path'] }}">
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

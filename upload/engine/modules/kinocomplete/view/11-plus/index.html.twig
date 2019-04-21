@@ -1,0 +1,220 @@
+{# install.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block header %}
+
+  {% include 'diagnostics/errors.html.twig' %}
+  {% include 'diagnostics/warnings.html.twig' %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Разделы управления
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-6">
+
+          <div
+            class="news with-icons">
+
+            <div
+              class="avatar">
+
+              <img
+                src="/engine/modules/kinocomplete/web/assets/images/icons/settings-icon.png">
+
+            </div>
+
+            <div
+              class="news-content">
+
+              <div
+                class="news-title">
+
+                <a
+                  href="{{ router.resolveUrl('settings') }}">
+                  Настройки модуля
+                </a>
+
+              </div>
+
+              <div
+                class="news-text">
+
+                <a
+                  href="{{ router.resolveUrl('settings') }}">
+                  Параметры прокси сервера, конфигурация автокомплита,
+                  деактивация модуля и другие настройки.
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div
+          class="col-md-6">
+
+          <div
+            class="news with-icons">
+
+            <div
+              class="avatar">
+
+              <img
+                src="/engine/modules/kinocomplete/web/assets/images/icons/feeds-icon.png">
+
+            </div>
+
+            <div
+              class="news-content">
+
+              <div
+                class="news-title">
+
+                <a
+                  href="{{ router.resolveUrl('feed-loader') }}">
+                  Загрузка фидов
+                </a>
+
+              </div>
+
+              <div
+                class="news-text">
+
+                <a
+                  href="{{ router.resolveUrl('feed-loader') }}">
+                  Утилита автоматического заполнения веб-сайта материалами.
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="row box-section">
+
+        <div
+          class="col-md-6">
+
+          <div
+            class="news with-icons">
+
+            <div
+              class="avatar">
+
+              <img
+                src="/engine/modules/kinocomplete/web/assets/images/icons/community-icon.png">
+
+            </div>
+
+            <div
+              class="news-content">
+
+              <div
+                class="news-title">
+
+                <a
+                  target="_blank"
+                  href="https://piratehaven.ws/">
+                  Пиратская гавань
+                </a>
+
+              </div>
+
+              <div
+                class="news-text">
+
+                <a
+                  target="_blank"
+                  href="https://piratehaven.ws/">
+                  Телеграм-сообщество для владельцев киносайтов.
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div
+          class="col-md-6">
+
+          <div
+            class="news with-icons">
+
+            <div
+              class="avatar">
+
+              <img
+                src="/engine/modules/kinocomplete/web/assets/images/icons/remove-icon.png">
+
+            </div>
+
+            <div
+              class="news-content">
+
+              <div
+                class="news-title">
+
+                <a
+                  href="{{ router.resolveUrl('uninstall') }}">
+                  Удаление модуля
+                </a>
+
+              </div>
+
+              <div
+                class="news-text">
+
+                <a
+                  href="{{ router.resolveUrl('uninstall') }}">
+                  Полная деинсталяция модуля, включая удаление
+                  пользовательских настроек.
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

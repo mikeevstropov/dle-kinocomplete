@@ -1,0 +1,69 @@
+{
+  "title_ru": "001 Троллинг",
+  "title_en": "Trolling",
+  "year": 2017,
+  "duration": {
+    "seconds": 4865,
+    "human": "01:21"
+  },
+  "kinopoisk_id": 907972,
+  "world_art_id": null,
+  "pornolab_id": null,
+  "token": "199817e0d677715b",
+  "type": "movie",
+  "camrip": false,
+  "source_type": "WEBRip",
+  "source_quality_type": null,
+  "instream_ads": true,
+  "directors_version": false,
+  "iframe_url": "http://moonwalk.cc/video/199817e0d677715b/iframe",
+  "trailer_token": null,
+  "trailer_iframe_url": null,
+  "translator": "Многоголосый закадровый",
+  "translator_id": 67,
+  "added_at": "2017-08-07 14:02:26",
+  "category": null,
+  "block": {
+    "blocked_at": null,
+    "block_ru": false,
+    "block_ua": false
+  },
+  "material_data": {
+    "updated_at": "2019-03-10 02:44:33",
+    "poster": null,
+    "year": 2017,
+    "tagline": "-",
+    "description": "Two internet anarchists wreak havoc on the world, and each other.",
+    "age": null,
+    "countries": [
+      "США"
+    ],
+    "genres": [
+      "комедия"
+    ],
+    "actors": [
+      "Филлип Кэйрс",
+      "Katherine Galanova",
+      "Gregg Golding",
+      "Лорен Кэйн",
+      "Энн Луна",
+      "Heather Mignon",
+      "Кэрол Мори",
+      "Louis Morton",
+      "Tyler J. Oakley",
+      "Монтгомери Полсен"
+    ],
+    "directors": [
+      "Gregg Golding"
+    ],
+    "studios": [
+      "Collage Fossil"
+    ],
+    "kinopoisk_rating": 0.0,
+    "kinopoisk_votes": null,
+    "imdb_rating": 4.4,
+    "imdb_votes": 267,
+    "mpaa_rating": null,
+    "mpaa_votes": null
+  }
+}

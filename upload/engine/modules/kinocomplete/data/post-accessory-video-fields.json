@@ -1,0 +1,34 @@
+[
+  {
+    "label": "Идентификатор",
+    "name": "id"
+  },
+  {
+    "label": "Заголовок",
+    "name": "title"
+  },
+  {
+    "label": "Мировой заголовок",
+    "name": "world_title"
+  },
+  {
+    "label": "ID Кинопоиска",
+    "name": "kinopoisk_id"
+  },
+  {
+    "label": "ID TMDB",
+    "name": "tmdb_id"
+  },
+  {
+    "label": "ID World Art",
+    "name": "world_art_id"
+  },
+  {
+    "label": "ID Pornolab",
+    "name": "porno_lab_id"
+  },
+  {
+    "label": "ID IMDB",
+    "name": "imdb_id"
+  }
+]

@@ -1,0 +1,181 @@
+{# settings/general.html.twig #}
+
+<div
+  id="general"
+  style="display: {{ display }}">
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Действия
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Пользователь:
+              </h6>
+
+              <span
+                class="note large">
+                Выполнять действия от указанного пользователя.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <select
+                class="uniform"
+                name="settings[action_user_name]">
+
+                <option
+                  value="">
+                  Автоматически
+                </option>
+
+                {% for user in users %}
+
+                  <option
+                    value="{{ user.name }}"
+                    {{ settings['action_user_name'] == user.name ? 'selected' : '' }}>
+                    {{ user.name }}
+                  </option>
+
+                {% endfor %}
+
+              </select>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Автокомплит
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Добавление новости:
+              </h6>
+
+              <span
+                class="note large">
+                На странице создания новости будет
+                доступен автокомплит.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[autocomplete_add_post_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[autocomplete_add_post_enabled]"
+                {{ settings['autocomplete_add_post_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Редактирование новости:
+              </h6>
+
+              <span
+                class="note large">
+                На странице редактирования новости будет
+                доступен автокомплит.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[autocomplete_edit_post_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[autocomplete_edit_post_enabled]"
+                {{ settings['autocomplete_edit_post_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
