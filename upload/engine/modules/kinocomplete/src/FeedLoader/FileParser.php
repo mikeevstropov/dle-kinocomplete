@@ -2,6 +2,7 @@
 
 namespace Kinocomplete\FeedLoader;
 
+use JsonMachine\Exception\PathNotFoundException;
 use JsonMachine\JsonMachine;
 use Webmozart\PathUtil\Path;
 use Kinocomplete\Feed\Feed;
@@ -54,22 +55,26 @@ class FileParser
     $fileSize = filesize($filePath);
     $processedBytes = 0;
 
-    foreach ($feedStream as $array) {
+    try {
 
-      if ($onParse)
-        $onParse($array);
+      foreach ($feedStream as $array) {
 
-      $processedBytes += mb_strlen(
-        json_encode($array, JSON_UNESCAPED_UNICODE),
-        '8bit'
-      );
+        if ($onParse)
+          $onParse($array);
 
-      if ($onProgress)
-        $onProgress(
-          $fileSize,
-          $processedBytes,
-          $feed
+        $processedBytes += mb_strlen(
+          json_encode($array, JSON_UNESCAPED_UNICODE),
+          '8bit'
         );
-    }
+
+        if ($onProgress)
+          $onProgress(
+            $fileSize,
+            $processedBytes,
+            $feed
+          );
+      }
+
+    } catch (PathNotFoundException $exception) {}
   }
 }
