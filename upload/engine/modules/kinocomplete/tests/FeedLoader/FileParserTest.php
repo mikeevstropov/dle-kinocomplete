@@ -2,12 +2,12 @@
 
 namespace Kinocomplete\Test\FeedLoader;
 
-use Kinocomplete\Feed\Feed;
 use Kinocomplete\FeedLoader\FileParser;
 use PHPUnit\Framework\TestCase;
 use Kinocomplete\Video\Video;
 use Kinocomplete\Feed\Feeds;
 use Webmozart\Assert\Assert;
+use Kinocomplete\Feed\Feed;
 
 class FileParserTest extends TestCase
 {
