@@ -30,12 +30,14 @@ class FileParser
    * @param Feed $feed
    * @param callable|null $onParse
    * @param callable|null $onProgress
+   * @param bool $silent
    * @throws \Exception
    */
   public function parse(
     Feed $feed,
     callable $onParse = null,
-    callable $onProgress = null
+    callable $onProgress = null,
+    $silent = false
   ) {
     $filePath = Path::join(
       $this->workingDir,
@@ -75,6 +77,10 @@ class FileParser
           );
       }
 
-    } catch (PathNotFoundException $exception) {}
+    } catch (PathNotFoundException $exception) {
+
+      if (!$silent)
+        throw $exception;
+    }
   }
 }

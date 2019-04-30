@@ -243,7 +243,8 @@ class PostCreator
         $this->fileParser->parse(
           $feed,
           [$this, 'onParse'],
-          [$this, 'onParseProgress']
+          [$this, 'onParseProgress'],
+          true
         );
 
       } catch (\OverflowException $e) {

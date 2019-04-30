@@ -2,6 +2,7 @@
 
 namespace Kinocomplete\Test\FeedLoader;
 
+use JsonMachine\Exception\PathNotFoundException;
 use Kinocomplete\FeedLoader\FileParser;
 use PHPUnit\Framework\TestCase;
 use Kinocomplete\Video\Video;
@@ -51,6 +52,11 @@ class FileParserTest extends TestCase
     Assert::same($itemsParsed, 2);
   }
 
+  /**
+   * Testing `parseFeed` method by broken file.
+   *
+   * @throws \Exception
+   */
   public function testCanParseBrokenFile()
   {
     $instance = new FileParser(
@@ -80,10 +86,33 @@ class FileParserTest extends TestCase
     $instance->parse(
       $feed,
       $onParse,
-      $onProgress
+      $onProgress,
+      true
     );
 
     Assert::same($bytesParsed, 0);
     Assert::same($itemsParsed, 0);
+  }
+
+  /**
+   * Testing `parseFeed` method exceptions.
+   *
+   * @throws \Exception
+   */
+  public function testCannotParseBrokenFile()
+  {
+    $this->expectException(PathNotFoundException::class);
+
+    $instance = new FileParser(
+      FIXTURES_DIR .'/moonwalk-feed'
+    );
+
+    $feed = new Feed();
+    $feed->setName('broken');
+    $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
+    $feed->setJsonPointer('/report/movies');
+    $feed->setSize(49719268);
+
+    $instance->parse($feed);
   }
 }
