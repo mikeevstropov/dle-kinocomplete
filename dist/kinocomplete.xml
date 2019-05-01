@@ -3,7 +3,7 @@
   <name>Kinocomplete</name>
   <description>Автокомплит новостей для кино-сайтов.</description>
   <icon>engine/skins/images/kinocomplete.png</icon>
-  <version>0.1.4</version>
+  <version>0.1.5</version>
   <dleversion>11.0</dleversion>
   <versioncompare>greater</versioncompare>
   <mysqlinstall><![CDATA[]]></mysqlinstall>
