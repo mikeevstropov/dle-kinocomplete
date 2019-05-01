@@ -6,6 +6,7 @@ use Kinocomplete\Api\HdvbApi;
 use Kinocomplete\Api\TmdbApi;
 use Kinocomplete\Api\SystemApi;
 use Kinocomplete\Api\MoonwalkApi;
+use Kinocomplete\Api\VideoCdnApi;
 use Kinocomplete\Service\DefaultService;
 use Kinocomplete\Container\ContainerFactory;
 use GuzzleHttp\Exception\BadResponseException;
@@ -259,6 +260,54 @@ class Diagnostics extends DefaultService
   }
 
   /**
+   * Get video cdn errors.
+   *
+   * @return array
+   * @throws \GuzzleHttp\Exception\GuzzleException
+   */
+  public function getVideoCdnErrors()
+  {
+    $messages = [];
+
+    /** @var VideoCdnApi $videoCdnApi */
+    $videoCdnApi = $this->container->get('video_cdn_api');
+
+    try {
+
+      $videoCdnApi->accessChecking(true);
+
+    } catch (HostNotFoundException $exception) {
+
+      $messages[] = 'В настройках модуля требуется указать имя сервера VideoCdn.';
+
+    } catch (TokenNotFoundException $exception) {
+
+      $messages[] = 'В настройках модуля требуется указать VideoCdn Token.';
+
+    } catch (BasePathNotFoundException $exception) {
+
+      $messages[] = 'В настройках модуля требуется указать базовый путь сервера VideoCdn.';
+
+    } catch (InvalidTokenException $exception) {
+
+      $messages[] = 'В настройках модуля указан неверный VideoCdn Token.';
+
+    } catch (\Exception $exception) {
+
+      $reasonPhrase = $exception instanceof BadResponseException
+        ? $exception->getResponse()->getReasonPhrase()
+        : $exception->getMessage();
+
+      $messages[] = sprintf(
+        'Ошибка при проверке доступа к VideoCdn: %s',
+        $reasonPhrase
+      );
+    }
+
+    return $messages;
+  }
+
+  /**
    * Get errors.
    *
    * @return array
@@ -269,6 +318,7 @@ class Diagnostics extends DefaultService
     $moonwalkEnabled = $this->container->get('moonwalk_enabled');
     $tmdbEnabled     = $this->container->get('tmdb_enabled');
     $hdvbEnabled     = $this->container->get('hdvb_enabled');
+    $videoCdnEnabled = $this->container->get('video_cdn_enabled');
     $rutorEnabled    = $this->container->get('rutor_enabled');
     $proxyEnabled    = $this->container->get('proxy_enabled');
 
@@ -285,6 +335,7 @@ class Diagnostics extends DefaultService
       !$moonwalkEnabled &&
       !$tmdbEnabled &&
       !$hdvbEnabled &&
+      !$videoCdnEnabled &&
       !$rutorEnabled
     ) $messages[] = 'Включите хотя бы один источник данных.';
 
@@ -299,6 +350,10 @@ class Diagnostics extends DefaultService
     // Hdvb settings.
     if ($hdvbEnabled)
       $messages += $this->getHdvbErrors();
+
+    // VideoCdn settings.
+    if ($videoCdnEnabled)
+      $messages += $this->getVideoCdnErrors();
 
     // Proxy settings.
     if ($proxyEnabled)
