@@ -180,7 +180,7 @@ class SystemApi extends BaseSystemApi
       $extraFieldInstance->name = $extraField;
       $extraFieldInstance->value = $video->$instanceField;
 
-      if (!$extraFieldInstance)
+      if (!$extraFieldInstance->value)
         continue;
 
       try {
