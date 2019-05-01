@@ -138,6 +138,15 @@ trait VideoCdnFactoryTrait
       }
     }
 
+    // Field "quality".
+    if (array_key_exists('quality', $data)) {
+
+      if (is_string($data['quality']))
+        $video->quality = mb_strtoupper(
+          $data['quality']
+        );
+    }
+
     return $this->applyPatterns($video);
   }
 }
