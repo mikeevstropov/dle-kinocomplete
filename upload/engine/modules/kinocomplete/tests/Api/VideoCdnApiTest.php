@@ -201,7 +201,7 @@ class VideoCdnApiTest extends TestCase
    */
   public function testCanGetVideo()
   {
-    $id = '4430';
+    $id = '841700';
 
     $video = $this->instance->getVideo($id);
 

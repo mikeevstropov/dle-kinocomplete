@@ -116,7 +116,7 @@ class VideoCdnApi extends DefaultService implements ApiInterface
     $client = $this->container->get('client');
 
     $queryString = http_build_query([
-      'id' => 'a',
+      'kinopoisk_id' => 'a',
       'api_token' => $token
     ]);
 
@@ -217,8 +217,8 @@ class VideoCdnApi extends DefaultService implements ApiInterface
       if (
         !$data
         || !is_array($data)
-        || !array_key_exists('id', $data)
-        || !$data['id']
+        || !array_key_exists('kp_id', $data)
+        || !$data['kp_id']
       ) return false;
 
       return true;
@@ -266,7 +266,7 @@ class VideoCdnApi extends DefaultService implements ApiInterface
 
     $queryString = http_build_query([
       'api_token' => $source->getToken(),
-      'id' => $id
+      'kinopoisk_id' => $id
     ]);
 
     $url = Path::join(
@@ -299,8 +299,8 @@ class VideoCdnApi extends DefaultService implements ApiInterface
     if (
       !$data
       || !is_array($data)
-      || !array_key_exists('id', $data)
-      || !$data['id']
+      || !array_key_exists('kp_id', $data)
+      || !$data['kp_id']
     ) throw new UnexpectedResponseException(
       'Не удается обработать ответ VideoCdn.'
     );

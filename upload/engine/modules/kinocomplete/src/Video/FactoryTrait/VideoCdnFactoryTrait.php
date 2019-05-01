@@ -27,14 +27,14 @@ trait VideoCdnFactoryTrait
     $posterPattern    = $this->container->get('moonwalk_poster_pattern');
     $thumbnailPattern = $this->container->get('moonwalk_thumbnail_pattern');
 
-    if (!array_key_exists('id', $data) || !$data['id'])
+    if (!array_key_exists('kp_id', $data) || !$data['kp_id'])
       throw new \InvalidArgumentException(
         'Идентификатор видео отсутствует.'
       );
 
     $video = new Video();
 
-    $video->id = (string) $data['id'];
+    $video->id = (string) $data['kp_id'];
     $video->origin = Video::VIDEO_CDN_ORIGIN;
 
     // Field "type".

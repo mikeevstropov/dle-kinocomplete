@@ -172,7 +172,7 @@ class VideoFactoryTest extends TestCase
    */
   public function testCanFromVideoCdn()
   {
-    $array = ['id' => 'identifier'];
+    $array = ['kp_id' => 'identifier'];
 
     $video = $this->instance->fromVideoCdn($array);
 
