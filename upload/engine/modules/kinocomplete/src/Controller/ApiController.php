@@ -14,6 +14,7 @@ use Kinocomplete\FeedLoader\PostCleaner;
 use Kinocomplete\FeedLoader\PostCreator;
 use Kinocomplete\FeedLoader\FileParser;
 use Kinocomplete\Api\ApiInterface;
+use Kinocomplete\Api\VideoCdnApi;
 use Kinocomplete\Api\MoonwalkApi;
 use Kinocomplete\Api\SystemApi;
 use Kinocomplete\Api\RutorApi;
@@ -100,6 +101,7 @@ class ApiController extends DefaultController
     $moonwalkEnabled = $this->container->get('moonwalk_enabled');
     $tmdbEnabled     = $this->container->get('tmdb_enabled');
     $hdvbEnabled     = $this->container->get('hdvb_enabled');
+    $videoCdnEnabled = $this->container->get('video_cdn_enabled');
     $rutorEnabled    = $this->container->get('rutor_enabled');
 
     /** @var MoonwalkApi $moonwalkApi */
@@ -110,6 +112,9 @@ class ApiController extends DefaultController
 
     /** @var HdvbApi $hdvbApi */
     $hdvbApi = $this->container->get('hdvb_api');
+
+    /** @var VideoCdnApi $videoCdnApi */
+    $videoCdnApi = $this->container->get('video_cdn_api');
 
     /** @var RutorApi $rutorApi */
     $rutorApi = $this->container->get('rutor_api');
@@ -150,6 +155,18 @@ class ApiController extends DefaultController
       $hdvbResults = [];
     }
 
+    // VideoCdn.
+    try {
+
+      $videoCdnResults = $videoCdnEnabled
+        ? $videoCdnApi->getVideos($title)
+        : [];
+
+    } catch (NotFoundException $exception) {
+
+      $videoCdnResults = [];
+    }
+
     // Rutor.
     try {
 
@@ -166,6 +183,7 @@ class ApiController extends DefaultController
       $moonwalkResults,
       $tmdbResults,
       $hdvbResults,
+      $videoCdnResults,
       $rutorResults
     );
 
@@ -209,6 +227,10 @@ class ApiController extends DefaultController
     } else if ($origin === Video::HDVB_ORIGIN) {
 
       $api = $this->container->get('hdvb_api');
+
+    } else if ($origin === Video::VIDEO_CDN_ORIGIN) {
+
+      $api = $this->container->get('video_cdn_api');
 
     } else if ($origin === Video::RUTOR_ORIGIN) {
 
@@ -259,6 +281,10 @@ class ApiController extends DefaultController
     } else if ($origin === Video::HDVB_ORIGIN) {
 
       $api = $this->container->get('hdvb_api');
+
+    } else if ($origin === Video::VIDEO_CDN_ORIGIN) {
+
+      $api = $this->container->get('video_cdn_api');
 
     } else if ($origin === Video::RUTOR_ORIGIN) {
 

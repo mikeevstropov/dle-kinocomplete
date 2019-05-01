@@ -2,16 +2,17 @@
 
 namespace Kinocomplete\Video\FactoryTrait;
 
-use Psr\Container\ContainerInterface;
 use Kinocomplete\Video\Video;
+use Psr\Container\ContainerInterface;
 
+/**
+ * Trait FactoryTrait.
+ *
+ * @package Kinocomplete\Video\FactoryTrait
+ * @property ContainerInterface $container
+ */
 trait FactoryTrait
 {
-  /**
-   * @var ContainerInterface
-   */
-  protected $container;
-
   /**
    * Apply patterns.
    *

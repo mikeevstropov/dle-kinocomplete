@@ -845,6 +845,287 @@
 
       <div
         class="title">
+        VideoCDN
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Использовать источник:
+              </h6>
+
+              <span
+                class="note large">
+                VideoCDN будет исользован как
+                источник данных.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[video_cdn_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[video_cdn_enabled]"
+                {{ settings['video_cdn_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Безопасное подключение:
+              </h6>
+
+              <span
+                class="note large">
+                Запросы к VideoCDN будут выполняться
+                используя SSL подключение.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[video_cdn_secure]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[video_cdn_secure]"
+                {{ settings['video_cdn_secure'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Имя сервера:
+              </h6>
+
+              <span
+                class="note large">
+                Доменное имя для обращений к VideoCDN.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                name="settings[video_cdn_host]"
+                placeholder="введите имя сервера"
+                value="{{ settings['video_cdn_host'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Ключ-токен:
+              </h6>
+
+              <span
+                class="note large">
+                VideoCDN Token для запросов к материалам базы.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите токен"
+                name="settings[video_cdn_token]"
+                value="{{ settings['video_cdn_token'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Базовый путь:
+              </h6>
+
+              <span
+                class="note large">
+                Используется для формирования запросов к VideoCDN.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите путь"
+                name="settings[video_cdn_base_path]"
+                value="{{ settings['video_cdn_base_path'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Шаблон плеера:
+              </h6>
+
+              <span
+                class="note large">
+                Для ссылки плеера доступна переменная {path}.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите шаблон"
+                name="settings[video_cdn_player_pattern]"
+                value="{{ settings['video_cdn_player_pattern'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Шаблон постера:
+              </h6>
+
+              <span
+                class="note large">
+                Для ссылки постера доступна переменная {kinopoisk_id}.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите шаблон"
+                name="settings[video_cdn_poster_pattern]"
+                value="{{ settings['video_cdn_poster_pattern'] }}">
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Шаблон миниатюры:
+              </h6>
+
+              <span
+                class="note large">
+                Для ссылки миниатюры доступна переменная {kinopoisk_id}.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                type="text"
+                style="width: 100%;"
+                placeholder="введите шаблон"
+                name="settings[video_cdn_thumbnail_pattern]"
+                value="{{ settings['video_cdn_thumbnail_pattern'] }}">
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
         Rutor
       </div>
 
