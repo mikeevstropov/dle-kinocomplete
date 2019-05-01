@@ -208,7 +208,7 @@ class HdvbApi extends DefaultService implements ApiInterface
 
       $this->responseValidator($response);
 
-    } catch (ClientException $exception) {
+    } catch (TransferException $exception) {
 
       $this->errorHandler($exception);
     }
