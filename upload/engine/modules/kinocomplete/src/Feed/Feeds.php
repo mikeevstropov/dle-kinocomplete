@@ -38,7 +38,7 @@ class Feeds
 
   /**
    * Add feed.
-   * 
+   *
    * @param string $feedName
    * @param string $videoOrigin
    * @param callable $closure
@@ -55,7 +55,7 @@ class Feeds
       $feedName,
       $videoOrigin
     );
-    
+
     self::$feeds[$key] = $closure;
   }
 
@@ -142,7 +142,7 @@ class Feeds
         $feed->setName('foreign-series');
         $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
         $feed->setRequestPath('serials_foreign.json?api_token={token}');
-        $feed->setJsonPointer('/report/movies');
+        $feed->setJsonPointer('/report/serials');
         $feed->setSize(16970833);
 
         return $feed;
@@ -159,7 +159,7 @@ class Feeds
         $feed->setName('russian-series');
         $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
         $feed->setRequestPath('serials_russian.json?api_token={token}');
-        $feed->setJsonPointer('/report/movies');
+        $feed->setJsonPointer('/report/serials');
         $feed->setSize(5535230);
 
         return $feed;
@@ -193,7 +193,7 @@ class Feeds
         $feed->setName('anime-series');
         $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
         $feed->setRequestPath('serials_anime.json?api_token={token}');
-        $feed->setJsonPointer('/report/movies');
+        $feed->setJsonPointer('/report/serials');
         $feed->setSize(6542717);
 
         return $feed;
