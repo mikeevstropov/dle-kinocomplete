@@ -11,6 +11,7 @@
     <env name="moonwalk_token" value=""/>
     <env name="tmdb_token" value=""/>
     <env name="hdvb_token" value=""/>
+    <env name="video_cdn_token" value=""/>
     <env name="feed_loader_posts_limit" value=""/>
   </php>
 </phpunit>

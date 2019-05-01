@@ -40,6 +40,8 @@ class ServiceInjector
     $this->container['tmdb_source']         = ServiceFactory::getTmdbSource();
     $this->container['hdvb_api']            = ServiceFactory::getHdvbApi();
     $this->container['hdvb_source']         = ServiceFactory::getHdvbSource();
+    $this->container['video_cdn_api']       = ServiceFactory::getVideoCdnApi();
+    $this->container['video_cdn_source']    = ServiceFactory::getVideoCdnSource();
     $this->container['rutor_api']           = ServiceFactory::getRutorApi();
     $this->container['rutor_source']        = ServiceFactory::getRutorSource();
     $this->container['rutor_parser']        = ServiceFactory::getRutorParser();

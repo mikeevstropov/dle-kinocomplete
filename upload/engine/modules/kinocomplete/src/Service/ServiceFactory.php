@@ -15,6 +15,7 @@ use Kinocomplete\Parser\RutorParser;
 use Kinocomplete\User\UserFactory;
 use Kinocomplete\Post\PostFactory;
 use Kinocomplete\Api\MoonwalkApi;
+use Kinocomplete\Api\VideoCdnApi;
 use Kinocomplete\Api\SystemApi;
 use Kinocomplete\Module\Module;
 use Kinocomplete\Source\Source;
@@ -213,6 +214,14 @@ class ServiceFactory
     };
   }
 
+  public static function getVideoCdnApi()
+  {
+    return function (ContainerInterface $container) {
+
+      return new VideoCdnApi($container);
+    };
+  }
+
   public static function getRutorApi()
   {
     return function (ContainerInterface $container) {
@@ -339,7 +348,7 @@ class ServiceFactory
       $source->setBasePath($container->get('moonwalk_base_path'));
       $source->setToken($container->get('moonwalk_token'));
       $source->setVideoOrigin(Video::MOONWALK_ORIGIN);
-      $source->setVideoFactory([$videoFactory, 'createByMoonwalk']);
+      $source->setVideoFactory([$videoFactory, 'fromMoonwalk']);
 
       return $source;
     };
@@ -360,7 +369,7 @@ class ServiceFactory
       $source->setBasePath($container->get('tmdb_base_path'));
       $source->setToken($container->get('tmdb_token'));
       $source->setVideoOrigin(Video::TMDB_ORIGIN);
-      $source->setVideoFactory([$videoFactory, 'createByTmdb']);
+      $source->setVideoFactory([$videoFactory, 'fromTmdb']);
       $source->setLanguage($container->get('tmdb_language'));
 
       return $source;
@@ -382,7 +391,28 @@ class ServiceFactory
       $source->setBasePath($container->get('hdvb_base_path'));
       $source->setToken($container->get('hdvb_token'));
       $source->setVideoOrigin(Video::HDVB_ORIGIN);
-      $source->setVideoFactory([$videoFactory, 'createByHdvb']);
+      $source->setVideoFactory([$videoFactory, 'fromHdvb']);
+
+      return $source;
+    };
+  }
+
+  public static function getVideoCdnSource()
+  {
+    return function (ContainerInterface $container) {
+
+      /** @var VideoFactory $videoFactory */
+      $videoFactory = $container->get('video_factory');
+
+      $source = new Source();
+      $source->setApi($container->get('video_cdn_api'));
+      $source->setEnabled((bool) $container->get('video_cdn_enabled'));
+      $source->setSecure((bool) $container->get('video_cdn_secure'));
+      $source->setHost($container->get('video_cdn_host'));
+      $source->setBasePath($container->get('video_cdn_base_path'));
+      $source->setToken($container->get('video_cdn_token'));
+      $source->setVideoOrigin(Video::VIDEO_CDN_ORIGIN);
+      $source->setVideoFactory([$videoFactory, 'fromVideoCdn']);
 
       return $source;
     };
@@ -401,7 +431,7 @@ class ServiceFactory
       $source->setSecure((bool) $container->get('rutor_secure'));
       $source->setHost($container->get('rutor_host'));
       $source->setVideoOrigin(Video::RUTOR_ORIGIN);
-      $source->setVideoFactory([$videoFactory, 'createByRutor']);
+      $source->setVideoFactory([$videoFactory, 'fromRutor']);
 
       return $source;
     };

@@ -96,13 +96,13 @@ class VideoFactoryTest extends TestCase
   }
 
   /**
-   * Testing "createByMoonwalk" method.
+   * Testing "fromMoonwalk" method.
    */
-  public function testCanCreateByMoonwalk()
+  public function testCanFromMoonwalk()
   {
     $array = ['token' => 'identifier'];
 
-    $video = $this->instance->createByMoonwalk($array);
+    $video = $this->instance->fromMoonwalk($array);
 
     Assert::isInstanceOf(
       $video,
@@ -111,22 +111,22 @@ class VideoFactoryTest extends TestCase
   }
 
   /**
-   * Testing "createByMoonwalk" method exceptions.
+   * Testing "fromMoonwalk" method exceptions.
    */
-  public function testCannotCreateByMoonwalk()
+  public function testCannotFromMoonwalk()
   {
     $this->expectException(\InvalidArgumentException::class);
-    $this->instance->createByMoonwalk([]);
+    $this->instance->fromMoonwalk([]);
   }
 
   /**
-   * Testing "createByTmdb" method.
+   * Testing "fromTmdb" method.
    */
-  public function testCanCreateByTmdb()
+  public function testCanFromTmdb()
   {
     $array = ['id' => 'identifier'];
 
-    $video = $this->instance->createByTmdb($array);
+    $video = $this->instance->fromTmdb($array);
 
     Assert::isInstanceOf(
       $video,
@@ -135,22 +135,22 @@ class VideoFactoryTest extends TestCase
   }
 
   /**
-   * Testing "createByMoonwalk" method exceptions.
+   * Testing "fromMoonwalk" method exceptions.
    */
-  public function testCannotCreateByTmdb()
+  public function testCannotFromTmdb()
   {
     $this->expectException(\InvalidArgumentException::class);
-    $this->instance->createByTmdb([]);
+    $this->instance->fromTmdb([]);
   }
 
   /**
-   * Testing "createByHdvb" method.
+   * Testing "fromHdvb" method.
    */
-  public function testCanCreateByHdvb()
+  public function testCanFromHdvb()
   {
     $array = ['token' => 'identifier'];
 
-    $video = $this->instance->createByHdvb($array);
+    $video = $this->instance->fromHdvb($array);
 
     Assert::isInstanceOf(
       $video,
@@ -159,22 +159,44 @@ class VideoFactoryTest extends TestCase
   }
 
   /**
-   * Testing "createByHdvb" method exceptions.
+   * Testing "fromHdvb" method exceptions.
    */
-  public function testCannotCreateByHdvb()
+  public function testCannotFromHdvb()
   {
     $this->expectException(\InvalidArgumentException::class);
-    $this->instance->createByHdvb([]);
+    $this->instance->fromHdvb([]);
   }
 
   /**
-   * Testing "createByRutor" method.
+   * Testing "fromVideoCdn" method.
+   */
+  public function testCanFromVideoCdn()
+  {
+    $array = ['id' => 'identifier'];
+
+    $video = $this->instance->fromVideoCdn($array);
+
+    Assert::isInstanceOf(
+      $video,
+      Video::class
+    );
+  }
+
+  /**
+   * Testing "fromVideoCdn" method exceptions.
+   */
+  public function testCannotFromVideoCdn()
+  {
+    $this->expectException(\InvalidArgumentException::class);
+    $this->instance->fromVideoCdn([]);
+  }
+
+  /**
+   * Testing "fromRutor" method.
    *
    * @throws \Throwable
-   * @throws \Twig_Error_Loader
-   * @throws \Twig_Error_Syntax
    */
-  public function testCanCreateByRutor()
+  public function testCanFromRutor()
   {
     $array = [
       'id'          => 'id',
@@ -186,7 +208,7 @@ class VideoFactoryTest extends TestCase
       'leeches'     => 30
     ];
 
-    $video = $this->instance->createByRutor($array);
+    $video = $this->instance->fromRutor($array);
 
     Assert::same(
       $video->id,
@@ -225,11 +247,11 @@ class VideoFactoryTest extends TestCase
   }
 
   /**
-   * Testing "createByRutor" method exceptions.
+   * Testing "fromRutor" method exceptions.
    */
-  public function testCannotCreateByRutor()
+  public function testCannotFromRutor()
   {
     $this->expectException(\InvalidArgumentException::class);
-    $this->instance->createByRutor([]);
+    $this->instance->fromRutor([]);
   }
 }

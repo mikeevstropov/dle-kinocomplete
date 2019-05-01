@@ -341,7 +341,7 @@ class SourceTest extends TestCase
 
     $callable = [
       $videoFactory,
-      'createByMoonwalk'
+      'fromMoonwalk'
     ];
 
     $source->setVideoFactory(null);

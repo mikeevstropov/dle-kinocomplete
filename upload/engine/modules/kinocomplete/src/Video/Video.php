@@ -13,10 +13,11 @@ class Video
   const MOVIE_TYPE  = 'movie';
   const SERIES_TYPE = 'series';
 
-  const MOONWALK_ORIGIN = 'moonwalk';
-  const TMDB_ORIGIN     = 'tmdb';
-  const HDVB_ORIGIN     = 'hdvb';
-  const RUTOR_ORIGIN    = 'rutor';
+  const MOONWALK_ORIGIN  = 'moonwalk';
+  const TMDB_ORIGIN      = 'tmdb';
+  const HDVB_ORIGIN      = 'hdvb';
+  const VIDEO_CDN_ORIGIN = 'video-cdn';
+  const RUTOR_ORIGIN     = 'rutor';
 
   /**
    * @var string
