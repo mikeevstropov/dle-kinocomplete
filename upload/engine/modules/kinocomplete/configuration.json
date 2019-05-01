@@ -34,7 +34,7 @@
   "video_cdn_host":                       "videocdn.tv",
   "video_cdn_token":                      "",
   "video_cdn_base_path":                  "api",
-  "video_cdn_player_pattern":             "//14.cdn129.info{path}",
+  "video_cdn_player_pattern":             "https://14.cdn129.info{path}",
   "video_cdn_poster_pattern":             "https://st.kp.yandex.net/images/film_big/{kinopoisk_id}.jpg",
   "video_cdn_thumbnail_pattern":          "https://st.kp.yandex.net/images/film_iphone/iphone360_{kinopoisk_id}.jpg",
   "rutor_enabled":                        "0",

@@ -23,9 +23,9 @@ trait VideoCdnFactoryTrait
   ) {
     Assert::isArray($data);
 
-    $playerPattern    = $this->container->get('moonwalk_player_pattern');
-    $posterPattern    = $this->container->get('moonwalk_poster_pattern');
-    $thumbnailPattern = $this->container->get('moonwalk_thumbnail_pattern');
+    $playerPattern    = $this->container->get('video_cdn_player_pattern');
+    $posterPattern    = $this->container->get('video_cdn_poster_pattern');
+    $thumbnailPattern = $this->container->get('video_cdn_thumbnail_pattern');
 
     if (!array_key_exists('kp_id', $data) || !$data['kp_id'])
       throw new \InvalidArgumentException(
