@@ -3,6 +3,7 @@
 namespace Kinocomplete\FeedLoader;
 
 use JsonMachine\Exception\PathNotFoundException;
+use JsonMachine\Exception\SyntaxError;
 use JsonMachine\JsonMachine;
 use Webmozart\PathUtil\Path;
 use Kinocomplete\Feed\Feed;
@@ -78,6 +79,11 @@ class FileParser
       }
 
     } catch (PathNotFoundException $exception) {
+
+      if (!$silent)
+        throw $exception;
+
+    } catch (SyntaxError $exception) {
 
       if (!$silent)
         throw $exception;
