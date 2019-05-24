@@ -87,11 +87,15 @@ class PostProcessorTest extends TestCase
   /**
    * Testing "addPostFromVideoArray" method.
    *
-   * @throws \Exception
+   * @throws \Throwable
+   * @throws \Twig_Error_Loader
+   * @throws \Twig_Error_Syntax
    */
   public function testCanAddPostFromVideoArray()
   {
     $video = new Video();
+    $video->id = Utils::randomString();
+
     $post = new Post();
     $feedPost = new FeedPost();
 
@@ -118,6 +122,11 @@ class PostProcessorTest extends TestCase
       ->expects($this->once())
       ->method('addPost')
       ->with($post);
+
+    $systemApi
+      ->expects($this->once())
+      ->method('removeFeedPosts')
+      ->with(['videoId' => $feedPost->videoId]);
 
     $systemApi
       ->expects($this->once())

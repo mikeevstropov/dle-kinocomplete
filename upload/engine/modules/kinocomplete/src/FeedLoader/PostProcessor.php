@@ -101,6 +101,7 @@ class PostProcessor extends DefaultService
     /** @var SystemApi $systemApi */
     $systemApi = $this->container->get('system_api');
 
+    // Add Post of the Video.
     $systemApi->addPost($post);
 
     /** @var FeedPostFactory $feedPostFactory */
@@ -111,6 +112,12 @@ class PostProcessor extends DefaultService
       $video
     );
 
+    // Remove existed FeedPosts by Video ID.
+    $systemApi->removeFeedPosts([
+      'videoId' => $feedPost->videoId
+    ]);
+
+    // Add new FeedPost.
     $systemApi->addFeedPost($feedPost);
   }
 
