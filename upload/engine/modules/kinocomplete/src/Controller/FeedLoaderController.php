@@ -38,9 +38,11 @@ class FeedLoaderController extends DefaultController
     /** @var SystemApi $systemApi */
     $systemApi = $this->container->get('system_api');
 
-    $moonwalkFeedPostsCount = $systemApi->countFeedPosts([
-      'videoOrigin' => Video::MOONWALK_ORIGIN
-    ]);
+    // Count FeedPosts which is related to Posts.
+    $moonwalkFeedPostsCount = $systemApi->countFeedPosts(
+      ['videoOrigin' => Video::MOONWALK_ORIGIN],
+      ['[><]post' => ['postId' => 'id']]
+    );
 
     $noMoonwalkFeedsEnabled =
       !$this->container->get('moonwalk_foreign_movies_feed_enabled') &&

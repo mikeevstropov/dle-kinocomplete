@@ -305,6 +305,51 @@ class BaseSystemApiTest extends TestCase
   }
 
   /**
+   * Testing `countCategories` method with join.
+   *
+   * @throws \Exception
+   */
+  public function testCanCountCategoriesWithJoin()
+  {
+    $where   = ['1'];
+    $join    = ['2'];
+    $columns = ['3'];
+
+    $expected = 5;
+
+    $database = $this->getMockBuilder(Medoo::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+
+    $database
+      ->expects($this->once())
+      ->method('count')
+      ->with(
+        'category',
+        $join,
+        $columns,
+        $where
+      )->willReturn($expected);
+
+    $baseSystemApi = new BaseSystemApi(
+      new Container([
+        'database' => $database,
+      ])
+    );
+
+    $result = $baseSystemApi->countCategories(
+      $where,
+      $join,
+      $columns
+    );
+
+    Assert::same(
+      $result,
+      $expected
+    );
+  }
+
+  /**
    * Testing `removeCategory` method.
    *
    * @param   string $id
@@ -624,6 +669,51 @@ class BaseSystemApiTest extends TestCase
   }
 
   /**
+   * Testing `countPosts` method with join.
+   *
+   * @throws \Exception
+   */
+  public function testCanCountPostsWithJoin()
+  {
+    $where   = ['1'];
+    $join    = ['2'];
+    $columns = ['3'];
+
+    $expected = 5;
+
+    $database = $this->getMockBuilder(Medoo::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+
+    $database
+      ->expects($this->once())
+      ->method('count')
+      ->with(
+        'post',
+        $join,
+        $columns,
+        $where
+      )->willReturn($expected);
+
+    $baseSystemApi = new BaseSystemApi(
+      new Container([
+        'database' => $database,
+      ])
+    );
+
+    $result = $baseSystemApi->countPosts(
+      $where,
+      $join,
+      $columns
+    );
+
+    Assert::same(
+      $result,
+      $expected
+    );
+  }
+
+  /**
    * Testing `removePost` method.
    *
    * @param   string $id
@@ -934,6 +1024,53 @@ class BaseSystemApiTest extends TestCase
     Assert::same($count, 1);
 
     return $id;
+  }
+
+  /**
+   * Testing `countFeedPosts` method with join.
+   *
+   * @throws \Exception
+   */
+  public function testCanCountFeedPostsWithJoin()
+  {
+    $table   = $this->getContainer()->get('database_feed_posts_table');
+    $where   = ['1'];
+    $join    = ['2'];
+    $columns = ['3'];
+
+    $expected = 5;
+
+    $database = $this->getMockBuilder(Medoo::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+
+    $database
+      ->expects($this->once())
+      ->method('count')
+      ->with(
+        $table,
+        $join,
+        $columns,
+        $where
+      )->willReturn($expected);
+
+    $baseSystemApi = new BaseSystemApi(
+      new Container([
+        'database' => $database,
+        'database_feed_posts_table' => $table,
+      ])
+    );
+
+    $result = $baseSystemApi->countFeedPosts(
+      $where,
+      $join,
+      $columns
+    );
+
+    Assert::same(
+      $result,
+      $expected
+    );
   }
 
   /**
@@ -1261,6 +1398,51 @@ class BaseSystemApiTest extends TestCase
     Assert::same($count, 1);
 
     return $id;
+  }
+
+  /**
+   * Testing `countUsers` method with join.
+   *
+   * @throws \Exception
+   */
+  public function testCanCountUsersWithJoin()
+  {
+    $where   = ['1'];
+    $join    = ['2'];
+    $columns = ['3'];
+
+    $expected = 5;
+
+    $database = $this->getMockBuilder(Medoo::class)
+      ->disableOriginalConstructor()
+      ->getMock();
+
+    $database
+      ->expects($this->once())
+      ->method('count')
+      ->with(
+        'users',
+        $join,
+        $columns,
+        $where
+      )->willReturn($expected);
+
+    $baseSystemApi = new BaseSystemApi(
+      new Container([
+        'database' => $database,
+      ])
+    );
+
+    $result = $baseSystemApi->countUsers(
+      $where,
+      $join,
+      $columns
+    );
+
+    Assert::same(
+      $result,
+      $expected
+    );
   }
 
   /**

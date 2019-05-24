@@ -324,19 +324,35 @@ class BaseSystemApi extends DefaultService implements BaseSystemApiInterface
    * Count categories.
    *
    * @param  array $where
+   * @param  array $join
+   * @param  array|string $columns
    * @return int
    * @throws \Exception
    */
   public function countCategories(
-    array $where = []
+    array $where = [],
+    array $join = [],
+    $columns = '*'
   ) {
     /** @var Medoo $database */
     $database = $this->container->get('database');
 
-    $count = $database->count(
-      'category',
-      $where
-    );
+    if ($join) {
+
+      $count = $database->count(
+        'category',
+        $join,
+        $columns,
+        $where
+      );
+
+    } else {
+
+      $count = $database->count(
+        'category',
+        $where
+      );
+    }
 
     $error = $database->error();
 
@@ -844,19 +860,35 @@ class BaseSystemApi extends DefaultService implements BaseSystemApiInterface
    * Count posts.
    *
    * @param  array $where
+   * @param  array $join
+   * @param  array|string $columns
    * @return int
    * @throws \Exception
    */
   public function countPosts(
-    array $where = []
+    array $where = [],
+    array $join = [],
+    $columns = '*'
   ) {
     /** @var Medoo $database */
     $database = $this->container->get('database');
 
-    $count = $database->count(
-      'post',
-      $where
-    );
+    if ($join) {
+
+      $count = $database->count(
+        'post',
+        $join,
+        $columns,
+        $where
+      );
+
+    } else {
+
+      $count = $database->count(
+        'post',
+        $where
+      );
+    }
 
     $error = $database->error();
 
@@ -1163,21 +1195,37 @@ class BaseSystemApi extends DefaultService implements BaseSystemApiInterface
    * Count feed posts.
    *
    * @param  array $where
+   * @param  array $join
+   * @param  array|string $columns
    * @return int
    * @throws \Exception
    */
   public function countFeedPosts(
-    array $where = []
+    array $where = [],
+    array $join = [],
+    $columns = '*'
   ) {
     /** @var Medoo $database */
     $database = $this->container->get('database');
 
     $feedPostsTable = $this->container->get('database_feed_posts_table');
 
-    $count = $database->count(
-      $feedPostsTable,
-      $where
-    );
+    if ($join) {
+
+      $count = $database->count(
+        $feedPostsTable,
+        $join,
+        $columns,
+        $where
+      );
+
+    } else {
+
+      $count = $database->count(
+        $feedPostsTable,
+        $where
+      );
+    }
 
     $error = $database->error();
 
@@ -1474,19 +1522,35 @@ class BaseSystemApi extends DefaultService implements BaseSystemApiInterface
    * Count users.
    *
    * @param  array $where
+   * @param  array $join
+   * @param  array|string $columns
    * @return int
    * @throws \Exception
    */
   public function countUsers(
-    array $where = []
+    array $where = [],
+    array $join = [],
+    $columns = '*'
   ) {
     /** @var Medoo $database */
     $database = $this->container->get('database');
 
-    $count = $database->count(
-      'users',
-      $where
-    );
+    if ($join) {
+
+      $count = $database->count(
+        'users',
+        $join,
+        $columns,
+        $where
+      );
+
+    } else {
+
+      $count = $database->count(
+        'users',
+        $where
+      );
+    }
 
     $error = $database->error();
 
