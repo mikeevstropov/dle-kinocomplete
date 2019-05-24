@@ -141,9 +141,12 @@ class SystemApi extends BaseSystemApi
       array_key_exists('id', $filteredVideoFields)
     ) {
 
-      $has = $this->hasFeedPosts([
-        'videoId' => $video->id
-      ]);
+      $posts = $this->getFeedPosts(
+        ['videoId' => $video->id],
+        ['[><]post' => ['postId' => 'id']]
+      );
+
+      $has = count($posts) > 0;
 
       if ($has) return $has;
     }

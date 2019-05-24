@@ -119,9 +119,56 @@ class SystemApiTest extends TestCase
   /**
    * Testing "isVideoInPosts" method by id.
    *
-   * @throws \Kinocomplete\Exception\NotFoundException
+   * @throws NotFoundException
+   * @throws \Throwable
+   * @throws \Twig_Error_Loader
+   * @throws \Twig_Error_Syntax
    */
   public function testCanIsVideoInPostsById()
+  {
+    /** @var PostFactory $postFactory */
+    $postFactory = $this->getContainer()->get('post_factory');
+
+    /** @var FeedPostFactory $feedPostFactory */
+    $feedPostFactory = $this->getContainer()->get('feed_post_factory');
+
+    $video = new Video();
+    $video->id = Utils::randomString();
+    $video->title = Utils::randomString();
+
+    $post = $postFactory->fromVideo($video);
+    $post = $this->instance->addPost($post);
+
+    $feedPost = $feedPostFactory->fromPostAndVideo($post, $video);
+    $feedPost = $this->instance->addFeedPost($feedPost);
+
+    $has = $this->instance->isVideoInPosts(
+      $video
+    );
+
+    Assert::true($has);
+
+    $this->instance->removePost($post->id);
+
+    $has = $this->instance->isVideoInPosts(
+      $video
+    );
+
+    Assert::false($has);
+
+    $has = $this->instance->hasFeedPosts(
+      ['id' => $feedPost->id]
+    );
+
+    Assert::false($has);
+  }
+
+  /**
+   * Testing "isVideoInPosts" method by id without post.
+   *
+   * @throws \Kinocomplete\Exception\NotFoundException
+   */
+  public function testCanIsVideoInPostsByIdWithoutPost()
   {
     $video = new Video();
     $video->id = Utils::randomString();
@@ -134,7 +181,7 @@ class SystemApiTest extends TestCase
       $video
     );
 
-    Assert::true($has);
+    Assert::false($has);
 
     $this->instance->removeFeedPost($feedPost->id);
 
