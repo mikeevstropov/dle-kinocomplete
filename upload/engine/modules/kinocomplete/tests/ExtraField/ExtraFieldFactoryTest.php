@@ -190,6 +190,69 @@ class ExtraFieldFactoryTest extends TestCase
   }
 
   /**
+   * Testing "fromValues" method with values
+   * of undefined fields.
+   *
+   * @throws \Exception
+   */
+  public function testCanFromValuesOfUndefinedFields()
+  {
+    $definitionsFilePath = realpath(
+      FIXTURES_DIR .'/extra-field/definitions.txt'
+    );
+
+    $valuesFilePath = realpath(
+      FIXTURES_DIR .'/extra-field/values-of-undefined.txt'
+    );
+
+    $definitions = file_get_contents($definitionsFilePath);
+    $values = file_get_contents($valuesFilePath);
+
+    $fields = $this->instance->fromDefinitions(
+      $definitions
+    );
+
+    $fields = $this->instance->fromValues(
+      $values,
+      $fields,
+      true
+    );
+
+    Assert::count($fields, 1);
+  }
+
+  /**
+   * Testing "fromValues" method exceptions
+   * with values of undefined fields.
+   *
+   * @throws \Exception
+   */
+  public function testCannotFromValuesOfUndefinedFields() {
+
+    $this->expectException(\Exception::class);
+
+    $definitionsFilePath = realpath(
+      FIXTURES_DIR .'/extra-field/definitions.txt'
+    );
+
+    $valuesFilePath = realpath(
+      FIXTURES_DIR .'/extra-field/values-of-undefined.txt'
+    );
+
+    $definitions = file_get_contents($definitionsFilePath);
+    $values = file_get_contents($valuesFilePath);
+
+    $fields = $this->instance->fromDefinitions(
+      $definitions
+    );
+
+    $this->instance->fromValues(
+      $values,
+      $fields
+    );
+  }
+
+  /**
    * Testing "toValue" method.
    */
   public function testCanToValue()

@@ -176,7 +176,8 @@ class PostFactory extends DefaultService
 
         $post->extraFields = $extraFieldFactory->fromValues(
           $array['xfields'],
-          $extraFields
+          $extraFields,
+          true
         );
       }
     }

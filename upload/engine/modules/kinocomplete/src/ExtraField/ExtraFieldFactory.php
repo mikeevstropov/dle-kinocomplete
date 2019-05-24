@@ -118,12 +118,14 @@ class ExtraFieldFactory extends DefaultService
    *
    * @param  string $string
    * @param  array $extraFields
+   * @param  bool $soft Skip not defined fields.
    * @return array
    * @throws \Exception
    */
   public function fromValues(
     $string,
-    array $extraFields
+    array $extraFields,
+    $soft = false
   ) {
     Assert::string($string);
 
@@ -178,10 +180,20 @@ class ExtraFieldFactory extends DefaultService
         )
       );
 
-      if (!$matchedField)
-        throw new \Exception(
-          'Не удалось найти дополнительное поле по названию.'
-        );
+      // Extra field of value has not found.
+      if (!$matchedField) {
+
+        if ($soft) {
+
+          continue;
+
+        } else {
+
+          throw new \Exception(
+            'Не удалось найти дополнительное поле по названию.'
+          );
+        }
+      }
 
       Assert::string(
         $value,
