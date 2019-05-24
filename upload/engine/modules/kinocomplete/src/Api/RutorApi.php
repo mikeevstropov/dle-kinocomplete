@@ -7,6 +7,7 @@ use Kinocomplete\Exception\TooLargeResponseException;
 use Kinocomplete\Exception\NotFoundException;
 use GuzzleHttp\Exception\TransferException;
 use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Exception\ClientException;
 use Kinocomplete\Service\DefaultService;
 use Kinocomplete\Parser\RutorParser;
@@ -34,6 +35,13 @@ class RutorApi extends DefaultService implements ApiInterface
       );
 
     if ($exception instanceof ClientException)
+      throw new UnexpectedResponseException(sprintf(
+        'Неожиданный код ответа Rutor: %s',
+        $exception->getCode()
+      ));
+
+    // Server exception.
+    if ($exception instanceof ServerException)
       throw new UnexpectedResponseException(sprintf(
         'Неожиданный код ответа Rutor: %s',
         $exception->getCode()
