@@ -150,17 +150,17 @@ class SystemApiTest extends TestCase
 
     $this->instance->removePost($post->id);
 
-    $has = $this->instance->isVideoInPosts(
-      $video
-    );
+    $postExist = $this->instance->hasPosts([
+      'id' => $post->id
+    ]);
 
-    Assert::false($has);
+    Assert::false($postExist);
 
-    $has = $this->instance->hasFeedPosts(
-      ['id' => $feedPost->id]
-    );
+    $feedPostExist = $this->instance->hasFeedPosts([
+      'id' => $feedPost->id
+    ]);
 
-    Assert::false($has);
+    Assert::false($feedPostExist);
   }
 
   /**
@@ -168,7 +168,7 @@ class SystemApiTest extends TestCase
    *
    * @throws \Kinocomplete\Exception\NotFoundException
    */
-  public function testCanIsVideoInPostsByIdWithoutPost()
+  public function testCannotIsVideoInPostsByIdWithoutPost()
   {
     $video = new Video();
     $video->id = Utils::randomString();
@@ -185,11 +185,11 @@ class SystemApiTest extends TestCase
 
     $this->instance->removeFeedPost($feedPost->id);
 
-    $has = $this->instance->isVideoInPosts(
-      $video
-    );
+    $feedPostExist = $this->instance->hasFeedPosts([
+      'id' => $feedPost->id
+    ]);
 
-    Assert::false($has);
+    Assert::false($feedPostExist);
   }
 
   /**
@@ -360,6 +360,33 @@ class SystemApiTest extends TestCase
     $posts = $this->instance->getPostsByVideo($video);
 
     Assert::count($posts, 0);
+  }
+
+  /**
+   * Testing "getPostsByVideo" method by id.
+   *
+   * @throws NotFoundException
+   */
+  public function testCannotGetPostsByVideoByIdWithoutPost()
+  {
+    $video = new Video();
+    $video->id = Utils::randomString();
+
+    $feedPost = new FeedPost();
+    $feedPost->videoId = $video->id;
+    $feedPost = $this->instance->addFeedPost($feedPost);
+
+    $posts = $this->instance->getPostsByVideo($video);
+
+    Assert::isEmpty($posts);
+
+    $this->instance->removeFeedPost($feedPost->id);
+
+    $feedPostExist = $this->instance->hasFeedPosts([
+      'id' => $feedPost->id
+    ]);
+
+    Assert::false($feedPostExist);
   }
 
   /**
