@@ -38,6 +38,8 @@ class ServiceInjector
     $this->container['moonwalk_source']     = ServiceFactory::getMoonwalkSource();
     $this->container['tmdb_api']            = ServiceFactory::getTmdbApi();
     $this->container['tmdb_source']         = ServiceFactory::getTmdbSource();
+    $this->container['kodik_api']           = ServiceFactory::getKodikApi();
+    $this->container['kodik_source']        = ServiceFactory::getKodikSource();
     $this->container['hdvb_api']            = ServiceFactory::getHdvbApi();
     $this->container['hdvb_source']         = ServiceFactory::getHdvbSource();
     $this->container['video_cdn_api']       = ServiceFactory::getVideoCdnApi();

@@ -565,6 +565,290 @@
 
     <div
       class="panel-body">
+      Kodik
+    </div>
+
+    <div
+      class="table-responsive">
+
+      <table
+        class="table table-striped">
+
+        <tbody>
+
+        <tr>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-7">
+
+            <h6
+              class="media-heading text-semibold">
+              Использовать источник:
+            </h6>
+
+            <span
+              class="text-muted text-size-small hidden-xs">
+              Kodik будет исользован как
+              источник данных.
+            </span>
+
+          </td>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-5">
+
+            <input
+              value="0"
+              type="hidden"
+              name="settings[kodik_enabled]">
+
+            <input
+              value="1"
+              class="switch"
+              type="checkbox"
+              name="settings[kodik_enabled]"
+              {{ settings['kodik_enabled'] ? 'checked' : '' }}>
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-7">
+
+            <h6
+              class="media-heading text-semibold">
+              Безопасное подключение:
+            </h6>
+
+            <span
+              class="text-muted text-size-small hidden-xs">
+              Запросы к Kodik будут выполняться
+              используя SSL подключение.
+            </span>
+
+          </td>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-5">
+
+            <input
+              value="0"
+              type="hidden"
+              name="settings[kodik_secure]">
+
+            <input
+              value="1"
+              class="switch"
+              type="checkbox"
+              name="settings[kodik_secure]"
+              {{ settings['kodik_secure'] ? 'checked' : '' }}>
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-7">
+
+            <h6
+              class="media-heading text-semibold">
+              Имя сервера:
+            </h6>
+
+            <span
+              class="text-muted text-size-small hidden-xs">
+              Доменное имя для обращений к Kodik.
+            </span>
+
+          </td>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-5">
+
+            <input
+              type="text"
+              class="form-control"
+              name="settings[kodik_host]"
+              placeholder="введите имя сервера"
+              value="{{ settings['kodik_host'] }}">
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-7">
+
+            <h6
+              class="media-heading text-semibold">
+              Ключ-токен:
+            </h6>
+
+            <span
+              class="text-muted text-size-small hidden-xs">
+              Kodik Token для запросов к материалам базы.
+            </span>
+
+          </td>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-5">
+
+            <input
+              type="text"
+              class="form-control"
+              placeholder="введите токен"
+              name="settings[kodik_token]"
+              value="{{ settings['kodik_token'] }}">
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-7">
+
+            <h6
+              class="media-heading text-semibold">
+              Базовый путь:
+            </h6>
+
+            <span
+              class="text-muted text-size-small hidden-xs">
+              Используется для формирования запросов к Kodik.
+            </span>
+
+          </td>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-5">
+
+            <input
+              type="text"
+              class="form-control"
+              placeholder="введите путь"
+              name="settings[kodik_base_path]"
+              value="{{ settings['kodik_base_path'] }}">
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-7">
+
+            <h6
+              class="media-heading text-semibold">
+              Шаблон плеера:
+            </h6>
+
+            <span
+              class="text-muted text-size-small hidden-xs">
+              Для ссылки плеера доступна переменная {path}.
+            </span>
+
+          </td>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-5">
+
+            <input
+              type="text"
+              class="form-control"
+              placeholder="введите шаблон"
+              name="settings[kodik_player_pattern]"
+              value="{{ settings['kodik_player_pattern'] }}">
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-7">
+
+            <h6
+              class="media-heading text-semibold">
+              Шаблон постера:
+            </h6>
+
+            <span
+              class="text-muted text-size-small hidden-xs">
+              Для ссылки постера доступна переменная {kinopoisk_id}.
+            </span>
+
+          </td>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-5">
+
+            <input
+              type="text"
+              class="form-control"
+              placeholder="введите шаблон"
+              name="settings[kodik_poster_pattern]"
+              value="{{ settings['kodik_poster_pattern'] }}">
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-7">
+
+            <h6
+              class="media-heading text-semibold">
+              Шаблон миниатюры:
+            </h6>
+
+            <span
+              class="text-muted text-size-small hidden-xs">
+              Для ссылки миниатюры доступна переменная {kinopoisk_id}.
+            </span>
+
+          </td>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-5">
+
+            <input
+              type="text"
+              class="form-control"
+              placeholder="введите шаблон"
+              name="settings[kodik_thumbnail_pattern]"
+              value="{{ settings['kodik_thumbnail_pattern'] }}">
+
+          </td>
+
+        </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+  <div
+    class="panel panel-flat">
+
+    <div
+      class="panel-body">
       HDVB
     </div>
 

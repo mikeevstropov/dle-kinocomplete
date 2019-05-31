@@ -5,6 +5,7 @@ namespace Kinocomplete\Video;
 use Kinocomplete\Video\FactoryTrait\VideoCdnFactoryTrait;
 use Kinocomplete\Video\FactoryTrait\MoonwalkFactoryTrait;
 use Kinocomplete\Video\FactoryTrait\RutorFactoryTrait;
+use Kinocomplete\Video\FactoryTrait\KodikFactoryTrait;
 use Kinocomplete\Video\FactoryTrait\TmdbFactoryTrait;
 use Kinocomplete\Video\FactoryTrait\HdvbFactoryTrait;
 use Kinocomplete\Container\ContainerFactory;
@@ -16,6 +17,7 @@ class VideoFactory extends DefaultService
 {
   use MoonwalkFactoryTrait;
   use TmdbFactoryTrait;
+  use KodikFactoryTrait;
   use HdvbFactoryTrait;
   use VideoCdnFactoryTrait;
   use RutorFactoryTrait;

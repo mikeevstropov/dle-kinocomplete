@@ -4,6 +4,7 @@ namespace Kinocomplete\Diagnostics;
 
 use Kinocomplete\Api\HdvbApi;
 use Kinocomplete\Api\TmdbApi;
+use Kinocomplete\Api\KodikApi;
 use Kinocomplete\Api\SystemApi;
 use Kinocomplete\Api\MoonwalkApi;
 use Kinocomplete\Api\VideoCdnApi;
@@ -212,6 +213,54 @@ class Diagnostics extends DefaultService
   }
 
   /**
+   * Get kodik errors.
+   *
+   * @return array
+   * @throws \GuzzleHttp\Exception\GuzzleException
+   */
+  public function getKodikErrors()
+  {
+    $messages = [];
+
+    /** @var KodikApi $kodikApi */
+    $kodikApi = $this->container->get('kodik_api');
+
+    try {
+
+      $kodikApi->accessChecking(true);
+
+    } catch (HostNotFoundException $exception) {
+
+      $messages[] = 'В настройках модуля требуется указать имя сервера Kodik.';
+
+    } catch (TokenNotFoundException $exception) {
+
+      $messages[] = 'В настройках модуля требуется указать Kodik Token.';
+
+    } catch (BasePathNotFoundException $exception) {
+
+      $messages[] = 'В настройках модуля требуется указать базовый путь сервера Kodik.';
+
+    } catch (InvalidTokenException $exception) {
+
+      $messages[] = 'В настройках модуля указан неверный Kodik Token.';
+
+    } catch (\Exception $exception) {
+
+      $reasonPhrase = $exception instanceof BadResponseException
+        ? $exception->getResponse()->getReasonPhrase()
+        : $exception->getMessage();
+
+      $messages[] = sprintf(
+        'Ошибка при проверке доступа к Kodik: %s',
+        $reasonPhrase
+      );
+    }
+
+    return $messages;
+  }
+
+  /**
    * Get hdvb errors.
    *
    * @return array
@@ -317,6 +366,7 @@ class Diagnostics extends DefaultService
   {
     $moonwalkEnabled = $this->container->get('moonwalk_enabled');
     $tmdbEnabled     = $this->container->get('tmdb_enabled');
+    $kodikEnabled    = $this->container->get('kodik_enabled');
     $hdvbEnabled     = $this->container->get('hdvb_enabled');
     $videoCdnEnabled = $this->container->get('video_cdn_enabled');
     $rutorEnabled    = $this->container->get('rutor_enabled');
@@ -334,6 +384,7 @@ class Diagnostics extends DefaultService
     if (
       !$moonwalkEnabled &&
       !$tmdbEnabled &&
+      !$kodikEnabled &&
       !$hdvbEnabled &&
       !$videoCdnEnabled &&
       !$rutorEnabled
@@ -346,6 +397,10 @@ class Diagnostics extends DefaultService
     // Tmdb settings.
     if ($tmdbEnabled)
       $messages += $this->getTmdbErrors();
+
+    // Kodik settings.
+    if ($kodikEnabled)
+      $messages += $this->getKodikErrors();
 
     // Hdvb settings.
     if ($hdvbEnabled)

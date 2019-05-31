@@ -31,6 +31,7 @@ trait ContainerTrait
       'database_prefix'         => getenv('database_prefix'),
       'moonwalk_token'          => getenv('moonwalk_token'),
       'tmdb_token'              => getenv('tmdb_token'),
+      'kodik_token'             => getenv('kodik_token'),
       'hdvb_token'              => getenv('hdvb_token'),
       'video_cdn_token'         => getenv('video_cdn_token'),
       'feed_loader_posts_limit' => getenv('feed_loader_posts_limit'),

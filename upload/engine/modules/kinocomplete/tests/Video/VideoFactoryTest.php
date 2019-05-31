@@ -144,6 +144,30 @@ class VideoFactoryTest extends TestCase
   }
 
   /**
+   * Testing "fromKodik" method.
+   */
+  public function testCanFromKodik()
+  {
+    $array = ['id' => 'identifier'];
+
+    $video = $this->instance->fromKodik($array);
+
+    Assert::isInstanceOf(
+      $video,
+      Video::class
+    );
+  }
+
+  /**
+   * Testing "fromKodik" method exceptions.
+   */
+  public function testCannotFromKodik()
+  {
+    $this->expectException(\InvalidArgumentException::class);
+    $this->instance->fromKodik([]);
+  }
+
+  /**
    * Testing "fromHdvb" method.
    */
   public function testCanFromHdvb()

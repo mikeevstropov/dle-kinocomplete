@@ -19,6 +19,7 @@ use Kinocomplete\Api\VideoCdnApi;
 use Kinocomplete\Api\SystemApi;
 use Kinocomplete\Module\Module;
 use Kinocomplete\Source\Source;
+use Kinocomplete\Api\KodikApi;
 use Kinocomplete\Api\RutorApi;
 use Kinocomplete\Api\HdvbApi;
 use Kinocomplete\Video\Video;
@@ -206,6 +207,14 @@ class ServiceFactory
     };
   }
 
+  public static function getKodikApi()
+  {
+    return function (ContainerInterface $container) {
+
+      return new KodikApi($container);
+    };
+  }
+
   public static function getHdvbApi()
   {
     return function (ContainerInterface $container) {
@@ -371,6 +380,27 @@ class ServiceFactory
       $source->setVideoOrigin(Video::TMDB_ORIGIN);
       $source->setVideoFactory([$videoFactory, 'fromTmdb']);
       $source->setLanguage($container->get('tmdb_language'));
+
+      return $source;
+    };
+  }
+
+  public static function getKodikSource()
+  {
+    return function (ContainerInterface $container) {
+
+      /** @var VideoFactory $videoFactory */
+      $videoFactory = $container->get('video_factory');
+
+      $source = new Source();
+      $source->setApi($container->get('kodik_api'));
+      $source->setEnabled((bool) $container->get('kodik_enabled'));
+      $source->setSecure((bool) $container->get('kodik_secure'));
+      $source->setHost($container->get('kodik_host'));
+      $source->setBasePath($container->get('kodik_base_path'));
+      $source->setToken($container->get('kodik_token'));
+      $source->setVideoOrigin(Video::KODIK_ORIGIN);
+      $source->setVideoFactory([$videoFactory, 'fromKodik']);
 
       return $source;
     };

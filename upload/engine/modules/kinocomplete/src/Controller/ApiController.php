@@ -17,6 +17,7 @@ use Kinocomplete\Api\ApiInterface;
 use Kinocomplete\Api\VideoCdnApi;
 use Kinocomplete\Api\MoonwalkApi;
 use Kinocomplete\Api\SystemApi;
+use Kinocomplete\Api\KodikApi;
 use Kinocomplete\Api\RutorApi;
 use Kinocomplete\Api\HdvbApi;
 use Kinocomplete\Video\Video;
@@ -100,6 +101,7 @@ class ApiController extends DefaultController
     $title           = $request->getQueryParam('title');
     $moonwalkEnabled = $this->container->get('moonwalk_enabled');
     $tmdbEnabled     = $this->container->get('tmdb_enabled');
+    $kodikEnabled    = $this->container->get('kodik_enabled');
     $hdvbEnabled     = $this->container->get('hdvb_enabled');
     $videoCdnEnabled = $this->container->get('video_cdn_enabled');
     $rutorEnabled    = $this->container->get('rutor_enabled');
@@ -109,6 +111,9 @@ class ApiController extends DefaultController
 
     /** @var TmdbApi $tmdbApi */
     $tmdbApi = $this->container->get('tmdb_api');
+
+    /** @var KodikApi $kodikApi */
+    $kodikApi = $this->container->get('kodik_api');
 
     /** @var HdvbApi $hdvbApi */
     $hdvbApi = $this->container->get('hdvb_api');
@@ -141,6 +146,18 @@ class ApiController extends DefaultController
     } catch (NotFoundException $exception) {
 
       $tmdbResults = [];
+    }
+
+    // Kodik.
+    try {
+
+      $kodikResults = $kodikEnabled
+        ? $kodikApi->getVideos($title)
+        : [];
+
+    } catch (NotFoundException $exception) {
+
+      $kodikResults = [];
     }
 
     // Hdvb.
@@ -182,6 +199,7 @@ class ApiController extends DefaultController
     $results = array_merge(
       $moonwalkResults,
       $tmdbResults,
+      $kodikResults,
       $hdvbResults,
       $videoCdnResults,
       $rutorResults
@@ -223,6 +241,10 @@ class ApiController extends DefaultController
     } else if ($origin === Video::TMDB_ORIGIN) {
 
       $api = $this->container->get('tmdb_api');
+
+    } else if ($origin === Video::KODIK_ORIGIN) {
+
+      $api = $this->container->get('kodik_api');
 
     } else if ($origin === Video::HDVB_ORIGIN) {
 
@@ -277,6 +299,10 @@ class ApiController extends DefaultController
     } else if ($origin === Video::TMDB_ORIGIN) {
 
       $api = $this->container->get('tmdb_api');
+
+    } else if ($origin === Video::KODIK_ORIGIN) {
+
+      $api = $this->container->get('kodik_api');
 
     } else if ($origin === Video::HDVB_ORIGIN) {
 

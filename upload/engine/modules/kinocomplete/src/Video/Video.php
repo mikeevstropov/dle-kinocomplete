@@ -15,6 +15,7 @@ class Video
 
   const MOONWALK_ORIGIN  = 'moonwalk';
   const TMDB_ORIGIN      = 'tmdb';
+  const KODIK_ORIGIN     = 'kodik';
   const HDVB_ORIGIN      = 'hdvb';
   const VIDEO_CDN_ORIGIN = 'video-cdn';
   const RUTOR_ORIGIN     = 'rutor';
