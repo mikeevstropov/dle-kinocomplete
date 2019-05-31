@@ -46,10 +46,10 @@ trait KodikFactoryTrait
     ) {
       $type = $data['type'];
 
-      if (strpos($type, 'movie') !== -1)
+      if (strpos($type, 'movie') !== false)
         $video->type = Video::MOVIE_TYPE;
 
-      elseif (strpos($type, 'serial') !== -1)
+      elseif (strpos($type, 'serial') !== false)
         $video->type = Video::SERIES_TYPE;
     }
 
