@@ -40,12 +40,12 @@ class Feeds
    *
    * @param string $feedName
    * @param string $videoOrigin
-   * @param callable $closure
+   * @param callable $feedFactory
    */
   static protected function add(
     $feedName,
     $videoOrigin,
-    callable $closure
+    callable $feedFactory
   ) {
     if (!self::$feeds)
       self::$feeds = new Container();
@@ -55,7 +55,7 @@ class Feeds
       $videoOrigin
     );
 
-    self::$feeds[$key] = $closure;
+    self::$feeds[$key] = $feedFactory;
   }
 
   /**
@@ -88,5 +88,6 @@ class Feeds
     };
 
     MoonwalkFeedsInjector::inject($addMethod);
+    KodikFeedsInjector::inject($addMethod);
   }
 }
