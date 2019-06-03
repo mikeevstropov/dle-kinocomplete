@@ -119,6 +119,19 @@ class Utils
   }
 
   /**
+   * Hyphen to snake case.
+   *
+   * @param  string $string
+   * @return string
+   */
+  static public function hyphenToSnake($string)
+  {
+    $string = str_replace('-', '_', $string);
+
+    return $string;
+  }
+
+  /**
    * Get random string.
    *
    * @param int $length
