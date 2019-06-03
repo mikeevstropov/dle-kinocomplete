@@ -46,7 +46,12 @@ class Feeds
   static public function getAll(
     $videoOrigin = null
   ) {
-    Assert::nullOrStringNotEmpty($videoOrigin);
+    Assert::nullOrStringNotEmpty(
+      $videoOrigin
+    );
+
+    if (!self::$feeds)
+      self::createFeeds();
 
     if ($videoOrigin) {
 
@@ -81,7 +86,12 @@ class Feeds
     ContainerInterface $configuration,
     $videoOrigin = null
   ) {
-    Assert::nullOrStringNotEmpty($videoOrigin);
+    Assert::nullOrStringNotEmpty(
+      $videoOrigin
+    );
+
+    if (!self::$feeds)
+      self::createFeeds();
 
     if ($videoOrigin) {
 
