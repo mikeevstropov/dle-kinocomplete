@@ -123,6 +123,9 @@ class MoonwalkApi extends DefaultService implements ApiInterface
    * @throws TooLargeResponseException
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\BasePathNotFoundException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
+   * @throws \Kinocomplete\Exception\TokenNotFoundException
    */
   public function accessChecking(
     $cache = false
@@ -133,8 +136,15 @@ class MoonwalkApi extends DefaultService implements ApiInterface
     /** @var ModuleCache $moduleCache */
     $moduleCache = $this->container->get('module_cache');
 
-    $token = $source->getToken();
-    $origin = $source->getVideoOrigin();
+    // Following getters will throw an
+    // errors if value are not defined.
+    // So it must be placed before a
+    // cache checking block.
+    $token    = $source->getToken();
+    $origin   = $source->getVideoOrigin();
+    $scheme   = $source->getScheme();
+    $host     = $source->getHost();
+    $basePath = $source->getBasePath();
 
     if ($cache) {
 
@@ -151,9 +161,9 @@ class MoonwalkApi extends DefaultService implements ApiInterface
     $client = $this->container->get('client');
 
     $url = Path::join(
-      $source->getScheme(),
-      $source->getHost(),
-      $source->getBasePath(),
+      $scheme,
+      $host,
+      $basePath,
       'videos.json?api_token='. $token
     );
 
@@ -204,6 +214,9 @@ class MoonwalkApi extends DefaultService implements ApiInterface
    * @throws TooLargeResponseException
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\BasePathNotFoundException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
+   * @throws \Kinocomplete\Exception\TokenNotFoundException
    */
   public function getVideos($title)
   {
@@ -286,13 +299,16 @@ class MoonwalkApi extends DefaultService implements ApiInterface
   /**
    * Get video.
    *
-   * @param  $id
+   * @param  string $id
    * @return Video
-   * @throws NotFoundException
    * @throws InvalidTokenException
+   * @throws NotFoundException
    * @throws TooLargeResponseException
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\BasePathNotFoundException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
+   * @throws \Kinocomplete\Exception\TokenNotFoundException
    */
   public function getVideo($id)
   {
@@ -483,12 +499,15 @@ class MoonwalkApi extends DefaultService implements ApiInterface
    * Get screenshots.
    *
    * @param  string $videoId
-   * @return mixed
+   * @return array
    * @throws InvalidTokenException
    * @throws NotFoundException
    * @throws TooLargeResponseException
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\BasePathNotFoundException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
+   * @throws \Kinocomplete\Exception\TokenNotFoundException
    */
   public function getScreenshots($videoId)
   {

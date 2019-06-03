@@ -6,6 +6,7 @@ use Kinocomplete\Api\HdvbApi;
 use Kinocomplete\Api\TmdbApi;
 use Kinocomplete\Api\KodikApi;
 use Kinocomplete\Api\SystemApi;
+use Kinocomplete\Source\Source;
 use Kinocomplete\Api\MoonwalkApi;
 use Kinocomplete\Api\VideoCdnApi;
 use Kinocomplete\Service\DefaultService;
@@ -363,6 +364,41 @@ class Diagnostics extends DefaultService
   }
 
   /**
+   * Get rutor errors.
+   *
+   * @return array
+   */
+  public function getRutorErrors()
+  {
+    $messages = [];
+
+    /** @var Source $source */
+    $source = $this->container->get('rutor_source');
+
+    try {
+
+      $source->getHost();
+
+    } catch (HostNotFoundException $exception) {
+
+      $messages[] = 'В настройках модуля требуется указать имя сервера Rutor.';
+
+    } catch (\Exception $exception) {
+
+      $reasonPhrase = $exception instanceof BadResponseException
+        ? $exception->getResponse()->getReasonPhrase()
+        : $exception->getMessage();
+
+      $messages[] = sprintf(
+        'Ошибка при проверке доступа к Rutor: %s',
+        $reasonPhrase
+      );
+    }
+
+    return $messages;
+  }
+
+  /**
    * Get errors.
    *
    * @return array
@@ -415,6 +451,10 @@ class Diagnostics extends DefaultService
     // VideoCdn settings.
     if ($videoCdnEnabled)
       $messages += $this->getVideoCdnErrors();
+
+    // Rutor settings.
+    if ($rutorEnabled)
+      $messages += $this->getRutorErrors();
 
     // Proxy settings.
     if ($proxyEnabled)

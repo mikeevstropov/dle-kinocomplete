@@ -98,6 +98,9 @@ class HdvbApi extends DefaultService implements ApiInterface
    * @throws NotFoundException
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\BasePathNotFoundException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
+   * @throws \Kinocomplete\Exception\TokenNotFoundException
    */
   public function accessChecking(
     $cache = false
@@ -108,8 +111,15 @@ class HdvbApi extends DefaultService implements ApiInterface
     /** @var ModuleCache $moduleCache */
     $moduleCache = $this->container->get('module_cache');
 
-    $token = $source->getToken();
-    $origin = $source->getVideoOrigin();
+    // Following getters will throw an
+    // errors if value are not defined.
+    // So it must be placed before a
+    // cache checking block.
+    $token    = $source->getToken();
+    $origin   = $source->getVideoOrigin();
+    $scheme   = $source->getScheme();
+    $host     = $source->getHost();
+    $basePath = $source->getBasePath();
 
     if ($cache) {
 
@@ -131,9 +141,9 @@ class HdvbApi extends DefaultService implements ApiInterface
     ]);
 
     $url = Path::join(
-      $source->getScheme(),
-      $source->getHost(),
-      $source->getBasePath(),
+      $scheme,
+      $host,
+      $basePath,
       'videos.json?'. $queryString
     );
 
@@ -168,6 +178,9 @@ class HdvbApi extends DefaultService implements ApiInterface
    * @throws TooLargeResponseException
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\BasePathNotFoundException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
+   * @throws \Kinocomplete\Exception\TokenNotFoundException
    */
   public function getVideos($title)
   {
@@ -253,6 +266,9 @@ class HdvbApi extends DefaultService implements ApiInterface
    * @return Video
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\BasePathNotFoundException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
+   * @throws \Kinocomplete\Exception\TokenNotFoundException
    */
   public function getVideo($id)
   {

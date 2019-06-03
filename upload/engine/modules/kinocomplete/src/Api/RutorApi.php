@@ -56,6 +56,7 @@ class RutorApi extends DefaultService implements ApiInterface
    * @return bool
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
    */
   public function accessChecking()
   {
@@ -103,6 +104,7 @@ class RutorApi extends DefaultService implements ApiInterface
    * @throws TooLargeResponseException
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
    */
   public function getVideos($title)
   {
@@ -164,6 +166,7 @@ class RutorApi extends DefaultService implements ApiInterface
    * @throws NotFoundException
    * @throws UnexpectedResponseException
    * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\HostNotFoundException
    * @throws \Kinocomplete\Exception\ParsingException
    */
   public function getVideo($id)
