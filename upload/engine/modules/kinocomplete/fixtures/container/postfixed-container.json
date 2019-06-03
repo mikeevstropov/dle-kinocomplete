@@ -1,0 +1,6 @@
+{
+  "integer_option_postfix": 1,
+  "string_option_postfix": "1",
+  "boolean_option_postfix": false,
+  "serialized_option_postfix": "a:1:{s:1:\"a\";s:1:\"b\";}"
+}

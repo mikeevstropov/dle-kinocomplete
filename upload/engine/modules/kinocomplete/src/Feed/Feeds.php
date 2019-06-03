@@ -53,13 +53,16 @@ class Feeds
       $namedArray = ContainerFactory::fromPostfix(
         self::$feeds,
         $videoOrigin,
+        true,
+        true,
         true
       );
 
     } else {
 
       $namedArray = ContainerFactory::toArray(
-        self::$feeds
+        self::$feeds,
+        true
       );
     }
 
@@ -71,7 +74,7 @@ class Feeds
    * container which contain enable flags.
    *
    * @param  ContainerInterface $configuration
-   * @param  null $videoOrigin
+   * @param  string|null $videoOrigin
    * @return array
    */
   static public function getEnabled(
@@ -86,13 +89,15 @@ class Feeds
         self::$feeds,
         $videoOrigin,
         true,
+        true,
         true
       );
 
     } else {
 
       $namedArray = ContainerFactory::toArray(
-        self::$feeds
+        self::$feeds,
+        true
       );
     }
 
@@ -136,11 +141,6 @@ class Feeds
     if (!self::$feeds)
       self::$feeds = new Container();
 
-    if (strpos($feedName, '_') !== false)
-      throw new \InvalidArgumentException(
-        'Имя фида имеет недопустимый символ нижнего подчеркивания.'
-      );
-
     $key = self::getKey(
       $feedName,
       $videoOrigin
@@ -162,6 +162,16 @@ class Feeds
   ) {
     Assert::stringNotEmpty($videoOrigin);
     Assert::stringNotEmpty($feedName);
+
+    if (strpos($feedName, '_') !== false)
+      throw new \InvalidArgumentException(
+        'Имя фида имеет недопустимый символ нижнего подчеркивания.'
+      );
+
+    if (strpos($videoOrigin, '_') !== false)
+      throw new \InvalidArgumentException(
+        'Имя источника имеет недопустимый символ нижнего подчеркивания.'
+      );
 
     return $feedName .'_'. $videoOrigin;
   }

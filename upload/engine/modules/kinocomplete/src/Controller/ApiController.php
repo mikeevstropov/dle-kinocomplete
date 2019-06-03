@@ -401,28 +401,10 @@ class ApiController extends DefaultController
       $statusSender
     );
 
-    $feeds = [];
-
-    if ($this->container->get('moonwalk_foreign_movies_feed_enabled'))
-      $feeds[] = Feeds::get('foreign-movies', Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_russian_movies_feed_enabled'))
-      $feeds[] = Feeds::get('russian-movies', Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_camrip_movies_feed_enabled'))
-      $feeds[] = Feeds::get('camrip-movies',  Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_foreign_series_feed_enabled'))
-      $feeds[] = Feeds::get('foreign-series',  Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_russian_series_feed_enabled'))
-      $feeds[] = Feeds::get('russian-series',  Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_anime_movies_feed_enabled'))
-      $feeds[] = Feeds::get('anime-movies',  Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_anime_series_feed_enabled'))
-      $feeds[] = Feeds::get('anime-series',  Video::MOONWALK_ORIGIN);
+    $feeds = Feeds::getEnabled(
+      $this->container,
+      Video::MOONWALK_ORIGIN
+    );
 
     try {
 
@@ -487,28 +469,10 @@ class ApiController extends DefaultController
       $statusSender
     );
 
-    $feeds = [];
-
-    if ($this->container->get('moonwalk_foreign_movies_feed_enabled'))
-      $feeds[] = Feeds::get('foreign-movies', Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_russian_movies_feed_enabled'))
-      $feeds[] = Feeds::get('russian-movies', Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_camrip_movies_feed_enabled'))
-      $feeds[] = Feeds::get('camrip-movies',  Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_foreign_series_feed_enabled'))
-      $feeds[] = Feeds::get('foreign-series',  Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_russian_series_feed_enabled'))
-      $feeds[] = Feeds::get('russian-series',  Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_anime_movies_feed_enabled'))
-      $feeds[] = Feeds::get('anime-movies',  Video::MOONWALK_ORIGIN);
-
-    if ($this->container->get('moonwalk_anime_series_feed_enabled'))
-      $feeds[] = Feeds::get('anime-series',  Video::MOONWALK_ORIGIN);
+    $feeds = Feeds::getEnabled(
+      $this->container,
+      Video::MOONWALK_ORIGIN
+    );
 
     try {
 
@@ -552,6 +516,170 @@ class ApiController extends DefaultController
   ) {
     $postCleaner = new PostCleaner(
       $this->container->get('moonwalk_source'),
+      $this->container->get('system_api')
+    );
+
+    $postCleaner->clean();
+
+    $response = $response->withJson([
+      'status' => 'success',
+    ]);
+
+    return $response;
+  }
+
+  /**
+   * Create kodik posts action.
+   *
+   * @param  Request $request
+   * @param  Response $response
+   * @param  $arguments
+   * @throws \Exception
+   */
+  public function createKodikPostsAction(
+    Request $request,
+    Response $response,
+    $arguments
+  ) {
+    $postProcessor = new PostProcessor(
+      $this->container,
+      $this->container->get('kodik_source')
+    );
+
+    $feedProcessor = new FeedProcessor(
+      $this->container->get('kodik_source'),
+      $this->container->get('system_api'),
+      $this->container->get('system_cache_dir')
+    );
+
+    $fileParser = new FileParser(
+      $this->container->get('system_cache_dir')
+    );
+
+    $statusSender = new StatusSender();
+
+    $creator = new PostCreator(
+      $fileParser,
+      $postProcessor,
+      $feedProcessor,
+      $statusSender
+    );
+
+    $feeds = Feeds::getEnabled(
+      $this->container,
+      Video::KODIK_ORIGIN
+    );
+
+    try {
+
+      $creator->create(
+        $feeds,
+        (int) $this->container->get('feed_loader_posts_limit')
+      );
+
+    } catch (\Exception $exception) {
+
+      if (!$statusSender->isConnected())
+        $statusSender->openConnection();
+
+      $statusSender->closeConnection(
+        $exception
+      );
+
+    }
+
+    /** @var SystemApi $systemApi */
+    $systemApi = $this->container->get('system_api');
+
+    $systemApi->clearSystemCache('category');
+
+    exit();
+  }
+
+  /**
+   * Update kodik posts action.
+   *
+   * @param  Request $request
+   * @param  Response $response
+   * @param  $arguments
+   * @throws \Exception
+   */
+  public function updateKodikPostsAction(
+    Request $request,
+    Response $response,
+    $arguments
+  ) {
+    $postProcessor = new PostProcessor(
+      $this->container,
+      $this->container->get('kodik_source')
+    );
+
+    $feedProcessor = new FeedProcessor(
+      $this->container->get('kodik_source'),
+      $this->container->get('system_api'),
+      $this->container->get('system_cache_dir')
+    );
+
+    $fileParser = new FileParser(
+      $this->container->get('system_cache_dir')
+    );
+
+    $statusSender = new StatusSender();
+
+    $creator = new PostUpdater(
+      $fileParser,
+      $postProcessor,
+      $feedProcessor,
+      $statusSender
+    );
+
+    $feeds = Feeds::getEnabled(
+      $this->container,
+      Video::KODIK_ORIGIN
+    );
+
+    try {
+
+      $creator->update(
+        $feeds,
+        (int) $this->container->get('feed_loader_posts_limit')
+      );
+
+    } catch (\Exception $exception) {
+
+      if (!$statusSender->isConnected())
+        $statusSender->openConnection();
+
+      $statusSender->closeConnection(
+        $exception
+      );
+
+    }
+
+    /** @var SystemApi $systemApi */
+    $systemApi = $this->container->get('system_api');
+
+    $systemApi->clearSystemCache('category');
+
+    exit();
+  }
+
+  /**
+   * Clean kodik posts action.
+   *
+   * @param  Request $request
+   * @param  Response $response
+   * @param  $arguments
+   * @return Response
+   * @throws \Exception
+   */
+  public function cleanKodikPostsAction(
+    Request $request,
+    Response $response,
+    $arguments
+  ) {
+    $postCleaner = new PostCleaner(
+      $this->container->get('kodik_source'),
       $this->container->get('system_api')
     );
 

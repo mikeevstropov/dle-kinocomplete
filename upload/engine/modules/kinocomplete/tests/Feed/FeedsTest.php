@@ -147,6 +147,160 @@ class FeedsTest extends TestCase
   }
 
   /**
+   * Testing "add" method.
+   */
+  public function testCanAdd()
+  {
+    $expected = new Feed();
+    $name = Utils::randomString();
+    $origin = Utils::randomString();
+
+    $reflection = new \ReflectionClass(Feeds::class);
+
+    $property = $reflection->getProperty('feeds');
+    $property->setAccessible(true);
+    $property->setValue(new Container());
+
+    $addMethod = $reflection->getMethod('add');
+    $addMethod->setAccessible(true);
+
+    $addMethod->invoke(
+      $reflection,
+      $name,
+      $origin,
+      function () use ($expected) {
+        return $expected;
+      }
+    );
+
+    Assert::same(
+      $expected,
+      Feeds::get(
+        $name,
+        $origin
+      )
+    );
+  }
+
+  /**
+   * Testing "add" method exceptions.
+   */
+  public function testCannotAdd()
+  {
+    $reflection = new \ReflectionClass(Feeds::class);
+
+    $property = $reflection->getProperty('feeds');
+    $property->setAccessible(true);
+    $property->setValue(new Container());
+
+    $addMethod = $reflection->getMethod('add');
+    $addMethod->setAccessible(true);
+
+    $feedFactory = function () {
+      return new Feed();
+    };
+
+    try {
+
+      $addMethod->invoke(
+        $reflection,
+        'test_name',
+        'origin',
+        $feedFactory
+      );
+
+    } catch (\InvalidArgumentException $e) {}
+
+    try {
+
+      $addMethod->invoke(
+        $reflection,
+        'name',
+        'test_origin',
+        $feedFactory
+      );
+
+    } catch (\InvalidArgumentException $e) {}
+
+    Assert::isEmpty(
+      Feeds::getAll('origin')
+    );
+  }
+
+  /**
+   * Testing "getKey" method.
+   */
+  public function testCanGetKey()
+  {
+    $name = 'test-feed';
+    $origin = 'test-origin';
+    $expected = $name .'_'. $origin;
+
+    $reflection = new \ReflectionClass(Feeds::class);
+
+    $property = $reflection->getProperty('feeds');
+    $property->setAccessible(true);
+    $property->setValue(new Container());
+
+    $method = $reflection->getMethod('getKey');
+    $method->setAccessible(true);
+
+    Assert::same(
+      $expected,
+      $method->invoke(
+        $reflection,
+        $name,
+        $origin
+      )
+    );
+  }
+
+  /**
+   * Testing "getKey" method exceptions.
+   */
+  public function testCannotGetKey()
+  {
+    $exceptions = 0;
+    $expectedExceptions = 2;
+
+    $reflection = new \ReflectionClass(Feeds::class);
+
+    $method = $reflection->getMethod('getKey');
+    $method->setAccessible(true);
+
+    try {
+
+      $method->invoke(
+        $reflection,
+        'test_name',
+        'origin'
+      );
+
+    } catch (\InvalidArgumentException $e) {
+
+      ++$exceptions;
+    }
+
+    try {
+
+      $method->invoke(
+        $reflection,
+        'name',
+        'test_origin'
+      );
+
+    } catch (\InvalidArgumentException $e) {
+
+      ++$exceptions;
+    }
+
+    Assert::same(
+      $expectedExceptions,
+      $exceptions
+    );
+  }
+
+  /**
    * Tear down after class.
    *
    * @throws \ReflectionException

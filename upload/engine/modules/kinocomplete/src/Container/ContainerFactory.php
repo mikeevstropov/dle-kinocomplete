@@ -48,13 +48,15 @@ class ContainerFactory
    * @param  string $namespace
    * @param  bool $raw
    * @param  bool $namespaceInResult
+   * @param  bool $includeServices
    * @return ContainerInterface|array
    */
   static public function fromNamespace(
     $array,
     $namespace,
     $raw = false,
-    $namespaceInResult = false
+    $namespaceInResult = false,
+    $includeServices = false
   ) {
     if (!is_array($array) && !($array instanceof ContainerInterface))
       throw new \InvalidArgumentException(sprintf(
@@ -74,8 +76,10 @@ class ContainerFactory
 
         $isService = is_callable($array->raw($key));
 
-        if (!$isService)
-          $iterable[$key] = $array[$key];
+        if (!$includeServices && $isService)
+          continue;
+
+        $iterable[$key] = $array[$key];
       }
 
       $array = $iterable;
@@ -111,13 +115,15 @@ class ContainerFactory
    * @param  string $postfix
    * @param  bool $raw
    * @param  bool $postfixInResult
+   * @param  bool $includeServices
    * @return ContainerInterface|array
    */
   static public function fromPostfix(
     $array,
     $postfix,
     $raw = false,
-    $postfixInResult = false
+    $postfixInResult = false,
+    $includeServices = false
   ) {
     if (!is_array($array) && !($array instanceof ContainerInterface))
       throw new \InvalidArgumentException(sprintf(
@@ -137,8 +143,10 @@ class ContainerFactory
 
         $isService = is_callable($array->raw($key));
 
-        if (!$isService)
-          $iterable[$key] = $array[$key];
+        if (!$includeServices && $isService)
+          continue;
+
+        $iterable[$key] = $array[$key];
       }
 
       $array = $iterable;
@@ -204,10 +212,12 @@ class ContainerFactory
    * To array.
    *
    * @param  ContainerInterface $container
+   * @param  bool $includeServices
    * @return array
    */
   static public function toArray(
-    ContainerInterface $container
+    ContainerInterface $container,
+    $includeServices = false
   ) {
     $array = [];
 
@@ -219,8 +229,10 @@ class ContainerFactory
 
         $isService = is_callable($container->raw($key));
 
-        if (!$isService)
-          $array[$key] = $container[$key];
+        if (!$includeServices && $isService)
+          continue;
+
+        $array[$key] = $container[$key];
       }
 
     } else if ($container instanceof \Iterator) {
@@ -231,8 +243,10 @@ class ContainerFactory
 
         $isService = is_callable($value);
 
-        if (!$isService)
-          $array[$key] = $value;
+        if (!$includeServices && $isService)
+          continue;
+
+        $array[$key] = $value;
       }
     }
 
