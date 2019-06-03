@@ -2,6 +2,9 @@
 
 namespace Kinocomplete\Source;
 
+use Kinocomplete\Exception\BasePathNotFoundException;
+use Kinocomplete\Exception\TokenNotFoundException;
+use Kinocomplete\Exception\HostNotFoundException;
 use Kinocomplete\Api\ApiInterface;
 use Webmozart\Assert\Assert;
 
@@ -59,11 +62,10 @@ class Source
    */
   public function getApi()
   {
-    Assert::isInstanceOf(
-      $this->api,
-      ApiInterface::class,
-      'Не определен экземпляр ApiInterface для источника.'
-    );
+    if (!$this->api)
+      throw new \InvalidArgumentException(
+        'Отсутствует интерфейс источника.'
+      );
 
     return $this->api;
   }
@@ -87,7 +89,7 @@ class Source
   {
     Assert::boolean(
       $this->enabled,
-      'Не определен статус активации источника.'
+      'Источник не имеет статуса активации.'
     );
 
     return $this->enabled;
@@ -114,7 +116,7 @@ class Source
   {
     Assert::boolean(
       $this->secure,
-      'Опция "secure" не определена для источника.'
+      'Источник не имеет определения безопасности.'
     );
 
     return $this->secure;
@@ -136,13 +138,14 @@ class Source
    * Get host.
    *
    * @return string
+   * @throws HostNotFoundException
    */
   public function getHost()
   {
-    Assert::stringNotEmpty(
-      $this->host,
-      'Опция "host" не определена для источника.'
-    );
+    if (!$this->host)
+      throw new HostNotFoundException(
+        'Источник не имеет имени сервера.'
+      );
 
     return $this->host;
   }
@@ -163,13 +166,14 @@ class Source
    * Get base path.
    *
    * @return string
+   * @throws BasePathNotFoundException
    */
   public function getBasePath()
   {
-    Assert::string(
-      $this->basePath,
-      'Опция "basePath" не определена для источника.'
-    );
+    if (!$this->basePath)
+      throw new BasePathNotFoundException(
+        'Источник не имеет базового пути.'
+      );
 
     return $this->basePath;
   }
@@ -190,13 +194,14 @@ class Source
    * Get token.
    *
    * @return string
+   * @throws TokenNotFoundException
    */
   public function getToken()
   {
-    Assert::string(
-      $this->token,
-      'Опция "token" не определена для источника.'
-    );
+    if (!$this->token)
+      throw new TokenNotFoundException(
+        'Источник не имеет токена.'
+      );
 
     return $this->token;
   }
@@ -222,7 +227,7 @@ class Source
   {
     Assert::stringNotEmpty(
       $this->videoOrigin,
-      'Опция "videoOrigin" не определена для источника.'
+      'Источник не имеет определения.'
     );
 
     return $this->videoOrigin;
@@ -249,7 +254,7 @@ class Source
   {
     Assert::isCallable(
       $this->videoFactory,
-      'Не определен фабричный метод для создания Video экземпляров.'
+      'Источник не имеет фабрики Video экземпляров.'
     );
 
     return $this->videoFactory;
@@ -276,7 +281,7 @@ class Source
   {
     Assert::stringNotEmpty(
       $this->language,
-      'Опция "language" не определена для источника.'
+      'Источник не имеет языкового определения.'
     );
 
     return $this->language;
@@ -301,12 +306,7 @@ class Source
    */
   public function getScheme()
   {
-    Assert::boolean(
-      $this->secure,
-      'Опция "secure" не определена для источника.'
-    );
-
-    return $this->secure
+    return $this->isSecure()
       ? 'https://'
       : 'http://';
   }

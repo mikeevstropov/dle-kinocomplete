@@ -2,6 +2,9 @@
 
 namespace Kinocomplete\Test\Source;
 
+use Kinocomplete\Exception\BasePathNotFoundException;
+use Kinocomplete\Exception\TokenNotFoundException;
+use Kinocomplete\Exception\HostNotFoundException;
 use Kinocomplete\Container\Container;
 use Kinocomplete\Video\VideoFactory;
 use Kinocomplete\Api\ApiInterface;
@@ -148,6 +151,7 @@ class SourceTest extends TestCase
    * Testing "getHost" method.
    *
    * @param   Source $source
+   * @throws  HostNotFoundException
    * @depends testCanSetHost
    */
   public function testCanGetHost(Source $source)
@@ -169,7 +173,7 @@ class SourceTest extends TestCase
 
     try {
       $source->getHost();
-    } catch (\InvalidArgumentException $e) {
+    } catch (HostNotFoundException $e) {
       ++$exceptions;
     }
 
@@ -177,7 +181,7 @@ class SourceTest extends TestCase
 
     try {
       $source->getHost();
-    } catch (\InvalidArgumentException $e) {
+    } catch (HostNotFoundException $e) {
       ++$exceptions;
     }
 
@@ -204,6 +208,7 @@ class SourceTest extends TestCase
    * Testing "getBasePath" method.
    *
    * @param   Source $source
+   * @throws  BasePathNotFoundException
    * @depends testCanSetBasePath
    */
   public function testCanGetBasePath(Source $source)
@@ -225,14 +230,19 @@ class SourceTest extends TestCase
 
     try {
       $source->getBasePath();
-    } catch (\InvalidArgumentException $e) {
+    } catch (BasePathNotFoundException $e) {
       ++$exceptions;
     }
 
     $source->setBasePath('');
-    $source->getBasePath();
 
-    Assert::same($exceptions, 1);
+    try {
+      $source->getBasePath();
+    } catch (BasePathNotFoundException $e) {
+      ++$exceptions;
+    }
+
+    Assert::same($exceptions, 2);
   }
 
   /**
@@ -255,6 +265,7 @@ class SourceTest extends TestCase
    * Testing "getToken" method.
    *
    * @param   Source $source
+   * @throws  TokenNotFoundException
    * @depends testCanSetToken
    */
   public function testCanGetToken(Source $source)
@@ -276,14 +287,19 @@ class SourceTest extends TestCase
 
     try {
       $source->getToken();
-    } catch (\InvalidArgumentException $e) {
+    } catch (TokenNotFoundException $e) {
       ++$exceptions;
     }
 
     $source->setToken('');
-    $source->getToken();
 
-    Assert::same($exceptions, 1);
+    try {
+      $source->getToken();
+    } catch (TokenNotFoundException $e) {
+      ++$exceptions;
+    }
+
+    Assert::same($exceptions, 2);
   }
 
   /**
