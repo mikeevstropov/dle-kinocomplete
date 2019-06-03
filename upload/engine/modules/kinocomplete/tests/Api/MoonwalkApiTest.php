@@ -311,8 +311,8 @@ class MoonwalkApiTest extends TestCase
    * @throws \Kinocomplete\Exception\FileSystemPermissionException
    * @throws \Kinocomplete\Exception\TooLargeResponseException
    * @throws \Kinocomplete\Exception\UnexpectedResponseException
+   * @throws \Throwable
    * @throws \Twig_Error_Loader
-   * @throws \Twig_Error_Runtime
    * @throws \Twig_Error_Syntax
    */
   public function testCanDownloadFeed()

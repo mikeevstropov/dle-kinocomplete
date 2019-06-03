@@ -24,6 +24,7 @@
   "kodik_enabled":                        "0",
   "kodik_secure":                         "1",
   "kodik_host":                           "kodikapi.com",
+  "kodik_feeds_host":                     "dumps.kodik.biz",
   "kodik_token":                          "",
   "kodik_base_path":                      "",
   "kodik_player_pattern":                 "https://kodik.info{path}",

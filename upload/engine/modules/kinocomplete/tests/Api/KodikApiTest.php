@@ -5,6 +5,7 @@ namespace Kinocomplete\Test\Api;
 use Kinocomplete\Exception\InvalidTokenException;
 use Kinocomplete\Tests\TestTrait\ContainerTrait;
 use Kinocomplete\Exception\NotFoundException;
+use GuzzleHttp\Exception\RequestException;
 use Kinocomplete\Container\Container;
 use Kinocomplete\Module\ModuleCache;
 use Kinocomplete\Source\Source;
@@ -12,7 +13,9 @@ use PHPUnit\Framework\TestCase;
 use Kinocomplete\Api\KodikApi;
 use Kinocomplete\Video\Video;
 use Kinocomplete\Utils\Utils;
+use Kinocomplete\Feed\Feeds;
 use Webmozart\Assert\Assert;
+use Webmozart\PathUtil\Path;
 
 class KodikApiTest extends TestCase
 {
@@ -227,5 +230,61 @@ class KodikApiTest extends TestCase
     $this->expectException(NotFoundException::class);
 
     $this->instance->getVideo(md5('id'));
+  }
+
+  /**
+   * Testing `downloadFeed` method exceptions.
+   *
+   * @throws InvalidTokenException
+   * @throws NotFoundException
+   * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Kinocomplete\Exception\FileSystemPermissionException
+   * @throws \Kinocomplete\Exception\UnexpectedResponseException
+   * @throws \Throwable
+   * @throws \Twig_Error_Loader
+   * @throws \Twig_Error_Syntax
+   */
+  public function testCanDownloadFeed()
+  {
+    $feed = Feeds::get(
+      'movies',
+      Video::KODIK_ORIGIN
+    );
+
+    $onProgress = function (
+      $totalBytes,
+      $loadedBytes
+    ) {
+      if ($loadedBytes > 100)
+        throw new \OverflowException();
+    };
+
+    $filePath = Path::join(
+      $this->getContainer()->get('system_cache_dir'),
+      $feed->getFileName()
+    );
+
+    try {
+
+      $this->instance->downloadFeed(
+        $feed,
+        $filePath,
+        $onProgress
+      );
+
+    } catch (\OverflowException $exception) {
+    } catch (RequestException $exception) {
+
+      $previous = $exception->getPrevious();
+
+      $overflowed = $previous
+        && $previous instanceof \OverflowException;
+
+      if (!$overflowed)
+        throw $exception;
+    }
+
+    Assert::fileExists($filePath);
+    Assert::true(unlink($filePath));
   }
 }

@@ -10,6 +10,7 @@ use Kinocomplete\Video\Video;
 use Kinocomplete\Source\Source;
 use GuzzleHttp\ClientInterface;
 use Kinocomplete\Module\ModuleCache;
+use Kinocomplete\Templating\Templating;
 use Kinocomplete\Service\DefaultService;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
@@ -20,6 +21,7 @@ use Kinocomplete\Exception\EmptyQueryException;
 use Kinocomplete\Exception\InvalidTokenException;
 use Kinocomplete\Exception\TooLargeResponseException;
 use Kinocomplete\Exception\UnexpectedResponseException;
+use Kinocomplete\Exception\FileSystemPermissionException;
 
 class KodikApi extends DefaultService implements ApiInterface
 {
@@ -308,13 +310,84 @@ class KodikApi extends DefaultService implements ApiInterface
    * @param  Feed $feed
    * @param  string $filePath
    * @param  callable|null $onProgress
-   * @return string|void
+   * @return string
+   * @throws FileSystemPermissionException
+   * @throws InvalidTokenException
+   * @throws NotFoundException
+   * @throws UnexpectedResponseException
+   * @throws \GuzzleHttp\Exception\GuzzleException
+   * @throws \Throwable
+   * @throws \Twig_Error_Loader
+   * @throws \Twig_Error_Syntax
    */
   public function downloadFeed(
     Feed $feed,
     $filePath,
     callable $onProgress = null
   ) {
-    // TODO: Implement downloadFeed() method.
+    Assert::stringNotEmpty($filePath);
+
+    if (file_exists($filePath) && !unlink($filePath))
+      throw new FileSystemPermissionException(
+        'Не удалось удалить файл фида.'
+      );
+
+    if (!touch($filePath))
+      throw new FileSystemPermissionException(
+        'Не удалось создать файл фида.'
+      );
+
+    /** @var Source $source */
+    $source = $this->container->get('kodik_source');
+
+    $requestPath = Templating::renderString(
+      $feed->getRequestPath(),
+      ['token' => $source->getToken()]
+    );
+
+    $feedsHost = $this->container->get('kodik_feeds_host');
+
+    $url = Path::join(
+      $source->getScheme(),
+      $feedsHost,
+      $source->getBasePath(),
+      $requestPath
+    );
+
+    $progressHandler = function (
+      $totalBytes,
+      $loadedBytes
+    ) use (
+      $onProgress,
+      $feed
+    ) {
+      if ($onProgress) {
+
+        $totalBytes = $totalBytes
+          ?: $feed->getSize();
+
+        $onProgress(
+          $totalBytes,
+          $loadedBytes
+        );
+      }
+    };
+
+    /** @var ClientInterface $client */
+    $client = $this->container->get('client');
+
+    try {
+
+      $client->request('GET', $url, [
+        'sink' => $filePath,
+        'progress' => $progressHandler
+      ]);
+
+    } catch (TransferException $exception) {
+
+      $this->errorHandler($exception);
+    }
+
+    return $filePath;
   }
 }
