@@ -95,6 +95,58 @@ class FeedsTest extends TestCase
   }
 
   /**
+   * Testing "getEnabled" method.
+   */
+  public function testCanGetEnabled()
+  {
+    $firstFeed  = new Feed();
+    $secondFeed = new Feed();
+    $thirdFeed  = new Feed();
+    $fourthFeed = new Feed();
+
+    $reflection = new \ReflectionClass(Feeds::class);
+
+    $property = $reflection->getProperty('feeds');
+    $property->setAccessible(true);
+
+    $property->setValue(new Container([
+      'first-feed_first-origin'   => $firstFeed,
+      'second-feed_first-origin'  => $secondFeed,
+      'third-feed_second-origin'  => $thirdFeed,
+      'fourth-feed_second-origin' => $fourthFeed,
+    ]));
+
+    $method = $reflection->getMethod('getEnabled');
+
+    $configuration = new Container([
+      'first_origin_first_feed_feed_enabled' => '1',
+      'first_origin_second_feed_feed_enabled' => '1',
+      'second_origin_third_feed_feed_enabled' => '1',
+      'second_origin_fourth_feed_feed_enabled' => '0',
+    ]);
+
+    $enabledFeeds = $method->invoke(
+      $reflection,
+      $configuration,
+      'first-origin'
+    );
+
+    Assert::count($enabledFeeds, 2);
+    Assert::same($firstFeed, $enabledFeeds[0]);
+    Assert::same($secondFeed, $enabledFeeds[1]);
+
+    $enabledFeeds = $method->invoke(
+      $reflection,
+      $configuration
+    );
+
+    Assert::count($enabledFeeds, 3);
+    Assert::same($firstFeed, $enabledFeeds[0]);
+    Assert::same($secondFeed, $enabledFeeds[1]);
+    Assert::same($thirdFeed, $enabledFeeds[2]);
+  }
+
+  /**
    * Tear down after class.
    *
    * @throws \ReflectionException
