@@ -3,13 +3,13 @@
 namespace Kinocomplete\Feed;
 
 use Kinocomplete\Container\Container;
-use Psr\Container\ContainerInterface;
+use Kinocomplete\Container\ContainerFactory;
 use Webmozart\Assert\Assert;
 
 class Feeds
 {
   /**
-   * @var ContainerInterface
+   * @var Container
    */
   static protected $feeds;
 
@@ -33,6 +33,35 @@ class Feeds
     );
 
     return self::$feeds->get($key);
+  }
+
+  /**
+   * Get all feeds.
+   *
+   * @param  string|null $videoOrigin
+   * @return array
+   */
+  static public function getAll(
+    $videoOrigin = null
+  ) {
+    Assert::nullOrStringNotEmpty($videoOrigin);
+
+    if ($videoOrigin) {
+
+      $namedArray = ContainerFactory::fromPostfix(
+        self::$feeds,
+        $videoOrigin,
+        true
+      );
+
+    } else {
+
+      $namedArray = ContainerFactory::toArray(
+        self::$feeds
+      );
+    }
+
+    return array_values($namedArray);
   }
 
   /**

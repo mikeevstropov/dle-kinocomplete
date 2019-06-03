@@ -54,6 +54,47 @@ class FeedsTest extends TestCase
   }
 
   /**
+   * Testing "getAll" method.
+   */
+  public function testCanGetAll()
+  {
+    $firstFeed  = new Feed();
+    $secondFeed = new Feed();
+    $thirdFeed  = new Feed();
+
+    $reflection = new \ReflectionClass(Feeds::class);
+
+    $property = $reflection->getProperty('feeds');
+    $property->setAccessible(true);
+
+    $property->setValue(new Container([
+      'first-feed_origin'         => $firstFeed,
+      'second-feed_origin'        => $secondFeed,
+      'third-feed_another-origin' => $thirdFeed,
+    ]));
+
+    $method = $reflection->getMethod('getAll');
+
+    $storedFeeds = $method->invoke(
+      $reflection,
+      'origin'
+    );
+
+    Assert::count($storedFeeds, 2);
+    Assert::same($firstFeed, $storedFeeds[0]);
+    Assert::same($secondFeed, $storedFeeds[1]);
+
+    $storedFeeds = $method->invoke(
+      $reflection
+    );
+
+    Assert::count($storedFeeds, 3);
+    Assert::same($firstFeed, $storedFeeds[0]);
+    Assert::same($secondFeed, $storedFeeds[1]);
+    Assert::same($thirdFeed, $storedFeeds[2]);
+  }
+
+  /**
    * Tear down after class.
    *
    * @throws \ReflectionException
