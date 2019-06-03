@@ -467,4 +467,628 @@
 
   </div>
 
+  <div
+    class="box">
+
+    <div
+      class="box-header">
+
+      <div
+        class="title">
+        Фиды Kodik
+      </div>
+
+    </div>
+
+    <div
+      class="box-content">
+
+      <table
+        class="table table-normal">
+
+        <tbody>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Все фильмы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид всех фильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_movies_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_movies_feed_enabled]"
+                {{ settings['kodik_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Все сериалы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид всех сериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_series_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_series_feed_enabled]"
+                {{ settings['kodik_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Adult-ролики:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид Adult-роликов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_adult_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_adult_feed_enabled]"
+                {{ settings['kodik_adult_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Зарубежные фильмы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид зарубежных фильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_foreign_movies_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_foreign_movies_feed_enabled]"
+                {{ settings['kodik_foreign_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Русские фильмы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид русских фильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_russian_movies_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_russian_movies_feed_enabled]"
+                {{ settings['kodik_russian_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Зарубежные мультфильмы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид зарубежных мультфильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_foreign_cartoon_movies_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_foreign_cartoon_movies_feed_enabled]"
+                {{ settings['kodik_foreign_cartoon_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Русские мультфильмы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид русских мультфильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_russian_cartoon_movies_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_russian_cartoon_movies_feed_enabled]"
+                {{ settings['kodik_russian_cartoon_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Советские мультфильмы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид советских мультфильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_soviet_cartoon_movies_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_soviet_cartoon_movies_feed_enabled]"
+                {{ settings['kodik_soviet_cartoon_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Аниме фильмы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид аниме фильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_anime_movies_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_anime_movies_feed_enabled]"
+                {{ settings['kodik_anime_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Зарубежные сериалы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид зарубежных сериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_foreign_series_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_foreign_series_feed_enabled]"
+                {{ settings['kodik_foreign_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Русские сериалы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид русских сериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_russian_series_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_russian_series_feed_enabled]"
+                {{ settings['kodik_russian_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Зарубежные мультсериалы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид зарубежных мультсериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_foreign_cartoon_series_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_foreign_cartoon_series_feed_enabled]"
+                {{ settings['kodik_foreign_cartoon_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Русские мультсериалы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид русских мультсериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_russian_cartoon_series_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_russian_cartoon_series_feed_enabled]"
+                {{ settings['kodik_russian_cartoon_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Зарубежные документальные сериалы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид зарубежных документальных сериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_foreign_documentary_series_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_foreign_documentary_series_feed_enabled]"
+                {{ settings['kodik_foreign_documentary_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Русские документальные сериалы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид русских документальных сериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_russian_documentary_series_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_russian_documentary_series_feed_enabled]"
+                {{ settings['kodik_russian_documentary_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Многосерийные фильмы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид многосерийных фильмов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_multipart_movies_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_multipart_movies_feed_enabled]"
+                {{ settings['kodik_multipart_movies_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td
+              class="col-xs-7 col-sm-6 col-md-7 white-line">
+
+              <h6>
+                Аниме сериалы:
+              </h6>
+
+              <span
+                class="note large">
+                Использовать фид аниме сериалов.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-5 col-md-5 settingstd white-line">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[kodik_anime_series_feed_enabled]">
+
+              <input
+                value="1"
+                type="checkbox"
+                class="iButton-icons-tab"
+                name="settings[kodik_anime_series_feed_enabled]"
+                {{ settings['kodik_anime_series_feed_enabled'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
 </div>

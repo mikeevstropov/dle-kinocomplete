@@ -285,5 +285,22 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
         return $feed;
       }
     );
+
+    // Feed "anime-series".
+    $add(
+      'anime-series',
+      Video::KODIK_ORIGIN,
+      function () {
+
+        $feed = new Feed();
+        $feed->setName('anime-series');
+        $feed->setVideoOrigin(Video::KODIK_ORIGIN);
+        $feed->setRequestPath('serials/anime-serial.json');
+        $feed->setJsonPointer('/');
+        $feed->setSize(2365702);
+
+        return $feed;
+      }
+    );
   }
 }
