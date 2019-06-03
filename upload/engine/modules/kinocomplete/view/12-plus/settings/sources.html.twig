@@ -657,12 +657,43 @@
 
             <h6
               class="media-heading text-semibold">
-              Имя сервера:
+              Имя сервера фидов:
             </h6>
 
             <span
               class="text-muted text-size-small hidden-xs">
-              Доменное имя для обращений к Kodik.
+              Доменное имя для загрузки фидов.
+            </span>
+
+          </td>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-5">
+
+            <input
+              type="text"
+              class="form-control"
+              name="settings[kodik_feeds_host]"
+              placeholder="введите имя сервера"
+              value="{{ settings['kodik_feeds_host'] }}">
+
+          </td>
+
+        </tr>
+
+        <tr>
+
+          <td
+            class="col-xs-6 col-sm-6 col-md-7">
+
+            <h6
+              class="media-heading text-semibold">
+              Имя API сервера:
+            </h6>
+
+            <span
+              class="text-muted text-size-small hidden-xs">
+              Доменное имя для обращений к API.
             </span>
 
           </td>
