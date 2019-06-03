@@ -20,6 +20,7 @@ use Kinocomplete\Exception\NotFoundException;
 use Kinocomplete\Exception\EmptyQueryException;
 use Kinocomplete\Exception\InvalidTokenException;
 use Kinocomplete\Exception\TooLargeResponseException;
+use Kinocomplete\Exception\FeedsHostNotFoundException;
 use Kinocomplete\Exception\UnexpectedResponseException;
 use Kinocomplete\Exception\FileSystemPermissionException;
 
@@ -346,6 +347,11 @@ class KodikApi extends DefaultService implements ApiInterface
     );
 
     $feedsHost = $this->container->get('kodik_feeds_host');
+
+    if (!$feedsHost)
+      throw new FeedsHostNotFoundException(
+        'Домен для загрузки фидов не установлен.'
+      );
 
     $url = Path::join(
       $source->getScheme(),
