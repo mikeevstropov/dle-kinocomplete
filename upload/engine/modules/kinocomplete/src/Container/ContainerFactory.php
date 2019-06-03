@@ -105,6 +105,69 @@ class ContainerFactory
   }
 
   /**
+   * From postfix.
+   *
+   * @param  ContainerInterface|array $array
+   * @param  string $postfix
+   * @param  bool $raw
+   * @param  bool $postfixInResult
+   * @return ContainerInterface|array
+   */
+  static public function fromPostfix(
+    $array,
+    $postfix,
+    $raw = false,
+    $postfixInResult = false
+  ) {
+    if (!is_array($array) && !($array instanceof ContainerInterface))
+      throw new \InvalidArgumentException(sprintf(
+        'First argument must be an array or instance of Psr\Container\ContainerInterface, got %s.',
+        $array
+      ));
+
+    $result = [];
+
+    // Fix for PimpleContainer.
+    if ($array instanceof PimpleContainer) {
+
+      $keys = $array->keys();
+      $iterable = [];
+
+      foreach ($keys as $key) {
+
+        $isService = is_callable($array->raw($key));
+
+        if (!$isService)
+          $iterable[$key] = $array[$key];
+      }
+
+      $array = $iterable;
+    }
+
+    foreach ($array as $key => $value) {
+
+      $matches = [];
+
+      preg_match(
+        "/\_$postfix$/",
+        $key,
+        $matches
+      );
+
+      $shortKey = $postfixInResult
+        ? $key
+        : str_replace('_'. $postfix, '', $key);
+
+      if ($matches)
+        $result[$shortKey] = $array[$key];
+    }
+
+    return $raw
+      ? $result
+      : new Container($result);
+  }
+
+  /**
    * Filter by keys.
    *
    * @param  ContainerInterface|array $array

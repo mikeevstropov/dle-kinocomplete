@@ -4,8 +4,8 @@ namespace Kinocomplete\Test\Container;
 
 use Kinocomplete\Container\ContainerFactory;
 use Kinocomplete\Container\Container;
-use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
+use PHPUnit\Framework\TestCase;
 use Webmozart\Assert\Assert;
 
 class ContainerFactoryTest extends TestCase
@@ -195,6 +195,136 @@ class ContainerFactoryTest extends TestCase
 
     Assert::same(
       $namespacedContainer->get('namespace_serialized_option'),
+      ['a' => 'b']
+    );
+  }
+
+  /**
+   * Testing "fromPostfix" method.
+   */
+  public function testCanFromPostfix()
+  {
+    $file = realpath(FIXTURES_DIR .'/container/postfixed-container.json');
+
+    $arrayFromFile = ContainerFactory::fromFile($file, true);
+    $containerFromFile = ContainerFactory::fromFile($file);
+
+    $array = ContainerFactory::fromPostfix(
+      $arrayFromFile,
+      'postfix',
+      true
+    );
+
+    Assert::isArray($array);
+
+    Assert::same(
+      $array['integer_option'],
+      1
+    );
+
+    Assert::same(
+      $array['string_option'],
+      '1'
+    );
+
+    Assert::same(
+      $array['boolean_option'],
+      false
+    );
+
+    Assert::same(
+      $array['serialized_option'],
+      ['a' => 'b']
+    );
+
+    $container = ContainerFactory::fromPostfix(
+      $containerFromFile,
+      'postfix'
+    );
+
+    Assert::isInstanceOf(
+      $container,
+      Container::class
+    );
+
+    Assert::same(
+      $container->get('integer_option'),
+      1
+    );
+
+    Assert::same(
+      $container->get('string_option'),
+      '1'
+    );
+
+    Assert::same(
+      $container->get('boolean_option'),
+      false
+    );
+
+    Assert::same(
+      $container->get('serialized_option'),
+      ['a' => 'b']
+    );
+
+    $postfixedArray = ContainerFactory::fromPostfix(
+      $arrayFromFile,
+      'postfix',
+      true,
+      true
+    );
+
+    Assert::isArray($postfixedArray);
+
+    Assert::same(
+      $postfixedArray['integer_option_postfix'],
+      1
+    );
+
+    Assert::same(
+      $postfixedArray['string_option_postfix'],
+      '1'
+    );
+
+    Assert::same(
+      $postfixedArray['boolean_option_postfix'],
+      false
+    );
+
+    Assert::same(
+      $postfixedArray['serialized_option_postfix'],
+      ['a' => 'b']
+    );
+
+    $postfixedContainer = ContainerFactory::fromPostfix(
+      $containerFromFile,
+      'postfix',
+      false,
+      true
+    );
+
+    Assert::isInstanceOf(
+      $postfixedContainer,
+      Container::class
+    );
+
+    Assert::same(
+      $postfixedContainer->get('integer_option_postfix'),
+      1
+    );
+
+    Assert::same(
+      $postfixedContainer->get('string_option_postfix'),
+      '1'
+    );
+
+    Assert::same(
+      $postfixedContainer->get('boolean_option_postfix'),
+      false
+    );
+
+    Assert::same(
+      $postfixedContainer->get('serialized_option_postfix'),
       ['a' => 'b']
     );
   }
