@@ -128,7 +128,6 @@ class KodikApi extends DefaultService implements ApiInterface
     $url = Path::join(
       $source->getScheme(),
       $source->getHost(),
-      $source->getBasePath(),
       'search?'. $queryString
     );
 
@@ -190,7 +189,6 @@ class KodikApi extends DefaultService implements ApiInterface
     $url = Path::join(
       $source->getScheme(),
       $source->getHost(),
-      $source->getBasePath(),
       'search?'. $queryString
     );
 
@@ -269,7 +267,6 @@ class KodikApi extends DefaultService implements ApiInterface
     $url = Path::join(
       $source->getScheme(),
       $source->getHost(),
-      $source->getBasePath(),
       'search?'. $queryString
     );
 
@@ -356,7 +353,6 @@ class KodikApi extends DefaultService implements ApiInterface
     $url = Path::join(
       $source->getScheme(),
       $feedsHost,
-      $source->getBasePath(),
       $requestPath
     );
 

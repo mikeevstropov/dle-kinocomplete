@@ -397,7 +397,6 @@ class ServiceFactory
       $source->setEnabled((bool) $container->get('kodik_enabled'));
       $source->setSecure((bool) $container->get('kodik_secure'));
       $source->setHost($container->get('kodik_host'));
-      $source->setBasePath($container->get('kodik_base_path'));
       $source->setToken($container->get('kodik_token'));
       $source->setVideoOrigin(Video::KODIK_ORIGIN);
       $source->setVideoFactory([$videoFactory, 'fromKodik']);

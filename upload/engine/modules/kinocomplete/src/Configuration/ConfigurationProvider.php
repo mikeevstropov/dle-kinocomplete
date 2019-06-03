@@ -86,7 +86,6 @@ class ConfigurationProvider
       'kodik_host'                                    => $configurationJson['kodik_host'],
       'kodik_feeds_host'                              => $configurationJson['kodik_feeds_host'],
       'kodik_token'                                   => $configurationJson['kodik_token'],
-      'kodik_base_path'                               => $configurationJson['kodik_base_path'],
       'kodik_player_pattern'                          => $configurationJson['kodik_player_pattern'],
       'kodik_poster_pattern'                          => $configurationJson['kodik_poster_pattern'],
       'kodik_thumbnail_pattern'                       => $configurationJson['kodik_thumbnail_pattern'],
