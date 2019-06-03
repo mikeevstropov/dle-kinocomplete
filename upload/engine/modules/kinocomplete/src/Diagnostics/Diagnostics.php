@@ -257,6 +257,12 @@ class Diagnostics extends DefaultService
       );
     }
 
+    // Feeds host.
+    $feedsHost = $this->container->get('kodik_feeds_host');
+
+    if (!$feedsHost)
+      $messages[] = 'В настройках модуля требуется указать имя сервера Kodik для загрузки фидов.';
+
     return $messages;
   }
 
