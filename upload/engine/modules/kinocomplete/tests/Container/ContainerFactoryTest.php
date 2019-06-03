@@ -200,6 +200,62 @@ class ContainerFactoryTest extends TestCase
   }
 
   /**
+   * Testing "fromNamespace" method with services.
+   */
+  public function testCanFromNamespaceWithServices()
+  {
+    $callable = function() {
+      return 'string';
+    };
+
+    $array = [
+      'namespace_function' => $callable,
+      'function' => $callable,
+    ];
+
+    $results = ContainerFactory::fromNamespace(
+      $array,
+      'namespace',
+      true
+    );
+
+    Assert::count($results, 1);
+
+    $results = ContainerFactory::fromNamespace(
+      $array,
+      'namespace',
+      true,
+      false,
+      true
+    );
+
+    Assert::count($results, 1);
+
+    $container = new Container([
+      'namespace_service' => $callable,
+      'service' => $callable
+    ]);
+
+    $results = ContainerFactory::fromNamespace(
+      $container,
+      'namespace',
+      true
+    );
+
+    Assert::count($results, 0);
+
+    $results = ContainerFactory::fromNamespace(
+      $container,
+      'namespace',
+      true,
+      false,
+      true
+    );
+
+    Assert::count($results, 1);
+  }
+
+  /**
    * Testing "fromPostfix" method.
    */
   public function testCanFromPostfix()
@@ -330,6 +386,62 @@ class ContainerFactoryTest extends TestCase
   }
 
   /**
+   * Testing "fromPostfix" method with services.
+   */
+  public function testCanFromPostfixWithServices()
+  {
+    $callable = function() {
+      return 'string';
+    };
+
+    $array = [
+      'function_postfix' => $callable,
+      'function' => $callable,
+    ];
+
+    $results = ContainerFactory::fromPostfix(
+      $array,
+      'postfix',
+      true
+    );
+
+    Assert::count($results, 1);
+
+    $results = ContainerFactory::fromPostfix(
+      $array,
+      'postfix',
+      true,
+      false,
+      true
+    );
+
+    Assert::count($results, 1);
+
+    $container = new Container([
+      'service_postfix' => $callable,
+      'service' => $callable
+    ]);
+
+    $results = ContainerFactory::fromPostfix(
+      $container,
+      'postfix',
+      true
+    );
+
+    Assert::count($results, 0);
+
+    $results = ContainerFactory::fromPostfix(
+      $container,
+      'postfix',
+      true,
+      false,
+      true
+    );
+
+    Assert::count($results, 1);
+  }
+
+  /**
    * Testing "filterByKeys" method.
    */
   public function testCanFilterByKeys()
@@ -406,5 +518,32 @@ class ContainerFactoryTest extends TestCase
       $array,
       $expected
     );
+  }
+
+  /**
+   * Testing "toArray" method.
+   */
+  public function testCanToArrayWithServices()
+  {
+    $callable = function() {
+      return 'string';
+    };
+
+    $container = new Container([
+      'service' => $callable
+    ]);
+
+    $result = ContainerFactory::toArray(
+      $container
+    );
+
+    Assert::count($result, 0);
+
+    $result = ContainerFactory::toArray(
+      $container,
+      true
+    );
+
+    Assert::count($result, 1);
   }
 }
