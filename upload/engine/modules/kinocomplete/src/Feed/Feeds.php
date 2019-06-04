@@ -139,24 +139,19 @@ class Feeds
   /**
    * Add feed.
    *
-   * @param string $feedName
-   * @param string $videoOrigin
-   * @param callable $feedFactory
+   * @param Feed $feed
    */
-  static protected function add(
-    $feedName,
-    $videoOrigin,
-    callable $feedFactory
-  ) {
+  static protected function add(Feed $feed)
+  {
     if (!self::$feeds)
       self::$feeds = new Container();
 
     $key = self::getKey(
-      $feedName,
-      $videoOrigin
+      $feed->getName(),
+      $feed->getVideoOrigin()
     );
 
-    self::$feeds[$key] = $feedFactory;
+    self::$feeds[$key] = $feed;
   }
 
   /**
@@ -191,14 +186,11 @@ class Feeds
    */
   static protected function createFeeds()
   {
-    $addMethod = function () {
-      call_user_func_array(
-        [__CLASS__, 'add'],
-        func_get_args()
-      );
+    $injector = function (Feed $feed) {
+      self::add($feed);
     };
 
-    MoonwalkFeedsInjector::inject($addMethod);
-    KodikFeedsInjector::inject($addMethod);
+    MoonwalkFeedsInjector::inject($injector);
+    KodikFeedsInjector::inject($injector);
   }
 }

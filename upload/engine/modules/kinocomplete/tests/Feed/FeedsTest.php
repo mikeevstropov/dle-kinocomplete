@@ -151,9 +151,9 @@ class FeedsTest extends TestCase
    */
   public function testCanAdd()
   {
-    $expected = new Feed();
-    $name = Utils::randomString();
-    $origin = Utils::randomString();
+    $feed = new Feed();
+    $feed->setName(Utils::randomString());
+    $feed->setVideoOrigin(Utils::randomString());
 
     $reflection = new \ReflectionClass(Feeds::class);
 
@@ -166,18 +166,14 @@ class FeedsTest extends TestCase
 
     $addMethod->invoke(
       $reflection,
-      $name,
-      $origin,
-      function () use ($expected) {
-        return $expected;
-      }
+      $feed
     );
 
     Assert::same(
-      $expected,
+      $feed,
       Feeds::get(
-        $name,
-        $origin
+        $feed->getName(),
+        $feed->getVideoOrigin()
       )
     );
   }
@@ -187,6 +183,17 @@ class FeedsTest extends TestCase
    */
   public function testCannotAdd()
   {
+    $exceptionsCount = 0;
+    $expectedCount = 2;
+
+    $invalidNameFeed = new Feed();
+    $invalidNameFeed->setName('test_name');
+    $invalidNameFeed->setVideoOrigin('origin');
+
+    $invalidOriginFeed = new Feed();
+    $invalidOriginFeed->setName('name');
+    $invalidOriginFeed->setVideoOrigin('test_origin');
+
     $reflection = new \ReflectionClass(Feeds::class);
 
     $property = $reflection->getProperty('feeds');
@@ -196,31 +203,34 @@ class FeedsTest extends TestCase
     $addMethod = $reflection->getMethod('add');
     $addMethod->setAccessible(true);
 
-    $feedFactory = function () {
-      return new Feed();
-    };
+    try {
+
+      $addMethod->invoke(
+        $reflection,
+        $invalidNameFeed
+      );
+
+    } catch (\InvalidArgumentException $e) {
+
+      ++$exceptionsCount;
+    }
 
     try {
 
       $addMethod->invoke(
         $reflection,
-        'test_name',
-        'origin',
-        $feedFactory
+        $invalidOriginFeed
       );
 
-    } catch (\InvalidArgumentException $e) {}
+    } catch (\InvalidArgumentException $e) {
 
-    try {
+      ++$exceptionsCount;
+    }
 
-      $addMethod->invoke(
-        $reflection,
-        'name',
-        'test_origin',
-        $feedFactory
-      );
-
-    } catch (\InvalidArgumentException $e) {}
+    Assert::same(
+      $expectedCount,
+      $exceptionsCount
+    );
 
     Assert::isEmpty(
       Feeds::getAll('origin')
