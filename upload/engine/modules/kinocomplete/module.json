@@ -1,5 +1,5 @@
 {
-  "module_version":               "0.1.9",
+  "module_version":               "0.2.0",
   "module_label":                 "Kinocomplete",
   "module_name":                  "kinocomplete",
   "module_description":           "Автокомплит новостей для кино-сайтов.",
