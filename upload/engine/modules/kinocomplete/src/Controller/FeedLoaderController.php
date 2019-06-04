@@ -4,6 +4,7 @@ namespace Kinocomplete\Controller;
 
 use Kinocomplete\Api\SystemApi;
 use Kinocomplete\Video\Video;
+use Kinocomplete\Feed\Feeds;
 use Slim\Http\Response;
 use Slim\Http\Request;
 
@@ -44,28 +45,12 @@ class FeedLoaderController extends DefaultController
       ['[><]post' => ['postId' => 'id']]
     );
 
-    $noMoonwalkFeedsEnabled =
-      !$this->container->get('moonwalk_foreign_movies_feed_enabled') &&
-      !$this->container->get('moonwalk_russian_movies_feed_enabled') &&
-      !$this->container->get('moonwalk_camrip_movies_feed_enabled')  &&
-      !$this->container->get('moonwalk_foreign_series_feed_enabled') &&
-      !$this->container->get('moonwalk_russian_series_feed_enabled') &&
-      !$this->container->get('moonwalk_anime_movies_feed_enabled')   &&
-      !$this->container->get('moonwalk_anime_series_feed_enabled');
-
     $parameters = [
-      'noMoonwalkFeedsEnabled'           => $noMoonwalkFeedsEnabled,
-      'moonwalkForeignMoviesFeedEnabled' => $this->container->get('moonwalk_foreign_movies_feed_enabled'),
-      'moonwalkRussianMoviesFeedEnabled' => $this->container->get('moonwalk_russian_movies_feed_enabled'),
-      'moonwalkCamripMoviesFeedEnabled'  => $this->container->get('moonwalk_camrip_movies_feed_enabled'),
-      'moonwalkForeignSeriesFeedEnabled' => $this->container->get('moonwalk_foreign_series_feed_enabled'),
-      'moonwalkRussianSeriesFeedEnabled' => $this->container->get('moonwalk_russian_series_feed_enabled'),
-      'moonwalkAnimeMoviesFeedEnabled'   => $this->container->get('moonwalk_anime_movies_feed_enabled'),
-      'moonwalkAnimeSeriesFeedEnabled'   => $this->container->get('moonwalk_anime_series_feed_enabled'),
-      'feedLoaderPostsLimit'             => $this->container->get('feed_loader_posts_limit'),
-      'moonwalkFeedPostsCount'           => $moonwalkFeedPostsCount,
-      'categoriesFromVideoType'          => $this->container->get('categories_from_video_type'),
-      'categoriesFromVideoGenres'        => $this->container->get('categories_from_video_genres')
+      'moonwalkFeeds'             => Feeds::getEnabled($this->container, Video::MOONWALK_ORIGIN),
+      'feedLoaderPostsLimit'      => $this->container->get('feed_loader_posts_limit'),
+      'moonwalkFeedPostsCount'    => $moonwalkFeedPostsCount,
+      'categoriesFromVideoType'   => $this->container->get('categories_from_video_type'),
+      'categoriesFromVideoGenres' => $this->container->get('categories_from_video_genres')
     ];
 
     return $view->render(

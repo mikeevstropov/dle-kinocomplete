@@ -49,6 +49,54 @@
 
         </div>
 
+        <div
+          class="row box-section"
+          style="padding-left: 0;">
+
+          <div
+            class="col-md-3">
+            Лимит чтения материалов:
+          </div>
+
+          <div
+            class="col-md-9">
+            {{ feedLoaderPostsLimit ? feedLoaderPostsLimit : 'не ограничено' }}
+          </div>
+
+        </div>
+
+        <div
+          class="row box-section"
+          style="padding-left: 0;">
+
+          <div
+            class="col-md-3">
+            Назначение типов в категориях:
+          </div>
+
+          <div
+            class="col-md-9">
+            {{ categoriesFromVideoType ? 'да' : 'нет' }}
+          </div>
+
+        </div>
+
+        <div
+          class="row box-section"
+          style="padding-left: 0;">
+
+          <div
+            class="col-md-3">
+            Назначение жанров в категориях:
+          </div>
+
+          <div
+            class="col-md-9">
+            {{ categoriesFromVideoGenres ? 'да' : 'нет' }}
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -74,155 +122,43 @@
         class="box-content">
 
         <div
-          class="box-section"
-          style="padding: 0; border-top: none;">
+          style="padding: 0;"
+          class="row box-section">
 
           <div
-            class="tab-content">
+            class="col-md-3"
+            style="padding: 15px 15px 0 15px;">
+            Используемые фиды:
+          </div>
 
-            <div
-              class="tab-pane active">
+          <div
+            class="col-md-9"
+            style="padding: 15px;">
+
+            {% if moonwalkFeeds is empty %}
+
+              <span
+                class="text-danger">
+                фидов нет
+              </span>
+
+            {% else %}
 
               <div
-                class="row box-section"
-                style="padding-left: 0;">
+                class="kc__tags">
 
-                <div
-                  class="col-md-3">
-                  Используемые фиды:
-                </div>
+                {% for feed in moonwalkFeeds %}
 
-                <div
-                  class="col-md-9">
+                  <span
+                    class="kc__tag">
+                    {{ feed.getLabel() }}
+                  </span>
 
-                  {% if noMoonwalkFeedsEnabled %}
-                    <span
-                      class="text-danger">
-                      фидов нет
-                    </span>
-                  {% endif %}
-
-                  <div
-                    class="kc__tags">
-
-                    {% if moonwalkForeignMoviesFeedEnabled %}
-
-                      <span
-                        class="kc__tag">
-                        Зарубежные фильмы
-                      </span>
-
-                    {% endif %}
-
-                    {% if moonwalkRussianMoviesFeedEnabled %}
-
-                      <span
-                        class="kc__tag">
-                        Русские фильмы
-                      </span>
-
-                    {% endif %}
-
-                    {% if moonwalkCamripMoviesFeedEnabled %}
-
-                      <span
-                        class="kc__tag">
-                        CamRIP фильмы
-                      </span>
-
-                    {% endif %}
-
-                    {% if moonwalkForeignSeriesFeedEnabled %}
-
-                      <span
-                        class="kc__tag">
-                        Зарубежные сериалы
-                      </span>
-
-                    {% endif %}
-
-                    {% if moonwalkRussianSeriesFeedEnabled %}
-
-                      <span
-                        class="kc__tag">
-                        Русские сериалы
-                      </span>
-
-                    {% endif %}
-
-                    {% if moonwalkAnimeMoviesFeedEnabled %}
-
-                      <span
-                        class="kc__tag">
-                        Аниме фильмы
-                      </span>
-
-                    {% endif %}
-
-                    {% if moonwalkAnimeSeriesFeedEnabled %}
-
-                      <span
-                        class="kc__tag">
-                        Аниме сериалы
-                      </span>
-
-                    {% endif %}
-
-                  </div>
-
-                </div>
+                {% endfor %}
 
               </div>
 
-              <div
-                class="row box-section"
-                style="padding-left: 0;">
-
-                <div
-                  class="col-md-3">
-                  Ограничение загрузки новостей:
-                </div>
-
-                <div
-                  class="col-md-9">
-                  {{ feedLoaderPostsLimit ? feedLoaderPostsLimit : 'не ограничено' }}
-                </div>
-
-              </div>
-
-              <div
-                class="row box-section"
-                style="padding-left: 0;">
-
-                <div
-                  class="col-md-3">
-                  Назначение типов в категориях:
-                </div>
-
-                <div
-                  class="col-md-9">
-                  {{ categoriesFromVideoType ? 'да' : 'нет' }}
-                </div>
-
-              </div>
-
-              <div
-                class="row box-section"
-                style="padding-left: 0;">
-
-                <div
-                  class="col-md-3">
-                  Назначение жанров в категориях:
-                </div>
-
-                <div
-                  class="col-md-9">
-                  {{ categoriesFromVideoGenres ? 'да' : 'нет' }}
-                </div>
-
-              </div>
-
-            </div>
+            {% endif %}
 
           </div>
 
