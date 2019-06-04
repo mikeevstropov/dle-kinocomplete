@@ -114,7 +114,7 @@
   "video_field_torrent_size":                      "",
   "video_field_torrent_seeds":                     "",
   "video_field_torrent_leeches":                   "",
-  "video_pattern_duration":                        "{duration|date('H:i', 'UTC')}",
+  "video_pattern_duration":                        "{% if duration %}{duration|date('H:i', 'UTC')}{% endif %}",
   "post_pattern_title":                            "{title ?: world_title}",
   "post_pattern_short_story":                      "{description}",
   "post_pattern_full_story":                       "{description}",
