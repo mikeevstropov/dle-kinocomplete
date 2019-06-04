@@ -17,6 +17,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "movies".
     $feed = new Feed();
     $feed->setName('movies');
+    $feed->setLabel('Все фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films.json');
     $feed->setJsonPointer('/');
@@ -26,6 +27,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "series".
     $feed = new Feed();
     $feed->setName('series');
+    $feed->setLabel('Все сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials.json');
     $feed->setJsonPointer('/');
@@ -35,6 +37,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "adult".
     $feed = new Feed();
     $feed->setName('adult');
+    $feed->setLabel('Adult-ролики');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('episodes.json');
     $feed->setJsonPointer('/');
@@ -44,6 +47,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "foreign-movies".
     $feed = new Feed();
     $feed->setName('foreign-movies');
+    $feed->setLabel('Зарубежные фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/foreign-movie.json');
     $feed->setJsonPointer('/');
@@ -53,6 +57,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "russian-movies".
     $feed = new Feed();
     $feed->setName('russian-movies');
+    $feed->setLabel('Русские фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/russian-movie.json');
     $feed->setJsonPointer('/');
@@ -62,6 +67,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "foreign-cartoon-movies".
     $feed = new Feed();
     $feed->setName('foreign-cartoon-movies');
+    $feed->setLabel('Зарубежные мультфильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/foreign-cartoon.json');
     $feed->setJsonPointer('/');
@@ -71,6 +77,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "russian-cartoon-movies".
     $feed = new Feed();
     $feed->setName('russian-cartoon-movies');
+    $feed->setLabel('Русские мультфильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/russian-cartoon.json');
     $feed->setJsonPointer('/');
@@ -80,6 +87,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "soviet-cartoon-movies".
     $feed = new Feed();
     $feed->setName('soviet-cartoon-movies');
+    $feed->setLabel('Советские мультфильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/soviet-cartoon.json');
     $feed->setJsonPointer('/');
@@ -89,6 +97,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "anime-movies".
     $feed = new Feed();
     $feed->setName('anime-movies');
+    $feed->setLabel('Аниме фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/anime.json');
     $feed->setJsonPointer('/');
@@ -98,6 +107,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "foreign-series".
     $feed = new Feed();
     $feed->setName('foreign-series');
+    $feed->setLabel('Зарубежные сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/foreign-serial.json');
     $feed->setJsonPointer('/');
@@ -107,6 +117,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "russian-series".
     $feed = new Feed();
     $feed->setName('russian-series');
+    $feed->setLabel('Русские сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/russian-serial.json');
     $feed->setJsonPointer('/');
@@ -116,6 +127,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "foreign-cartoon-series".
     $feed = new Feed();
     $feed->setName('foreign-cartoon-series');
+    $feed->setLabel('Зарубежные мультсериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/cartoon-serial.json');
     $feed->setJsonPointer('/');
@@ -125,6 +137,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "russian-cartoon-series".
     $feed = new Feed();
     $feed->setName('russian-cartoon-series');
+    $feed->setLabel('Русские мультсериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/russian-cartoon-serial.json');
     $feed->setJsonPointer('/');
@@ -134,6 +147,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "foreign-documentary-series".
     $feed = new Feed();
     $feed->setName('foreign-documentary-series');
+    $feed->setLabel('Зарубежные документальные сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/documentary-serial.json');
     $feed->setJsonPointer('/');
@@ -143,6 +157,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "russian-documentary-series".
     $feed = new Feed();
     $feed->setName('russian-documentary-series');
+    $feed->setLabel('Русские документальные сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/russian-documentary-serial.json');
     $feed->setJsonPointer('/');
@@ -152,6 +167,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "multipart-movies".
     $feed = new Feed();
     $feed->setName('multipart-movies');
+    $feed->setLabel('Многосерийные фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/multi-part-film.json');
     $feed->setJsonPointer('/');
@@ -161,6 +177,7 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     // Feed "anime-series".
     $feed = new Feed();
     $feed->setName('anime-series');
+    $feed->setLabel('Аниме сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/anime-serial.json');
     $feed->setJsonPointer('/');

@@ -17,6 +17,7 @@ class MoonwalkFeedsInjector implements FeedsInjectorInterface {
     // Feed "foreign-movies".
     $feed = new Feed();
     $feed->setName('foreign-movies');
+    $feed->setLabel('Зарубежные фильмы');
     $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
     $feed->setRequestPath('movies_foreign.json?api_token={token}');
     $feed->setJsonPointer('/report/movies');
@@ -26,6 +27,7 @@ class MoonwalkFeedsInjector implements FeedsInjectorInterface {
     // Feed "russian-movies".
     $feed = new Feed();
     $feed->setName('russian-movies');
+    $feed->setLabel('Русские фильмы');
     $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
     $feed->setRequestPath('movies_russian.json?api_token={token}');
     $feed->setJsonPointer('/report/movies');
@@ -35,6 +37,7 @@ class MoonwalkFeedsInjector implements FeedsInjectorInterface {
     // Feed "camrip-movies".
     $feed = new Feed();
     $feed->setName('camrip-movies');
+    $feed->setLabel('CamRIP фильмы');
     $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
     $feed->setRequestPath('movies_camrip.json?api_token={token}');
     $feed->setJsonPointer('/report/movies');
@@ -44,6 +47,7 @@ class MoonwalkFeedsInjector implements FeedsInjectorInterface {
     // Feed "foreign-series".
     $feed = new Feed();
     $feed->setName('foreign-series');
+    $feed->setLabel('Зарубежные сериалы');
     $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
     $feed->setRequestPath('serials_foreign.json?api_token={token}');
     $feed->setJsonPointer('/report/serials');
@@ -53,6 +57,7 @@ class MoonwalkFeedsInjector implements FeedsInjectorInterface {
     // Feed "russian-series".
     $feed = new Feed();
     $feed->setName('russian-series');
+    $feed->setLabel('Русские сериалы');
     $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
     $feed->setRequestPath('serials_russian.json?api_token={token}');
     $feed->setJsonPointer('/report/serials');
@@ -62,6 +67,7 @@ class MoonwalkFeedsInjector implements FeedsInjectorInterface {
     // Feed "anime-movies".
     $feed = new Feed();
     $feed->setName('anime-movies');
+    $feed->setLabel('Аниме фильмы');
     $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
     $feed->setRequestPath('movies_anime.json?api_token={token}');
     $feed->setJsonPointer('/report/movies');
@@ -71,6 +77,7 @@ class MoonwalkFeedsInjector implements FeedsInjectorInterface {
     // Feed "anime-series".
     $feed = new Feed();
     $feed->setName('anime-series');
+    $feed->setLabel('Аниме сериалы');
     $feed->setVideoOrigin(Video::MOONWALK_ORIGIN);
     $feed->setRequestPath('serials_anime.json?api_token={token}');
     $feed->setJsonPointer('/report/serials');
