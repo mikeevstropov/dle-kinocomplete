@@ -91,7 +91,6 @@ class ConfigurationProvider
       'kodik_thumbnail_pattern'                       => $configurationJson['kodik_thumbnail_pattern'],
       'kodik_movies_feed_enabled'                     => $configurationJson['kodik_movies_feed_enabled'],
       'kodik_series_feed_enabled'                     => $configurationJson['kodik_series_feed_enabled'],
-      'kodik_adult_feed_enabled'                      => $configurationJson['kodik_adult_feed_enabled'],
       'kodik_foreign_movies_feed_enabled'             => $configurationJson['kodik_foreign_movies_feed_enabled'],
       'kodik_russian_movies_feed_enabled'             => $configurationJson['kodik_russian_movies_feed_enabled'],
       'kodik_foreign_cartoon_movies_feed_enabled'     => $configurationJson['kodik_foreign_cartoon_movies_feed_enabled'],

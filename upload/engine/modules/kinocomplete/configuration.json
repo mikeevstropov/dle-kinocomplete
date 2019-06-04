@@ -31,7 +31,6 @@
   "kodik_thumbnail_pattern":                       "https://st.kp.yandex.net/images/film_iphone/iphone360_{kinopoisk_id}.jpg",
   "kodik_movies_feed_enabled":                     "1",
   "kodik_series_feed_enabled":                     "1",
-  "kodik_adult_feed_enabled":                      "0",
   "kodik_foreign_movies_feed_enabled":             "0",
   "kodik_russian_movies_feed_enabled":             "0",
   "kodik_foreign_cartoon_movies_feed_enabled":     "0",

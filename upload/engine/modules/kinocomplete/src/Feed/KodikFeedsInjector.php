@@ -32,15 +32,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setSize(11315895);
     $inject($feed);
 
-    // Feed "adult".
-    $feed = new Feed();
-    $feed->setName('adult');
-    $feed->setLabel('Adult-ролики');
-    $feed->setVideoOrigin(Video::KODIK_ORIGIN);
-    $feed->setRequestPath('episodes.json');
-    $feed->setSize(3228085);
-    $inject($feed);
-
     // Feed "foreign-movies".
     $feed = new Feed();
     $feed->setName('foreign-movies');
