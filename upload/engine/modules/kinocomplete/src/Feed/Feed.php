@@ -14,6 +14,11 @@ class Feed
   /**
    * @var string
    */
+  protected $label;
+
+  /**
+   * @var string
+   */
   protected $videoOrigin;
 
   /**
@@ -40,7 +45,7 @@ class Feed
   {
     Assert::stringNotEmpty(
       $this->name,
-      'Название фида не определено.'
+      'Имя фида не определено.'
     );
 
     return $this->name;
@@ -56,6 +61,33 @@ class Feed
     Assert::nullOrString($name);
 
     $this->name = $name;
+  }
+
+  /**
+   * Get label.
+   *
+   * @return string
+   */
+  public function getLabel()
+  {
+    Assert::stringNotEmpty(
+      $this->label,
+      'Название фида не определено.'
+    );
+
+    return $this->label;
+  }
+
+  /**
+   * Set label.
+   *
+   * @param string|null $label
+   */
+  public function setLabel($label)
+  {
+    Assert::nullOrString($label);
+
+    $this->label = $label;
   }
 
   /**

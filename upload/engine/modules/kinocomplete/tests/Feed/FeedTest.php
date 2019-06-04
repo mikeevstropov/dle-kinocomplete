@@ -44,6 +44,39 @@ class FeedTest extends TestCase
   }
 
   /**
+   * Testing "setLabel" method.
+   */
+  public function testCanSetLabel()
+  {
+    $expected = Utils::randomString();
+
+    $feed = new Feed();
+    $feed->setLabel($expected);
+
+    $reflection = new \ReflectionObject($feed);
+    $property = $reflection->getProperty('label');
+    $property->setAccessible(true);
+
+    $result = $property->getValue($feed);
+
+    Assert::same(
+      $expected,
+      $result
+    );
+  }
+
+  /**
+   * Testing "setLabel" method exceptions.
+   */
+  public function testCannotSetLabel()
+  {
+    $this->expectException(\InvalidArgumentException::class);
+
+    $feed = new Feed();
+    $feed->setLabel(5);
+  }
+
+  /**
    * Testing "getName" method.
    */
   public function testCanGetName()
