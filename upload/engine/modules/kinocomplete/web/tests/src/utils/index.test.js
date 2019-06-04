@@ -1,9 +1,31 @@
 import {
+  hyphenToCamel,
+  snakeToCamel,
   camelToSnake,
   camelKeysToSnake,
 } from '../../../src/utils';
 
 describe('checking utils', () => {
+
+  test('method `hyphenToCamel` must return a string', () => {
+
+    const string = 'camel-case';
+    const expected = 'camelCase';
+
+    const result = hyphenToCamel(string);
+
+    expect(result).toBe(expected);
+  });
+
+  test('method `snakeToCamel` must return a string', () => {
+
+    const string = 'camel_case';
+    const expected = 'camelCase';
+
+    const result = snakeToCamel(string);
+
+    expect(result).toBe(expected);
+  });
 
   test('method `camelToSnake` must return a string', () => {
 

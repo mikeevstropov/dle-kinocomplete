@@ -138,10 +138,24 @@ export function duckTypingCheckMulti ({
 }
 
 /**
+ * Hyphen case to camel case.
+ *
+ * @param  {string} string
+ * @return {string}
+ */
+export function hyphenToCamel (string) {
+
+  return string.replace(
+    /(-\w)/g,
+    m => m[1].toUpperCase()
+  );
+}
+
+/**
  * Snake case to camel case.
  *
  * @param  {string} string
- * @return {String}
+ * @return {string}
  */
 export function snakeToCamel (string) {
 
