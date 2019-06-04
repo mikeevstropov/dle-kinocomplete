@@ -312,6 +312,7 @@ class FeedTest extends TestCase
     $this->expectException(\InvalidArgumentException::class);
 
     $feed = new Feed();
+    $feed->setJsonPointer(null);
     $feed->getJsonPointer();
   }
 

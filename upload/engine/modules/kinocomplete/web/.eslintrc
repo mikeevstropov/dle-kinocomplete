@@ -16,6 +16,7 @@
     "object-curly-spacing": ["error", "never"],
     "indent": ["error", 2, {"SwitchCase": 1}],
     "linebreak-style": ["error", "unix"],
+    "no-useless-constructor": "off",
     "quotes": ["error", "single"],
     "no-trailing-spaces": "off",
     "operator-linebreak": "off",

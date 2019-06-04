@@ -29,7 +29,7 @@ class Feed
   /**
    * @var string
    */
-  protected $jsonPointer;
+  protected $jsonPointer = '';
 
   /**
    * @var int
@@ -151,7 +151,7 @@ class Feed
    */
   public function getJsonPointer()
   {
-    Assert::stringNotEmpty(
+    Assert::string(
       $this->jsonPointer,
       'Опция фида "jsonPointer" не определена.'
     );

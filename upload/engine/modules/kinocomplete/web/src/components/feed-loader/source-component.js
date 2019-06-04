@@ -1,6 +1,46 @@
+/* global Growl */
+
+import {requiredArgument} from '../../utils';
 import Component from './component';
 
-export default class MoonwalkComponent extends Component {
+export default class SourceComponent extends Component {
+
+  /**
+   * Origin.
+   *
+   * @type {string}
+   */
+  origin = null;
+
+  /**
+   * Controller constructor.
+   *
+   * @param configuration
+   * @param view
+   * @param api
+   * @param origin
+   * @public
+   */
+  constructor ({
+    configuration = requiredArgument('configuration'),
+    view = requiredArgument('view'),
+    api = requiredArgument('api'),
+    origin = requiredArgument('origin'),
+  } = {}) {
+
+    super({
+      configuration,
+      view,
+      api,
+    });
+
+    if (!origin || typeof origin !== 'string')
+      throw new Error(
+        'Argument "origin" must be a non-empty string.'
+      );
+
+    this.origin = origin;
+  }
 
   /**
    * Create posts.
@@ -65,7 +105,8 @@ export default class MoonwalkComponent extends Component {
       });
     };
 
-    this.api.createMoonwalkPosts({
+    this.api.createPosts({
+      origin: this.origin,
       onError,
       onMessage,
       onSuccess,
@@ -129,7 +170,8 @@ export default class MoonwalkComponent extends Component {
       });
     };
 
-    this.api.updateMoonwalkPosts({
+    this.api.updatePosts({
+      origin: this.origin,
       onError,
       onMessage,
       onSuccess,
@@ -147,7 +189,9 @@ export default class MoonwalkComponent extends Component {
     this.progress = 0;
     this.progress = 35;
 
-    this.api.cleanMoonwalkPosts().then(response => {
+    this.api.cleanPosts({
+      origin: this.origin,
+    }).then(response => {
 
       if (
         !Object.isObject(response)

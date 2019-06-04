@@ -1,7 +1,7 @@
-import MoonwalkComponent from './moonwalk-component';
-import MoonwalkView from './moonwalk-view';
+import SourceComponent from './source-component';
+import SourceView from './source-view';
 
 export default {
-  MoonwalkComponent,
-  MoonwalkView,
+  SourceComponent,
+  SourceView,
 };

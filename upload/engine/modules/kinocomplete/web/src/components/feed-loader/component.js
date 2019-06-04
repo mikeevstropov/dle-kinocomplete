@@ -66,7 +66,6 @@ export default class Component extends BaseComponent {
    * Controller constructor.
    *
    * @param configuration
-   * @param layout
    * @param view
    * @param api
    * @public

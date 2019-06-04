@@ -20,7 +20,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Все фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(22210342);
     $inject($feed);
 
@@ -30,7 +29,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Все сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(11315895);
     $inject($feed);
 
@@ -40,7 +38,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Adult-ролики');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('episodes.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(3228085);
     $inject($feed);
 
@@ -50,7 +47,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Зарубежные фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/foreign-movie.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(18075688);
     $inject($feed);
 
@@ -60,7 +56,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Русские фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/russian-movie.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(3126536);
     $inject($feed);
 
@@ -70,7 +65,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Зарубежные мультфильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/foreign-cartoon.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(474159);
     $inject($feed);
 
@@ -80,7 +74,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Русские мультфильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/russian-cartoon.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(69578);
     $inject($feed);
 
@@ -90,7 +83,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Советские мультфильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/soviet-cartoon.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(62436);
     $inject($feed);
 
@@ -100,7 +92,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Аниме фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('films/anime.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(403842);
     $inject($feed);
 
@@ -110,7 +101,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Зарубежные сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/foreign-serial.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(5974878);
     $inject($feed);
 
@@ -120,7 +110,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Русские сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/russian-serial.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(1880465);
     $inject($feed);
 
@@ -130,7 +119,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Зарубежные мультсериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/cartoon-serial.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(420853);
     $inject($feed);
 
@@ -140,7 +128,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Русские мультсериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/russian-cartoon-serial.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(50923);
     $inject($feed);
 
@@ -150,7 +137,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Зарубежные документальные сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/documentary-serial.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(356707);
     $inject($feed);
 
@@ -160,7 +146,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Русские документальные сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/russian-documentary-serial.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(203241);
     $inject($feed);
 
@@ -170,7 +155,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Многосерийные фильмы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/multi-part-film.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(63952);
     $inject($feed);
 
@@ -180,7 +164,6 @@ class KodikFeedsInjector implements FeedsInjectorInterface {
     $feed->setLabel('Аниме сериалы');
     $feed->setVideoOrigin(Video::KODIK_ORIGIN);
     $feed->setRequestPath('serials/anime-serial.json');
-    $feed->setJsonPointer('/');
     $feed->setSize(2365702);
     $inject($feed);
   }

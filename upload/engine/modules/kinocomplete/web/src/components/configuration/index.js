@@ -19,7 +19,11 @@ export default class Configuration {
         'Client must be an object which contain `get` method.'
       );
 
-    this.requestPath = location.pathname
+    const pathName = typeof location !== 'undefined'
+      ? location.pathname
+      : 'admin.php';
+
+    this.requestPath = pathName
       +'?mod=kinocomplete&action=get-configuration&ajax';
 
     this._values = values;

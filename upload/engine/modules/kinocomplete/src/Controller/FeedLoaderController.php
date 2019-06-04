@@ -39,16 +39,26 @@ class FeedLoaderController extends DefaultController
     /** @var SystemApi $systemApi */
     $systemApi = $this->container->get('system_api');
 
-    // Count FeedPosts which is related to Posts.
+    // Count FeedPosts of Moonwalk
+    // which is related to Posts.
     $moonwalkFeedPostsCount = $systemApi->countFeedPosts(
       ['videoOrigin' => Video::MOONWALK_ORIGIN],
       ['[><]post' => ['postId' => 'id']]
     );
 
+    // Count FeedPosts of Kodik
+    // which is related to Posts.
+    $kodikFeedPostsCount = $systemApi->countFeedPosts(
+      ['videoOrigin' => Video::KODIK_ORIGIN],
+      ['[><]post' => ['postId' => 'id']]
+    );
+
     $parameters = [
       'moonwalkFeeds'             => Feeds::getEnabled($this->container, Video::MOONWALK_ORIGIN),
-      'feedLoaderPostsLimit'      => $this->container->get('feed_loader_posts_limit'),
+      'kodikFeeds'                => Feeds::getEnabled($this->container, Video::KODIK_ORIGIN),
       'moonwalkFeedPostsCount'    => $moonwalkFeedPostsCount,
+      'kodikFeedPostsCount'       => $kodikFeedPostsCount,
+      'feedLoaderPostsLimit'      => $this->container->get('feed_loader_posts_limit'),
       'categoriesFromVideoType'   => $this->container->get('categories_from_video_type'),
       'categoriesFromVideoGenres' => $this->container->get('categories_from_video_genres')
     ];

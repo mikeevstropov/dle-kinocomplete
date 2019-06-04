@@ -160,6 +160,36 @@ class ControllerResolver extends DefaultController
           $arguments
         );
 
+      case 'create-kodik-posts':
+
+        $controller = new ApiController($this->container);
+
+        return $controller->createKodikPostsAction(
+          $request,
+          $response,
+          $arguments
+        );
+
+      case 'update-kodik-posts':
+
+        $controller = new ApiController($this->container);
+
+        return $controller->updateKodikPostsAction(
+          $request,
+          $response,
+          $arguments
+        );
+
+      case 'clean-kodik-posts':
+
+        $controller = new ApiController($this->container);
+
+        return $controller->cleanKodikPostsAction(
+          $request,
+          $response,
+          $arguments
+        );
+
       default:
 
         $this->cronNotAllowed();

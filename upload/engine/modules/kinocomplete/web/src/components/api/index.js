@@ -1,6 +1,11 @@
-import {duckTypingCheck, requiredArgument} from '../../utils';
 import videoModel from '../../models/video-model.json';
 import Url from 'urijs';
+
+import {
+  duckTypingCheck,
+  requiredArgument,
+  snakeToCamel,
+} from '../../utils';
 
 export default class Api {
 
@@ -223,22 +228,26 @@ export default class Api {
   }
 
   /**
-   * Create moonwalk posts.
+   * Create posts.
    *
+   * @param  origin
    * @param  onSuccess
    * @param  onMessage
    * @param  onError
    * @return {void}
    * @public
    */
-  createMoonwalkPosts ({
+  createPosts ({
+    origin = requiredArgument('origin'),
     onSuccess,
     onMessage,
     onError,
   } = {}) {
 
+    origin = snakeToCamel(origin);
+
     const url = this.queryToUrl({
-      action: 'create-moonwalk-posts',
+      action: `create-${origin}-posts`,
     });
 
     this.getEventSource({
@@ -250,22 +259,26 @@ export default class Api {
   }
 
   /**
-   * Update moonwalk posts.
+   * Update posts.
    *
+   * @param  origin
    * @param  onSuccess
    * @param  onMessage
    * @param  onError
    * @return {void}
    * @public
    */
-  updateMoonwalkPosts ({
+  updatePosts ({
+    origin = requiredArgument('origin'),
     onSuccess,
     onMessage,
     onError,
   } = {}) {
 
+    origin = snakeToCamel(origin);
+
     const url = this.queryToUrl({
-      action: 'update-moonwalk-posts',
+      action: `update-${origin}-posts`,
     });
 
     this.getEventSource({
@@ -279,12 +292,17 @@ export default class Api {
   /**
    * Clean moonwalk posts.
    *
+   * @param  origin
    * @return {Promise<*>}
    * @public
    */
-  async cleanMoonwalkPosts () {
+  async cleanPosts ({
+    origin = requiredArgument('origin'),
+  } = {}) {
 
-    const query = {action: 'clean-moonwalk-posts'};
+    origin = snakeToCamel(origin);
+
+    const query = {action: `clean-${origin}-posts`};
 
     return this.get({query});
   }

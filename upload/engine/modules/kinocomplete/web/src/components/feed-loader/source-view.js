@@ -1,28 +1,31 @@
 import {requiredArgument} from '../../utils';
 import View from './view';
 
-export default class MoonwalkView extends View {
+export default class SourceView extends View {
 
   /**
-   * MoonwalkView constructor.
+   * SourceView constructor.
    *
-   * @param {Configuration} configuration
    * @param {Layout} layout
+   * @param {string} origin
    * @public
    */
   constructor ({
-    configuration = requiredArgument('configuration'),
     layout = requiredArgument('layout'),
+    origin = requiredArgument('origin'),
   } = {}) {
 
-    super({
-      configuration,
-      layout,
-    });
+    super({layout});
+
+    if (!origin || typeof origin !== 'string')
+      throw new Error(
+        'Argument "origin" must be a non-empty string.'
+      );
 
     // Progress bar.
-    this.progressBar = document
-      .querySelector('.kc__feed-loader__progress-bar_moonwalk');
+    this.progressBar = document.querySelector(
+      `.kc__feed-loader__progress-bar_${origin}`
+    );
 
     if (!this.progressBar)
       throw new Error(
@@ -30,8 +33,9 @@ export default class MoonwalkView extends View {
       );
 
     // Create posts button.
-    this.createPostsButton = document
-      .querySelector('.kc__feed-loader__create-posts-button_moonwalk');
+    this.createPostsButton = document.querySelector(
+      `.kc__feed-loader__create-posts-button_${origin}`
+    );
 
     if (!this.createPostsButton)
       throw new Error(
@@ -39,8 +43,9 @@ export default class MoonwalkView extends View {
       );
 
     // Update posts button.
-    this.updatePostsButton = document
-      .querySelector('.kc__feed-loader__update-posts-button_moonwalk');
+    this.updatePostsButton = document.querySelector(
+      `.kc__feed-loader__update-posts-button_${origin}`
+    );
 
     if (!this.updatePostsButton)
       throw new Error(
@@ -48,8 +53,9 @@ export default class MoonwalkView extends View {
       );
 
     // Clean posts button.
-    this.cleanPostsButton = document
-      .querySelector('.kc__feed-loader__clean-posts-button_moonwalk');
+    this.cleanPostsButton = document.querySelector(
+      `.kc__feed-loader__clean-posts-button_${origin}`
+    );
 
     if (!this.cleanPostsButton)
       throw new Error(
@@ -57,8 +63,9 @@ export default class MoonwalkView extends View {
       );
 
     // Feed posts count container.
-    this.feedPostsCountContainer = document
-      .querySelector('.kc__feed-loader__feed-posts-count_moonwalk');
+    this.feedPostsCountContainer = document.querySelector(
+      `.kc__feed-loader__feed-posts-count_${origin}`
+    );
 
     if (!this.feedPostsCountContainer)
       throw new Error(
@@ -66,8 +73,9 @@ export default class MoonwalkView extends View {
       );
 
     // Feed posts updated container.
-    this.feedPostsUpdatedContainer = document
-      .querySelector('.kc__feed-loader__feed-posts-updated_moonwalk');
+    this.feedPostsUpdatedContainer = document.querySelector(
+      `.kc__feed-loader__feed-posts-updated_${origin}`
+    );
 
     if (!this.feedPostsUpdatedContainer)
       throw new Error(
@@ -75,8 +83,9 @@ export default class MoonwalkView extends View {
       );
 
     // Feed posts skipped container.
-    this.feedPostsSkippedContainer = document
-      .querySelector('.kc__feed-loader__feed-posts-skipped_moonwalk');
+    this.feedPostsSkippedContainer = document.querySelector(
+      `.kc__feed-loader__feed-posts-skipped_${origin}`
+    );
 
     if (!this.feedPostsSkippedContainer)
       throw new Error(

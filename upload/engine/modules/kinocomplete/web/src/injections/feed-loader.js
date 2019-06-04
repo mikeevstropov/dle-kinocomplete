@@ -1,4 +1,3 @@
-
 import Kinocomplete from '../index';
 import axios from 'axios';
 
@@ -18,13 +17,30 @@ import axios from 'axios';
     client: axios,
   });
 
-  const moonwalkView = new Kinocomplete.FeedLoader.MoonwalkView({
-    configuration,
+  // Moonwalk.
+
+  const moonwalkView = new Kinocomplete.FeedLoader.SourceView({
+    origin: 'moonwalk',
     layout,
   });
 
-  new Kinocomplete.FeedLoader.MoonwalkComponent({
+  new Kinocomplete.FeedLoader.SourceComponent({
+    origin: 'moonwalk',
     view: moonwalkView,
+    configuration,
+    api,
+  });
+
+  // Kodik.
+
+  const kodikView = new Kinocomplete.FeedLoader.SourceView({
+    origin: 'kodik',
+    layout,
+  });
+
+  new Kinocomplete.FeedLoader.SourceComponent({
+    origin: 'kodik',
+    view: kodikView,
     configuration,
     api,
   });

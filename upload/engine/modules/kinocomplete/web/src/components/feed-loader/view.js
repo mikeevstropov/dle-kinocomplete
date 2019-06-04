@@ -59,6 +59,17 @@ export default class View extends BaseView {
   feedPostsSkippedContainer = null;
 
   /**
+   * View constructor.
+   *
+   * @param {object} params
+   * @public
+   */
+  constructor (params) {
+
+    super(params);
+  }
+
+  /**
    * Set progress of
    * a progress bar.
    *
