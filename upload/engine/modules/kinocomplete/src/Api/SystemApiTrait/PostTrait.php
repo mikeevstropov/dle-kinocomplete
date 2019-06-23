@@ -623,7 +623,7 @@ trait PostTrait {
 
       foreach ($values as $value) {
 
-        if ($value == null || $value == '')
+        if ($value === null || $value === '')
           continue;
 
         $array[] = [
