@@ -87,10 +87,11 @@ trait TmdbFactoryTrait
     // Field "duration".
     if (array_key_exists('runtime', $data)) {
 
-      $duration = $data['runtime'];
+      if ($data['runtime']) {
 
-      if ($duration && is_int($duration))
-        $video->duration = $duration * 60;
+        if (is_int($data['runtime']))
+          $video->duration = $data['runtime'] * 60;
+      }
     }
 
     // Field "actors".
