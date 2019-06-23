@@ -36,5 +36,5 @@ class ExtraField
   /**
    * @var bool
    */
-  public $link = false;
+  public $linked = false;
 }

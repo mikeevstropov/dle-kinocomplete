@@ -36,7 +36,7 @@ class ExtraFieldFactory extends DefaultService
       ? $array[3]
       : null;
 
-    $link = array_key_exists(6, $array)
+    $linked = array_key_exists(6, $array)
       ? (bool) $array[6]
       : false;
 
@@ -49,7 +49,7 @@ class ExtraFieldFactory extends DefaultService
     $extraField->name = $name;
     $extraField->label = $label;
     $extraField->type = $type;
-    $extraField->link = $link;
+    $extraField->linked = $linked;
 
     return $extraField;
   }

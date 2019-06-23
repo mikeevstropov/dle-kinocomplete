@@ -73,12 +73,12 @@ class ExtraFieldFactoryTest extends TestCase
   }
 
   /**
-   * Testing "fromDefinition" method with link.
+   * Testing "fromDefinition" method by linked.
    */
-  public function testCanFromDefinitionWithLink()
+  public function testCanFromDefinitionByLinked()
   {
     $filePath = realpath(
-      FIXTURES_DIR .'/extra-field/link-definitions.txt'
+      FIXTURES_DIR .'/extra-field/linked-definitions.txt'
     );
 
     $definition = current(
@@ -97,7 +97,7 @@ class ExtraFieldFactoryTest extends TestCase
     );
 
     Assert::true(
-      $field->link
+      $field->linked
     );
   }
 
