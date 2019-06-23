@@ -73,6 +73,35 @@ class ExtraFieldFactoryTest extends TestCase
   }
 
   /**
+   * Testing "fromDefinition" method with link.
+   */
+  public function testCanFromDefinitionWithLink()
+  {
+    $filePath = realpath(
+      FIXTURES_DIR .'/extra-field/link-definitions.txt'
+    );
+
+    $definition = current(
+      array_filter(
+        file($filePath)
+      )
+    );
+
+    $field = $this->instance->fromDefinition(
+      $definition
+    );
+
+    Assert::isInstanceOf(
+      $field,
+      ExtraField::class
+    );
+
+    Assert::true(
+      $field->link
+    );
+  }
+
+  /**
    * Testing "fromDefinitions" method.
    */
   public function testCanFromDefinitions()

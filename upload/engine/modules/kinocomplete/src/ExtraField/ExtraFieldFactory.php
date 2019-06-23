@@ -36,6 +36,10 @@ class ExtraFieldFactory extends DefaultService
       ? $array[3]
       : null;
 
+    $link = array_key_exists(6, $array)
+      ? (bool) $array[6]
+      : false;
+
     if (!$name || !$label || !$type)
       throw new \InvalidArgumentException(
         'Определение дополнительного поля имеет неизвестный формат.'
@@ -45,6 +49,7 @@ class ExtraFieldFactory extends DefaultService
     $extraField->name = $name;
     $extraField->label = $label;
     $extraField->type = $type;
+    $extraField->link = $link;
 
     return $extraField;
   }

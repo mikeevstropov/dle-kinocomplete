@@ -2,8 +2,6 @@
 
 namespace Kinocomplete\ExtraField;
 
-use Webmozart\Assert\Assert;
-
 class ExtraField
 {
 
@@ -35,4 +33,8 @@ class ExtraField
    */
   public $value;
 
+  /**
+   * @var bool
+   */
+  public $link = false;
 }
