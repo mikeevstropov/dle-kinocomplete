@@ -192,6 +192,7 @@ class KodikApi extends DefaultService implements ApiInterface
     $source = $this->container->get('kodik_source');
 
     $queryString = http_build_query([
+      'with_material_data' => true,
       'token' => $source->getToken(),
       'title' => $title
     ]);
@@ -272,6 +273,7 @@ class KodikApi extends DefaultService implements ApiInterface
     $source = $this->container->get('kodik_source');
 
     $queryString = http_build_query([
+      'with_material_data' => true,
       'token' => $source->getToken(),
       'id' => $id
     ]);

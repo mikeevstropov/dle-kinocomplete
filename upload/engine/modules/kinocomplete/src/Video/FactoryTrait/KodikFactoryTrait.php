@@ -39,6 +39,10 @@ trait KodikFactoryTrait
     $video->id = (string) $data['id'];
     $video->origin = Video::KODIK_ORIGIN;
 
+    $material = array_key_exists('material_data', $data)
+      ? $data['material_data']
+      : [];
+
     // Field "type".
     if (
       array_key_exists('type', $data)
@@ -67,6 +71,70 @@ trait KodikFactoryTrait
         $video->worldTitle = (string) $data['title_orig'];
     }
 
+    // Field "tagline".
+    if (array_key_exists('tagline', $material)) {
+
+      if ($material['tagline'])
+        $video->tagline = (string) $material['tagline'];
+    }
+
+    // Field "description".
+    if (array_key_exists('description', $material)) {
+
+      if ($material['description'])
+        $video->description = (string) $material['description'];
+    }
+
+    // Field "duration".
+    if (array_key_exists('duration', $material)) {
+
+      if ($material['duration']) {
+
+        if (is_int($material['duration']))
+          $video->duration = $material['duration'] * 60;
+      }
+    }
+
+    // Field "actors".
+    if (array_key_exists('actors', $material)) {
+
+      if (is_array($material['actors']))
+        $video->actors = array_filter(
+          $material['actors'],
+          'is_string'
+        );
+    }
+
+    // Field "directors".
+    if (array_key_exists('directors', $material)) {
+
+      if (is_array($material['directors']))
+        $video->directors = array_filter(
+          $material['directors'],
+          'is_string'
+        );
+    }
+
+    // Field "countries".
+    if (array_key_exists('countries', $material)) {
+
+      if (is_array($material['countries']))
+        $video->countries = array_filter(
+          $material['countries'],
+          'is_string'
+        );
+    }
+
+    // Field "genres".
+    if (array_key_exists('genres', $material)) {
+
+      if (is_array($material['genres']))
+        $video->genres = array_filter(
+          $material['genres'],
+          'is_string'
+        );
+    }
+
     // Field "poster".
     if (
       $posterPattern &&
@@ -79,6 +147,14 @@ trait KodikFactoryTrait
         $posterPattern,
         ['kinopoisk_id' => $data['kinopoisk_id']]
       );
+
+    } else if (
+      array_key_exists('poster_url', $material) &&
+      $material['poster_url'] &&
+      is_string($material['poster_url'])
+    ) {
+
+      $video->poster = $material['poster_url'];
     }
 
     // Field "thumbnail".
@@ -93,6 +169,14 @@ trait KodikFactoryTrait
         $thumbnailPattern,
         ['kinopoisk_id' => $data['kinopoisk_id']]
       );
+
+    } else if (
+      array_key_exists('poster_url', $material) &&
+      $material['poster_url'] &&
+      is_string($material['poster_url'])
+    ) {
+
+      $video->thumbnail = $material['poster_url'];
     }
 
     // Field "year".
@@ -162,6 +246,34 @@ trait KodikFactoryTrait
           'Y-m-d H:i:s',
           $unixTime
         );
+    }
+
+    // Field "kinopoiskRating".
+    if (array_key_exists('kinopoisk_rating', $material)) {
+
+      if ($material['kinopoisk_rating'])
+        $video->kinopoiskRating = (string) $material['kinopoisk_rating'];
+    }
+
+    // Field "kinopoiskVotes".
+    if (array_key_exists('kinopoisk_votes', $material)) {
+
+      if ($material['kinopoisk_votes'])
+        $video->kinopoiskVotes = (string) $material['kinopoisk_votes'];
+    }
+
+    // Field "imdbRating".
+    if (array_key_exists('imdb_rating', $material)) {
+
+      if ($material['imdb_rating'])
+        $video->imdbRating = (string) $material['imdb_rating'];
+    }
+
+    // Field "imdbVotes".
+    if (array_key_exists('imdb_votes', $material)) {
+
+      if ($material['imdb_votes'])
+        $video->imdbVotes = (string) $material['imdb_votes'];
     }
 
     // Field "player".
