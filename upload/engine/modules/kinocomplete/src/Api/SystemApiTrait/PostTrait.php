@@ -513,7 +513,7 @@ trait PostTrait {
           ON {$postsTable}.id = {$extraSearchTable}.news_id
       ". $whereClause;
 
-      // Without categories relations. (< 13.2)
+    // Without categories relations. (< 13.2)
     } else {
 
       $sql = "
