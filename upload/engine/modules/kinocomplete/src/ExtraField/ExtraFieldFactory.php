@@ -244,6 +244,9 @@ class ExtraFieldFactory extends DefaultService
   public function fromVideo(
     Video $video
   ) {
+    $extraFields = $this->container
+      ->get('extra_fields');
+
     $videoFields = ContainerFactory::fromNamespace(
       $this->container,
       'video_field',
@@ -269,9 +272,30 @@ class ExtraFieldFactory extends DefaultService
       if (!$isNumeric && !$isNotEmptyString)
         continue;
 
-      $newField = new ExtraField();
-      $newField->name = $name;
-      $newField->value = $value;
+      $extraFieldFilter = function (
+        ExtraField $field
+      ) use ($name) {
+        return $field->name === $name;
+      };
+
+      $extraField = current(
+        array_filter(
+          $extraFields,
+          $extraFieldFilter
+        )
+      );
+
+      if ($extraField) {
+
+        $newField = clone $extraField;
+        $newField->value = $value;
+
+      } else {
+
+        $newField = new ExtraField();
+        $newField->name = $name;
+        $newField->value = $value;
+      }
 
       $fields[] = $newField;
     }

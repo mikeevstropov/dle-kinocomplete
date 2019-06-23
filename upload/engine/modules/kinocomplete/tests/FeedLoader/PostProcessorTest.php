@@ -276,7 +276,10 @@ class PostProcessorTest extends TestCase
     $videoFields['video_field_world_title'] = $firstField->name;
 
     $extraFieldFactory = new ExtraFieldFactory(
-      new Container($videoFields)
+      new Container(
+        ['extra_fields' => $post->extraFields]
+        + $videoFields
+      )
     );
 
     $postPatterns = ContainerFactory::fromNamespace(
@@ -407,7 +410,7 @@ class PostProcessorTest extends TestCase
       });
 
     $extraFieldFactory = new ExtraFieldFactory(
-      new Container([])
+      new Container(['extra_fields' => []])
     );
 
     $postPatterns = ContainerFactory::fromNamespace(
@@ -870,7 +873,10 @@ class PostProcessorTest extends TestCase
     $videoFields['video_field_world_title'] = $firstField->name;
 
     $extraFieldFactory = new ExtraFieldFactory(
-      new Container($videoFields)
+      new Container(
+        ['extra_fields' => $post->extraFields]
+        + $videoFields
+      )
     );
 
     $postPatterns = ContainerFactory::fromNamespace(

@@ -322,7 +322,8 @@ class ExtraFieldFactoryTest extends TestCase
 
     $container = new Container([
       'video_field_world_title' => $expectedName,
-      'video_field_tagline' => ''
+      'video_field_tagline' => '',
+      'extra_fields' => [],
     ]);
 
     $instance = new ExtraFieldFactory(
@@ -360,7 +361,8 @@ class ExtraFieldFactoryTest extends TestCase
     $expectedName = Utils::randomString();
 
     $container = new Container([
-      'video_field_world_title' => $expectedName
+      'video_field_world_title' => $expectedName,
+      'extra_fields' => [],
     ]);
 
     $instance = new ExtraFieldFactory(
@@ -370,5 +372,64 @@ class ExtraFieldFactoryTest extends TestCase
     $result = $instance->fromVideo($video);
 
     Assert::count($result, 0);
+  }
+
+  /**
+   * Testing "fromVideo" method with fields from container.
+   */
+  public function testCanFromVideoWithFieldsFromContainer()
+  {
+    $video = new Video();
+    $video->worldTitle = Utils::randomString();
+    $video->tagline = Utils::randomString();
+
+    $expectedName = Utils::randomString();
+
+    $worldTitleField = new ExtraField();
+    $worldTitleField->name = $expectedName;
+    $worldTitleField->type = ExtraField::TEXT_TYPE;
+
+    $taglineField = new ExtraField();
+    $taglineField->name = Utils::randomString();
+    $taglineField->type = ExtraField::TEXT_TYPE;
+
+    $extraFields = [
+      $worldTitleField,
+      $taglineField,
+    ];
+
+    $container = new Container([
+      'video_field_world_title' => $expectedName,
+      'video_field_tagline' => '',
+      'extra_fields' => $extraFields,
+    ]);
+
+    $instance = new ExtraFieldFactory(
+      $container
+    );
+
+    $result = $instance->fromVideo($video);
+
+    Assert::count($result, 1);
+
+    Assert::isInstanceOf(
+      $result[0],
+      ExtraField::class
+    );
+
+    Assert::same(
+      $result[0]->name,
+      $expectedName
+    );
+
+    Assert::same(
+      $result[0]->value,
+      $video->worldTitle
+    );
+
+    Assert::same(
+      $result[0]->type,
+      $worldTitleField->type
+    );
   }
 }
