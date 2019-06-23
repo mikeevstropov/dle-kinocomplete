@@ -583,11 +583,17 @@ trait PostTrait {
 
     foreach ($fields as $field) {
 
-      $array[] = [
-        'news_id' => $postId,
-        'tagname' => $field->name,
-        'tagvalue' => $field->value,
-      ];
+      $values = explode(',', $field->value);
+      $values = array_map('trim', $values);
+
+      foreach ($values as $value) {
+
+        $array[] = [
+          'news_id' => $postId,
+          'tagname' => $field->name,
+          'tagvalue' => $value,
+        ];
+      }
     }
 
     if (!$array) return 0;
