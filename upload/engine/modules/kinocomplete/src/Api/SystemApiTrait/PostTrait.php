@@ -107,6 +107,17 @@ trait PostTrait {
       }
     }
 
+    // Remove extra fields from search.
+    $this->removeExtraFieldsFromSearch(
+      $post->id
+    );
+
+    // Add extra fields to search.
+    $this->addExtraFieldsToSearch(
+      $post->id,
+      $post->extraFields
+    );
+
     return $post;
   }
 
@@ -249,6 +260,17 @@ trait PostTrait {
       }
     }
 
+    // Remove extra fields from search.
+    $this->removeExtraFieldsFromSearch(
+      $post->id
+    );
+
+    // Add extra fields to search.
+    $this->addExtraFieldsToSearch(
+      $post->id,
+      $post->extraFields
+    );
+
     return $post;
   }
 
@@ -335,6 +357,9 @@ trait PostTrait {
           $error[2]
         ));
     }
+
+    // Remove extra fields from search.
+    $this->removeExtraFieldsFromSearch($id);
 
     return true;
   }
@@ -453,6 +478,7 @@ trait PostTrait {
     $postsTable           = $prefix .'post';
     $postsExtrasTable     = $prefix .'post_extras';
     $postsCategoriesTable = $prefix .'post_extras_cats';
+    $extraSearchTable     = $prefix .'xfsearch';
     $whereClause          = $where ? ' WHERE' : '';
 
     foreach ($where as $key => $value) {
@@ -474,7 +500,8 @@ trait PostTrait {
           `{$postsTable}`,
           `{$postsExtrasTable}`,
           `{$postsCategoriesTable}`,
-          `{$feedPostsTable}`
+          `{$feedPostsTable}`,
+          `{$extraSearchTable}`
         FROM `{$postsTable}`
         LEFT JOIN `{$postsExtrasTable}`
           ON {$postsTable}.id = {$postsExtrasTable}.news_id
@@ -482,6 +509,8 @@ trait PostTrait {
           ON {$postsTable}.id = {$postsCategoriesTable}.news_id
         LEFT JOIN `{$feedPostsTable}`
           ON {$postsTable}.id = {$feedPostsTable}.postId
+        LEFT JOIN `{$extraSearchTable}`
+          ON {$postsTable}.id = {$extraSearchTable}.news_id
       ". $whereClause;
 
       // Without categories relations. (< 13.2)
@@ -491,12 +520,15 @@ trait PostTrait {
         DELETE
           `{$postsTable}`,
           `{$postsExtrasTable}`,
-          `{$feedPostsTable}`
+          `{$feedPostsTable}`,
+          `{$extraSearchTable}`
         FROM `{$postsTable}`
         LEFT JOIN `{$postsExtrasTable}`
           ON {$postsTable}.id = {$postsExtrasTable}.news_id
         LEFT JOIN `{$feedPostsTable}`
           ON {$postsTable}.id = {$feedPostsTable}.postId
+        LEFT JOIN `{$extraSearchTable}`
+          ON {$postsTable}.id = {$extraSearchTable}.news_id
       ". $whereClause;
     }
 

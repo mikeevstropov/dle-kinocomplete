@@ -542,4 +542,146 @@ class PostTraitTest extends TestCase
 
     Assert::same($count, 0);
   }
+
+  /**
+   * Testing `addPost` method with linked field.
+   *
+   * @return Post
+   * @throws \Exception
+   */
+  public function testCanAddPostWithLinkedField()
+  {
+    $values = [
+      'first',
+      'second',
+      'third',
+    ];
+
+    $expectedCount = count($values);
+
+    $extraField = new ExtraField();
+    $extraField->name = Utils::randomString();
+    $extraField->label = Utils::randomString();
+    $extraField->type = ExtraField::TEXT_TYPE;
+    $extraField->value = join(', ', $values);
+    $extraField->linked = true;
+
+    $post = new Post();
+    $post->title = Utils::randomString();
+    $post->extraFields = [$extraField];
+
+    $post = $this->instance->addPost($post);
+
+    $count = $this->database->count(
+      'xfsearch',
+      ['news_id' => $post->id]
+    );
+
+    Assert::same(
+      $count,
+      $expectedCount
+    );
+
+    return $post;
+  }
+
+  /**
+   * Testing `updatePost` with linked field.
+   *
+   * @param   Post $post
+   * @return  Post
+   * @throws  NotFoundException
+   * @depends testCanAddPostWithLinkedField
+   */
+  public function testCanUpdatePostWithLinkedField(Post $post)
+  {
+    $values = [
+      'third',
+      'fourth',
+    ];
+
+    $expectedCount = count($values);
+
+    /** @var ExtraField $extraField */
+    $extraField = current($post->extraFields);
+
+    $extraField->value = join(', ', $values);
+
+    $this->instance->updatePost($post);
+
+    $count = $this->database->count(
+      'xfsearch',
+      ['news_id' => $post->id]
+    );
+
+    Assert::same(
+      $count,
+      $expectedCount
+    );
+
+    return $post;
+  }
+
+  /**
+   * Testing `removePost` method with linked field.
+   *
+   * @param   Post $post
+   * @return  Post
+   * @throws  NotFoundException
+   * @depends testCanUpdatePostWithLinkedField
+   */
+  public function testCanRemovePostWithLinkedField(Post $post)
+  {
+    $this->instance->removePost($post->id);
+
+    $count = $this->database->count(
+      'xfsearch',
+      ['news_id' => $post->id]
+    );
+
+    Assert::same($count, 0);
+
+    return $post;
+  }
+
+  /**
+   * Testing `removePosts` method with linked field.
+   *
+   * @param Post $post
+   * @throws \Exception
+   * @depends testCanRemovePostWithLinkedField
+   */
+  public function testCanRemovePostsWithLinkedField(Post $post)
+  {
+    $extraField = current($post->extraFields);
+
+    $expectedCount = count(
+      explode(',', $extraField->value)
+    );
+
+    Assert::same($expectedCount, 2);
+
+    $this->instance->addPost($post);
+
+    $count = $this->database->count(
+      'xfsearch',
+      ['news_id' => $post->id]
+    );
+
+    Assert::same(
+      $count,
+      $expectedCount
+    );
+
+    $this->instance->removePosts([
+      'id' => $post->id
+    ]);
+
+    $count = $this->database->count(
+      'xfsearch',
+      ['news_id' => $post->id]
+    );
+
+    Assert::same($count, 0);
+  }
 }
