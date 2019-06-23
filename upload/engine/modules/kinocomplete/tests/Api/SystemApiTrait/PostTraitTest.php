@@ -5,6 +5,7 @@ namespace Kinocomplete\Test\Api\SystemApiTrait;
 use Kinocomplete\Tests\TestTrait\ContainerTrait;
 use Kinocomplete\Api\SystemApiTrait\PostTrait;
 use Kinocomplete\Exception\NotFoundException;
+use Kinocomplete\ExtraField\ExtraField;
 use Kinocomplete\Container\Container;
 use Kinocomplete\Post\PostFactory;
 use PHPUnit\Framework\TestCase;
@@ -446,5 +447,99 @@ class PostTraitTest extends TestCase
     $this->expectException(NotFoundException::class);
 
     $this->instance->removePost('-20');
+  }
+
+  /**
+   * Testing `addExtraFieldsToSearch` method.
+   *
+   * @return array
+   * @throws \Exception
+   */
+  public function testCanAddExtraFieldsToSearch()
+  {
+    $postId = (string) rand(1000, 9999);
+
+    $firstValues = [
+      'first',
+      'second',
+      'third',
+    ];
+
+    $firstField = new ExtraField();
+    $firstField->name = Utils::randomString();
+    $firstField->label = Utils::randomString();
+    $firstField->type = ExtraField::TEXT_TYPE;
+    $firstField->value = join(', ', $firstValues);
+    $firstField->linked = true;
+
+    $secondValues = [
+      'third',
+      'fourth',
+      'fifth',
+    ];
+
+    $secondField = new ExtraField();
+    $secondField->name = Utils::randomString();
+    $secondField->label = Utils::randomString();
+    $secondField->type = ExtraField::TEXT_TYPE;
+    $secondField->value = join(', ', $secondValues);
+    $secondField->linked = true;
+
+    $count = $this->instance->addExtraFieldsToSearch(
+      $postId,
+      [$firstField, $secondField]
+    );
+
+    $expectedCount = count(
+      $firstValues
+    ) + count(
+      $secondValues
+    );
+
+    Assert::same(
+      $count,
+      $expectedCount
+    );
+
+    $count = $this->database->count(
+      'xfsearch',
+      ['news_id' => $postId]
+    );
+
+    Assert::same(
+      $count,
+      $expectedCount
+    );
+
+    return [
+      'post_id' => $postId,
+      'count' => $expectedCount,
+    ];
+  }
+
+  /**
+   * Testing `removeExtraFieldsFromSearch` method.
+   *
+   * @param   array $options
+   * @throws  \Exception
+   * @depends testCanAddExtraFieldsToSearch
+   */
+  public function testCanRemoveExtraFieldsFromSearch($options)
+  {
+    $count = $this->instance->removeExtraFieldsFromSearch(
+      $options['post_id']
+    );
+
+    Assert::same(
+      $count,
+      $options['count']
+    );
+
+    $count = $this->database->count(
+      'xfsearch',
+      ['news_id' => $options['post_id']]
+    );
+
+    Assert::same($count, 0);
   }
 }
