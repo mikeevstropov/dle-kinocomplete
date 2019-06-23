@@ -2,7 +2,6 @@
 
 namespace Kinocomplete\Test\Api;
 
-use Kinocomplete\Post\PostFactory;
 use Kinocomplete\Tests\TestTrait\ContainerTrait;
 use Kinocomplete\Exception\NotFoundException;
 use Kinocomplete\Container\ContainerFactory;
@@ -10,6 +9,7 @@ use Kinocomplete\FeedPost\FeedPostFactory;
 use Kinocomplete\ExtraField\ExtraField;
 use Kinocomplete\Container\Container;
 use Kinocomplete\FeedPost\FeedPost;
+use Kinocomplete\Post\PostFactory;
 use PHPUnit\Framework\TestCase;
 use Kinocomplete\Api\SystemApi;
 use Kinocomplete\Utils\Utils;
@@ -17,6 +17,7 @@ use Kinocomplete\Video\Video;
 use Webmozart\PathUtil\Path;
 use Webmozart\Assert\Assert;
 use Kinocomplete\Post\Post;
+use Medoo\Medoo;
 
 class SystemApiTest extends TestCase
 {
@@ -26,6 +27,11 @@ class SystemApiTest extends TestCase
    * @var SystemApi
    */
   public $instance;
+
+  /**
+   * @var Medoo
+   */
+  public $database;
 
   /**
    * SystemApiTest constructor.
@@ -40,6 +46,7 @@ class SystemApiTest extends TestCase
 
     $container = $this->getContainer();
 
+    $this->database = $this->getContainer()->get('database');
     $this->instance = new SystemApi($container);
   }
 
@@ -641,5 +648,59 @@ class SystemApiTest extends TestCase
     }
 
     Assert::same($exceptions, 2);
+  }
+
+  /**
+   * Testing `removeFeedPostsAndRelatedPosts` method with linked field.
+   *
+   * @throws \Exception
+   */
+  public function testCanRemoveFeedPostsAndRelatedPostsWithLinkedField()
+  {
+    /** @var FeedPostFactory $feedPostFactory */
+    $feedPostFactory = $this->getContainer()->get('feed_post_factory');
+
+    $values = [
+      'first',
+      'second',
+      'third',
+    ];
+
+    $expectedCount = count($values);
+
+    $extraField = new ExtraField();
+    $extraField->name = Utils::randomString();
+    $extraField->label = Utils::randomString();
+    $extraField->type = ExtraField::TEXT_TYPE;
+    $extraField->value = join(', ', $values);
+    $extraField->linked = true;
+
+    $post = new Post();
+    $post->extraFields = [$extraField];
+    $addedPost = $this->instance->addPost($post);
+
+    $count = $this->database->count(
+      'xfsearch',
+      ['news_id' => $addedPost->id]
+    );
+
+    Assert::same(
+      $count,
+      $expectedCount
+    );
+
+    $feedPost = $feedPostFactory->fromPost($addedPost);
+    $addedFeedPost = $this->instance->addFeedPost($feedPost);
+
+    $this->instance->removeFeedPostsAndRelatedPosts([
+      'id' => $addedFeedPost->id
+    ]);
+
+    $count = $this->database->count(
+      'xfsearch',
+      ['news_id' => $addedPost->id]
+    );
+
+    Assert::same($count, 0);
   }
 }

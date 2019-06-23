@@ -377,6 +377,7 @@ class SystemApi extends DefaultService
     $postsTable           = $prefix .'post';
     $postsExtrasTable     = $prefix .'post_extras';
     $postsCategoriesTable = $prefix .'post_extras_cats';
+    $extraSearchTable     = $prefix .'xfsearch';
     $whereClause          = $where ? ' WHERE' : '';
 
     foreach ($where as $key => $value) {
@@ -398,7 +399,8 @@ class SystemApi extends DefaultService
           `{$feedPostsTable}`,
           `{$postsTable}`,
           `{$postsExtrasTable}`,
-          `{$postsCategoriesTable}`
+          `{$postsCategoriesTable}`,
+          `{$extraSearchTable}`
         FROM `{$feedPostsTable}`
         INNER JOIN `{$postsTable}`
           ON {$feedPostsTable}.postId = {$postsTable}.id
@@ -406,6 +408,8 @@ class SystemApi extends DefaultService
           ON {$feedPostsTable}.postId = {$postsExtrasTable}.news_id
         LEFT JOIN `{$postsCategoriesTable}`
           ON {$feedPostsTable}.postId = {$postsCategoriesTable}.news_id
+        LEFT JOIN `{$extraSearchTable}`
+          ON {$feedPostsTable}.postId = {$extraSearchTable}.news_id
       ". $whereClause;
 
     // Without categories relations. (< 13.2)
@@ -415,12 +419,15 @@ class SystemApi extends DefaultService
         DELETE
           `{$feedPostsTable}`,
           `{$postsTable}`,
-          `{$postsExtrasTable}`
+          `{$postsExtrasTable}`,
+          `{$extraSearchTable}`
         FROM `{$feedPostsTable}`
         INNER JOIN `{$postsTable}`
           ON {$feedPostsTable}.postId = {$postsTable}.id
         LEFT JOIN `{$postsExtrasTable}`
           ON {$feedPostsTable}.postId = {$postsExtrasTable}.news_id
+        LEFT JOIN `{$extraSearchTable}`
+          ON {$feedPostsTable}.postId = {$extraSearchTable}.news_id
       ". $whereClause;
     }
 
