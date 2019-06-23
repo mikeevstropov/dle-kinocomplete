@@ -65,10 +65,16 @@ class FileDownloader extends DefaultService
       $this->container->get('system_root_dir')
     );
 
-    return str_replace(
+    $relativeUrl = str_replace(
       $systemRootDir,
       '',
       $path
+    );
+
+    return str_replace(
+      '\\',
+      '/',
+      $relativeUrl
     );
   }
 
