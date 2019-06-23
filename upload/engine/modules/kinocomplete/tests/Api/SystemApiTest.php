@@ -512,6 +512,9 @@ class SystemApiTest extends TestCase
    * Testing "getPostsByVideo" method without duplicates.
    *
    * @throws NotFoundException
+   * @throws \Throwable
+   * @throws \Twig_Error_Loader
+   * @throws \Twig_Error_Syntax
    */
   public function testCanGetPostsByVideoWithoutDuplicates()
   {

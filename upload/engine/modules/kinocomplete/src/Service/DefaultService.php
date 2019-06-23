@@ -21,4 +21,14 @@ class DefaultService
   ) {
     $this->container = $container;
   }
+
+  /**
+   * Get container.
+   *
+   * @return ContainerInterface
+   */
+  public function getContainer()
+  {
+    return $this->container;
+  }
 }

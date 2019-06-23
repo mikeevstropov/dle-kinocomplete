@@ -2,18 +2,28 @@
 
 namespace Kinocomplete\Api;
 
+use Kinocomplete\Api\SystemApiTrait\CategoryTrait;
+use Kinocomplete\Api\SystemApiTrait\FeedPostTrait;
+use Kinocomplete\Api\SystemApiTrait\PostTrait;
+use Kinocomplete\Api\SystemApiTrait\UserTrait;
 use Kinocomplete\ExtraField\ExtraFieldFactory;
 use Kinocomplete\Container\ContainerFactory;
+use Kinocomplete\Service\DefaultService;
 use Kinocomplete\ExtraField\ExtraField;
-use Kinocomplete\Utils\Utils;
 use Kinocomplete\Video\Video;
+use Kinocomplete\Utils\Utils;
 use Webmozart\PathUtil\Path;
 use Webmozart\Assert\Assert;
 use Kinocomplete\Post\Post;
 use Medoo\Medoo;
 
-class SystemApi extends BaseSystemApi
+class SystemApi extends DefaultService
 {
+  use CategoryTrait;
+  use PostTrait;
+  use FeedPostTrait;
+  use UserTrait;
+
   /**
    * Get table engine.
    *
