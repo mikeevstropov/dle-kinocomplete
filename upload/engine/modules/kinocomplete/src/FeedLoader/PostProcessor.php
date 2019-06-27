@@ -98,6 +98,9 @@ class PostProcessor extends DefaultService
       CategoryFactory::CREATE_NOT_EXISTED
     );
 
+    $post->published = (bool) $this->container
+      ->get('feed_loader_publish_created');
+
     /** @var SystemApi $systemApi */
     $systemApi = $this->container->get('system_api');
 

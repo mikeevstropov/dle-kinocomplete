@@ -124,6 +124,7 @@
   "post_updater_video_fields":                     "a:0:{}",
   "post_updater_new_date":                         "1",
   "feed_loader_posts_limit":                       "10",
+  "feed_loader_publish_created":                   "0",
   "categories_case":                               "3",
   "categories_from_video_type":                    "0",
   "categories_from_video_genres":                  "0",

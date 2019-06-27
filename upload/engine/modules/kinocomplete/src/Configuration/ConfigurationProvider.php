@@ -183,6 +183,7 @@ class ConfigurationProvider
       'post_updater_video_fields'                     => $configurationJson['post_updater_video_fields'],
       'post_updater_new_date'                         => $configurationJson['post_updater_new_date'],
       'feed_loader_posts_limit'                       => $configurationJson['feed_loader_posts_limit'],
+      'feed_loader_publish_created'                   => $configurationJson['feed_loader_publish_created'],
       'categories_case'                               => $configurationJson['categories_case'],
       'categories_from_video_type'                    => $configurationJson['categories_from_video_type'],
       'categories_from_video_genres'                  => $configurationJson['categories_from_video_genres'],

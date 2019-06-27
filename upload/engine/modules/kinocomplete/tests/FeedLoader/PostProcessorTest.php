@@ -97,6 +97,8 @@ class PostProcessorTest extends TestCase
     $video->id = Utils::randomString();
 
     $post = new Post();
+    $post->published = false;
+
     $feedPost = new FeedPost();
 
     $videoFactory = function () use ($video) {
@@ -166,7 +168,8 @@ class PostProcessorTest extends TestCase
       'post_factory' => $postFactory,
       'feed_post_factory' => $feedPostFactory,
       'images_auto_download' => false,
-      'torrents_auto_download' => false
+      'torrents_auto_download' => false,
+      'feed_loader_publish_created' => true,
     ]);
 
     $instance = new PostProcessor(
@@ -175,6 +178,8 @@ class PostProcessorTest extends TestCase
     );
 
     $instance->addPostFromVideoArray([]);
+
+    Assert::true($post->published);
   }
 
   public function testCanGetPostsByVideoArray()

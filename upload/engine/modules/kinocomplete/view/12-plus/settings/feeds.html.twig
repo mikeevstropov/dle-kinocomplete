@@ -184,6 +184,42 @@
 
           </tr>
 
+          <tr>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-7">
+
+              <h6
+                class="media-heading text-semibold">
+                Публиковать при создании:
+              </h6>
+
+              <span
+                class="text-muted text-size-small hidden-xs">
+                Моментальная публикация при создании новости.
+              </span>
+
+            </td>
+
+            <td
+              class="col-xs-6 col-sm-6 col-md-5">
+
+              <input
+                value="0"
+                type="hidden"
+                name="settings[feed_loader_publish_created]">
+
+              <input
+                value="1"
+                class="switch"
+                type="checkbox"
+                name="settings[feed_loader_publish_created]"
+                {{ settings['feed_loader_publish_created'] ? 'checked' : '' }}>
+
+            </td>
+
+          </tr>
+
         </tbody>
 
       </table>

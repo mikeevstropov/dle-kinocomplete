@@ -59,6 +59,7 @@ class FeedLoaderController extends DefaultController
       'moonwalkFeedPostsCount'    => $moonwalkFeedPostsCount,
       'kodikFeedPostsCount'       => $kodikFeedPostsCount,
       'feedLoaderPostsLimit'      => $this->container->get('feed_loader_posts_limit'),
+      'feedLoaderPublishCreated'  => $this->container->get('feed_loader_publish_created'),
       'categoriesFromVideoType'   => $this->container->get('categories_from_video_type'),
       'categoriesFromVideoGenres' => $this->container->get('categories_from_video_genres')
     ];
