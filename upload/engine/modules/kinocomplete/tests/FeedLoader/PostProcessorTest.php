@@ -97,8 +97,102 @@ class PostProcessorTest extends TestCase
     $video->id = Utils::randomString();
 
     $post = new Post();
-    $post->published = false;
+    $feedPost = new FeedPost();
 
+    $videoFactory = function () use ($video) {
+      return $video;
+    };
+
+    $source = $this->getMockBuilder(
+      Source::class
+    )->getMock();
+
+    $source
+      ->expects($this->once())
+      ->method('getVideoFactory')
+      ->willReturn($videoFactory);
+
+    $systemApi = $this->getMockBuilder(
+      SystemApi::class
+    )->setConstructorArgs([
+      $this->getContainer()
+    ])->getMock();
+
+    $systemApi
+      ->expects($this->once())
+      ->method('addPost')
+      ->with($post);
+
+    $systemApi
+      ->expects($this->once())
+      ->method('removeFeedPosts')
+      ->with(['videoId' => $feedPost->videoId]);
+
+    $systemApi
+      ->expects($this->once())
+      ->method('addFeedPost')
+      ->with($feedPost);
+
+    $postFactory = $this->getMockBuilder(
+      PostFactory::class
+    )->setConstructorArgs([
+      $this->getContainer()
+    ])->getMock();
+
+    $postFactory
+      ->expects($this->once())
+      ->method('fromVideo')
+      ->with(
+        $video,
+        CategoryFactory::CREATE_NOT_EXISTED
+      )->willReturn($post);
+
+    $feedPostFactory = $this->getMockBuilder(
+      FeedPostFactory::class
+    )->setConstructorArgs([
+      $this->getContainer()
+    ])->getMock();
+
+    $feedPostFactory
+      ->expects($this->once())
+      ->method('fromPostAndVideo')
+      ->with(
+        $post,
+        $video
+      )->willReturn($feedPost);
+
+    $container = new Container([
+      'system_api' => $systemApi,
+      'post_factory' => $postFactory,
+      'feed_post_factory' => $feedPostFactory,
+      'images_auto_download' => false,
+      'torrents_auto_download' => false,
+      'feed_loader_publish_created' => false,
+    ]);
+
+    $instance = new PostProcessor(
+      $container,
+      $source
+    );
+
+    $instance->addPostFromVideoArray([]);
+
+    Assert::false($post->published);
+  }
+
+  /**
+   * Testing "addPostFromVideoArray" method with publish created.
+   *
+   * @throws \Throwable
+   * @throws \Twig_Error_Loader
+   * @throws \Twig_Error_Syntax
+   */
+  public function testCanAddPostFromVideoArrayWithPublishCreated()
+  {
+    $video = new Video();
+    $video->id = Utils::randomString();
+
+    $post = new Post();
     $feedPost = new FeedPost();
 
     $videoFactory = function () use ($video) {
