@@ -320,12 +320,17 @@ trait MoonwalkFactoryTrait
     }
 
     // Field "quality".
-    if (array_key_exists('camrip', $data)) {
+    $camrip = array_key_exists('camrip', $data)
+      ? (bool) $data['camrip']
+      : false;
 
-      $video->quality = $data['camrip']
-        ? 'CAMRip'
-        : 'HD';
-    }
+    $quality = array_key_exists('source_type', $data)
+      ? (string) $data['source_type']
+      : null;
+
+    $video->quality = $camrip == false
+      ? $quality ?: 'HD'
+      : 'CAMRip';
 
     // Field "trailer".
     if (array_key_exists('trailer_iframe_url', $data)) {
